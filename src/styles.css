@@ -1,0 +1,100 @@
+table.table td p:is(:first-child) {
+    margin-block-start: 0;
+}
+table.table td p:is(:last-child) {
+    margin-block-end: 0;
+}
+:root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+    );
+}
+html {
+    font-family: "Inter Variable Text", "Inter", sans-serif;
+    background: #eceac5;
+}
+body {
+    margin-top: 68px;
+}
+
+@property --percentage {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --middle-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: transparent;
+}
+
+.navbar {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+        li {
+            display: flex;
+            align-items: center;
+            a {
+                color: white;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+    --middle-color: #000000;
+    transition: --middle-color 0.25s;
+    --percentage: 110%;
+    background-image:   linear-gradient(90deg, #000000 calc(var(--percentage) - 9%), var(--middle-color) var(--percentage), #000000 calc(var(--percentage) + 9%)),
+                        linear-gradient(45deg, #d6750d 15%, #70c42b 50%, #65ace4 85%);
+    animation: navbar-hover 1.5s linear infinite;
+    &:hover {
+        --middle-color: transparent;
+    }
+    &::after {
+        content: var(--percentage);
+        --percentage: inherit;
+    }
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 5px 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes navbar-hover {
+    0% {
+        --percentage: -10%;
+    }
+    100% {
+        --percentage: 110%;
+    }
+}
+main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    font-size: 20px;
+    line-height: 1.6;
+}
+code {
+    font-family:
+        "JetBrains Mono",
+        monospace, serif;
+}

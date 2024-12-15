@@ -1,0 +1,36 @@
+---
+import Image from 'astro/components/Image.astro';
+
+interface Props {
+	name: string;
+    card: string;
+    pl: string;
+    style: string;
+    notes: any;
+}
+
+const { name, card, pl, style, notes } = Astro.props;
+
+const cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
+    .then(resp => resp.json())
+    .then(d => d.data)
+    .catch(err => console.error(err))
+
+const cardImage = cardData.images.large
+const dexno = cardData.nationalPokedexNumbers[0]
+//const illus = cardData.artist
+---
+
+<tr>
+    <td>#{dexno.toString().padStart(4,"0")}
+        
+        {name}</td>
+    <td><div class="cropped-card-image" style={style}><Image src={cardImage} width="300" height="419" loading="eager" alt={name}/></div></td>
+    <td>{pl}</td>
+    <td><slot /></td>
+    <td>{notes}</td>
+</tr>
+
+<style>
+    @import 'cropped-card-image.css';
+</style>

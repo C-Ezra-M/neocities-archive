@@ -1,0 +1,20 @@
+---
+interface Props {
+	title: string;
+	body: string;
+    tier: string;
+	img: string;
+}
+
+const { img, tier, title, body } = Astro.props;
+---
+
+<div class="token-desc">
+	<h2>
+		{title}
+		<span>&rarr;</span>
+	</h2>
+	<p>
+		{body}
+	</p>
+</div>

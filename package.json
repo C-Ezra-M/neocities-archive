@@ -1,0 +1,19 @@
+{
+  "name": "cezram-neocities",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.2",
+    "astro": "^5.0.5",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.83.0"
+  }
+}

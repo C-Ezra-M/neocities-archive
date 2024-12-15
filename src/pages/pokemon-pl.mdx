@@ -1,0 +1,65 @@
+import Layout from '../layouts/Layout.astro';
+import PokemonPl from '../components/PokemonPl.astro';
+
+<Layout title="Polish Pokémon names | C.Ezra.M">
+    <main>
+        # List of Polish Pokémon names
+        
+        This is a list of my own ideas for Polish Pokémon names.
+
+        ## Alphabet
+
+        The Polish alphabet extends the Latin alphabet, and has 32 letters.
+        The letters Q, V, and X may be used in below names, but are never used in native words.
+
+        ```
+        A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż
+        a ą b c ć d e ę f g h i j k l ł m n ń o ó p r s ś t u w y z ź ż
+        ```
+
+        ## Quick pronunciation guide
+
+        This mainly applies to contexts where there are native words.
+
+        - All vowel sounds are constant and never distinguished by length:
+          - A - as in "bark", but short
+          - E - as in "left"
+          - I - as Y in "very"
+          - O - as O in "cone", but short
+          - Ó/U - as OO in "boot", but short
+          - Y - as I in *thin*
+          - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
+        - All letters are pronounced, but if there is a difficult cluster of 3 or more consonants, the middle letter can be skipped: *kostka* (dice) → *kos-ka*, *sześćset* (six hundred) → *sześ-set* OR *szej-set*.
+        - S is always devoiced, so it's pronounced like in *sock*.
+        - T never becomes a tongue flap, so it's pronounced like in the word *tap*!
+        - C is pronounced like TS in *parts*.
+        - J is pronounced like Y in *yen*.
+        - Ł is pronounced like W in *week*.
+        - W is pronounced like V in *vine*.
+        - Ń is pronounced like NY in *canyon*.
+        - Ć, Ś, Ź, DŹ are pronounced like CH in *chip*, SH in *ship*, G in *regime*, and J in *jinn*, respectively. Those are iotized. The same applies to CI, SI, ZI, and DZI in most cases.
+        - CZ, SZ, Ż, DŻ are pronounced like CH in *chop*, SH in *show*, S in *vision*, and J in *jar*, respectively. Those are not iotized.
+        - Most words are stressed on the penultimate syllable.
+        
+        <table class="table table-striped table-light">
+            <thead>
+                <tr>
+                    <th>Pokémon</th>
+                    <th>Artwork</th>
+                    <th>New name</th>
+                    <th>Etymology</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <PokemonPl name="Pikachu" card="xy12-35" pl="Pikachu" style="--offset-top: -85px;" notes="Some classics, like Pikachu, won't have their name changed.">Same as original</PokemonPl>
+                <PokemonPl name="Eevee" card="svp-43" pl="Eevee" style="--offset-left: -100px;">Same as original</PokemonPl>
+                <PokemonPl name="Conkeldurr" card="sv6-105" pl="Starbeton" notes="I had this idea for the longest time, and I feel like it rolls off the tongue really well.">
+                    From *stary* "old" and *beton* "concrete (building material)"
+                </PokemonPl>
+                <PokemonPl name="Tandemaus" card="sv8-157" pl="Myszpół">From *mysz* "mouse" and *zespół* "team"</PokemonPl>
+                <PokemonPl name="Maushold" card="sv8-158" pl="Rodzimyszy">From *rodzina* "family" and *myszy* "mice"</PokemonPl>
+            </tbody>
+        </table>
+    </main>
+</Layout>
