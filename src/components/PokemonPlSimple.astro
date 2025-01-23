@@ -1,0 +1,17 @@
+---
+import PokemonPl from './PokemonPl.astro';
+
+interface Props {
+	name: string;
+    card: string;
+    pl: string;
+    style: string;
+}
+
+const { name, card, pl, style } = Astro.props;
+---
+
+<PokemonPl name={name} card={card} pl={pl} style={style}>
+    <td slot="etymology"><slot /></td>
+    <td slot="notes"></td>
+</PokemonPl>

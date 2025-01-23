@@ -1,34 +1,40 @@
 ---
 import Image from 'astro/components/Image.astro';
+import { Debug } from 'astro:components';
 
 interface Props {
 	name: string;
     card: string;
     pl: string;
     style: string;
-    notes: any;
 }
 
-const { name, card, pl, style, notes } = Astro.props;
+const { name, card, pl, style } = Astro.props;
+let image, dexno, artist;
 
 const cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
-    .then(resp => resp.json())
+    .then(resp => resp.json().catch(async e => console.log(`Error while handling card ${card}. Response: \n${await resp.text()}`)))
     .then(d => d.data)
-    .catch(err => console.error(err))
+    .catch(e => {
+        throw new Error(`Error while handling card ${card}`, {cause: e})
+    })
 
-const cardImage = cardData.images.large
-const dexno = cardData.nationalPokedexNumbers[0]
-//const illus = cardData.artist
+try {
+    image = cardData.images.large
+    dexno = cardData.nationalPokedexNumbers?.[0] ?? "????"
+    artist = cardData.artist ?? "(NOT FOUND)"
+} catch (e) {
+    throw new Error(`Error while handling card ${card}`, {cause: e})
+}
+console.log("HANDLING CARD: " + card)
 ---
 
 <tr>
-    <td>#{dexno.toString().padStart(4,"0")}
-        
-        {name}</td>
-    <td><div class="cropped-card-image" style={style}><Image src={cardImage} width="300" height="419" loading="eager" alt={name}/></div></td>
+    <td>#{dexno.toString().padStart(4,"0")} {name}</td>
+    <td><div class="cropped-card-image" style={style}><Image src={image} width="300" height="419" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
     <td>{pl}</td>
-    <td><slot /></td>
-    <td>{notes}</td>
+    <slot name="etymology" />
+    <slot name="notes"/>
 </tr>
 
 <style>

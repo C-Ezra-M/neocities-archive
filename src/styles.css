@@ -18,6 +18,7 @@ table.table td p:is(:last-child) {
 html {
     font-family: "Inter Variable Text", "Inter", sans-serif;
     background: #eceac5;
+    scroll-padding-top: 68px;
 }
 body {
     margin-top: 68px;

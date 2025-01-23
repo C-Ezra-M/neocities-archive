@@ -5,3 +5,24 @@
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/utilities";
+
+/*$font-sizes: map-merge($font-sizes, (
+    7: $h6-font-size * 1.0,
+));
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      (
+        values: $font-sizes,
+        ),
+      ),
+    ),
+  );*/
+
+
+@import "../node_modules/bootstrap/scss/utilities/api";
+

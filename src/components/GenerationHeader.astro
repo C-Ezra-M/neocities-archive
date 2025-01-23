@@ -1,0 +1,12 @@
+---
+interface Props {
+	name: string;
+}
+
+const { name } = Astro.props;
+const id = `gen-${name}`.toLowerCase()
+---
+
+<tr>
+    <th colspan="5" id={id}><a href={`#${id}`}>Generation {name}</a></th>
+</tr>

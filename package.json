@@ -13,6 +13,9 @@
   "dependencies": {
     "@astrojs/mdx": "^4.0.2",
     "astro": "^5.0.5",
+    "localforage": "^1.10.0"
+  },
+  "devDependencies": {
     "bootstrap": "^5.3.3",
     "sass": "^1.83.0"
   }
