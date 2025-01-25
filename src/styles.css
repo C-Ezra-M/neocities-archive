@@ -99,3 +99,6 @@ code {
         "JetBrains Mono",
         monospace, serif;
 }
+pre {
+    padding: 0.1rem 0.3rem;
+}

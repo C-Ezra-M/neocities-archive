@@ -13,7 +13,7 @@ const { name, card, pl, style } = Astro.props;
 let image, dexno, artist;
 
 const cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
-    .then(resp => resp.json().catch(async e => console.log(`Error while handling card ${card}. Response: \n${await resp.text()}`)))
+    .then(resp => resp.json())
     .then(d => d.data)
     .catch(e => {
         throw new Error(`Error while handling card ${card}`, {cause: e})
