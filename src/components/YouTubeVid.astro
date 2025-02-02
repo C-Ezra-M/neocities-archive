@@ -4,6 +4,20 @@ interface Props {
 }
 
 const { id } = Astro.props;
+const { PROD } = import.meta.env
 ---
 
-<iframe width="560" height="315" src={"https://www.youtube.com/embed/" + id} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div>
+    {
+        PROD
+        ? <iframe
+            width="560"
+            height="315"
+            src={"https://www.youtube.com/embed/" + id}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        : <a href={`https://www.youtube.com/watch?v=${id}`}>Watch on YouTube</a>
+    }
+</div>
