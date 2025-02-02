@@ -11,8 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.2",
-    "astro": "^5.0.5",
+    "@astrojs/mdx": "^4.0.8",
+    "astro": "^5.2.3",
     "localforage": "^1.10.0"
   },
   "devDependencies": {
