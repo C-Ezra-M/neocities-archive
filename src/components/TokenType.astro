@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    id: string,
+    name: string,
+    tier: string,
+}
+
+const {id, name, tier} = Astro.props;
+const img = import(`../img/${id}.png`)
+---
+
+<li class:list={[id]}>
+    <article class="clearfix">
+        <Image
+            src={img}
+            height="100"
+            width="110"
+            alt={name}
+            class="float-end ms-3"
+        />
+        <h3>{name} ({tier} tier)</h3>
+        {Astro.slots.has("elimination") ? <h4>In eliminations:</h4> : <></>}
+        <slot name="elimination" />
+        {Astro.slots.has("challenge") ? <h4>In challenges:</h4> : <></>}
+        <slot name="challenge" />
+        {Astro.slots.has("shared") ? <h4>In eliminations and challenges:</h4> : <></>}
+        <slot name="shared" />
+    </article>
+</li>

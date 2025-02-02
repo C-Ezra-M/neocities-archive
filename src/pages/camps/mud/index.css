@@ -1,0 +1,23 @@
+.token-type-list {
+    list-style: none;
+    padding-left: 0;
+    > li {
+        border-radius: 0.5rem;
+        background-color: var(--token-color);
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.win-token      { --token-color: #ABEFABCC; }
+.immunity-token { --token-color: #EFABABCC; }
+.revenge-token  { --token-color: #ABEFEFCC; }
+.swap-token     { --token-color: #ABABEFCC; }
+.guess-token    { --token-color: #EFABEFCC; }
+.extra-token    { --token-color: #EFEFABCC; }
+.kamikaze-token { --token-color: #EFCDABCC; }
+.flow-token     { --token-color: #ABEFCDCC; }
+.break-token    { --token-color: #CDABEFCC; }
+.preserve-token { --token-color: #EFEFEFCC; }
+.null-token     { --token-color: #CDCDCDCC; }
+.contrary-token { --token-color: #ABABABCC; }
