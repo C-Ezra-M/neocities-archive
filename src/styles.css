@@ -1,9 +1,3 @@
-table.table td p:is(:first-child) {
-    margin-block-start: 0;
-}
-table.table td p:is(:last-child) {
-    margin-block-end: 0;
-}
 :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -14,14 +8,11 @@ table.table td p:is(:last-child) {
         rgb(var(--accent-light)) 30%,
         white 60%
     );
+    --bs-body-font-family: "Inter Variable Text", "Inter", sans-serif;
+    --bs-body-bg: #eceac5;
 }
 html {
-    font-family: "Inter Variable Text", "Inter", sans-serif;
-    background: #eceac5;
     scroll-padding-top: 68px;
-}
-body {
-    margin-top: 68px;
 }
 
 @property --percentage {
@@ -87,7 +78,7 @@ body {
     }
 }
 main {
-    margin: auto;
+    margin: 68px auto auto;
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
@@ -101,4 +92,12 @@ code {
 }
 pre {
     padding: 0.1rem 0.3rem;
+}
+blockquote {
+    background-color: #eeeeeeaa;
+    border-left: 0.3rem solid #996611;
+    padding: 0.5rem 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
 }
