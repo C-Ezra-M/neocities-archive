@@ -21,9 +21,9 @@ import GenerationHeader from '../components/GenerationHeader.astro'
 
         ## Quick pronunciation guide
 
-        This mainly applies to contexts where there are native words.
+        This mainly applies to contexts where there are native words. Loanwords that are unchanged from the original spelling are pronounced regarding the origin language's pronunciation rules. Thus, *weekend* is pronounced like in English, but *Waszyngton* (Washington) is pronounced with a V sound instead of a W sound.
 
-        - All vowel sounds are constant, short, and never distinguished by length:
+        - All vowel sounds are consistent, short, and never distinguished by length:
           - A - as in *back*
           - E - as in *left*
           - I - as Y in *very*
@@ -32,6 +32,7 @@ import GenerationHeader from '../components/GenerationHeader.astro'
           - Y - as I in *thin*
           - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
         - All letters are pronounced, but if there is a difficult cluster of 3 or more consonants, the middle letter can be skipped: *kostka* (dice) → *kos-ka*, *sześćset* (six hundred) → *sześ-set* OR *szej-set*.
+            - In those cases, the word's inflected forms explain the spelling, as can be seen in the genitive: *kostka* → *kostek*, *sześćset* → *sześciuset*.
         - S is always devoiced, so it's pronounced like in *sock*.
         - T never becomes a tongue flap, so it's pronounced like in the word *tap*!
         - C is pronounced like TS in *parts*.
@@ -108,6 +109,17 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                         I was originally going with "Sandolin" (from *sand* and *pangolin*), but that sounded too similar to a brand name.
                     </td>
                 </PokemonPl>
+                <PokemonPl name="Voltorb" card="sv3pt5-100" pl="Kulomba">
+                    <td slot="etymology">
+                        - *kula*: Polish for ball
+                        - *bomba*: Polish for bomb
+                        - *kulomb*: Polish for coulomb (SI unit of electric charge, symbol: C)
+                    </td>
+                    <td slot="notes">
+                        The original idea, "Kulomb", was not coined by me! It comes from <a href="https://ar.hn/2023/12/pokemon-crystal-pl/">Dark Archon's Polish Pokémon Crystal patch</a>. But I love the pun so well that it landed on this list!
+                        I had to change it so that it's not the exact same as an actual word.
+                    </td>
+                </PokemonPl>
                 <PokemonPl name="Gyarados" card="hgss1-4" pl="Garados" style="--offset-left: -48px; --offset-top: -88px;">
                     <td slot="etymology">Same as the German name</td>
                     <td slot="notes">
@@ -168,17 +180,31 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                     - *foka*: Polish for seal
                     - *kula*: Polish for ball
                 </PokemonPlSimple>
+                <PokemonPl name="Walrein" card="sv8-45" pl="Morsir">
+                    <td slot="etymology">
+                        - *mors*: Polish for walrus
+                        - *Sir*: English honorific title
+                    </td>
+                    <td slot="notes">
+                        Pronounced as "MOR-ser".
+                    </td>
+                </PokemonPl>
                 <PokemonPlSimple name="Beldum" card="sv5-113" pl="Lahant">
                     - *hantla*: Polish for dumbbell; the syllables are rearranged
                 </PokemonPlSimple>
                 <GenerationHeader name="IV"/>
+                <PokemonPlSimple name="Chatot" card="sm10-162" pl="Papluga">
+                    - *paplać*: Polish for "[to] chatter, [to] babble"
+                        - *papla*: Polish for chatterbox, blabbermouth
+                    - *papuga*: Polish for parrot
+                </PokemonPlSimple>
                 <PokemonPlSimple name="Carnivine" card="swsh12pt5-12" pl="Venuliana">
                     - *Venus flytrap*
                     - *liana*: climbing woody vine, usually tropical
                 </PokemonPlSimple>
                 <PokemonPl name="Gliscor" card="xy6-37" pl="Skorpioszyb">
                     <td slot="etymology">
-                        - *szybować*: Polish for glide
+                        - *szybować*: Polish for "[to] glide"
                         - *skorpion*: Polish for scorpion
                     </td>
                     <td slot="notes">
@@ -213,6 +239,15 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                         I had this idea for the longest time, and I feel like it rolls off the tongue really well.
                     </td>
                 </PokemonPl>
+                <PokemonPlSimple name="Lampent" card="sv3-37" pl="Lampiór">
+                    - *lampa*: Polish for lamp
+                    - *lampion*: Polish for lantern
+                    - *upiór*: Polish for ghost, spectre, vampire
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Pawniard" card="swsh5-103" pl="Pionkatana">
+                    - *pion*: Polish for pawn
+                    - 刀 *katana*: Japanese for sword
+                </PokemonPlSimple>
                 <PokemonPlSimple name="Rufflet" card="swsh10-131" pl="Korzeł" style="--offset-top: -45px;">
                     - *karzeł*: Polish for dwarf
                     - *orzeł*: Polish for eagle
@@ -255,9 +290,13 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                 </PokemonPlSimple>
                 <PokemonPlSimple name="Maushold" card="sv8-158" pl="Rodzimyszy">
                     - *rodzina*: Polish for family
-                    - *rodzić*: Polish for give birth
+                    - *rodzić*: Polish for "[to] give birth"
                     - *myszy*: Polish for mice
                 </PokemonPlSimple>
+                <PokemonPl name="Flamigo" card="sv1-165" pl="Flamigo">
+                    <td slot="etymology">Same as original</td>
+                    <td slot="notes">No need to change anything. Flamigo's English name is perfect.</td>
+                </PokemonPl>
                 <PokemonPlSimple name="Scream Tail" card="sv4-86" pl="Krzykogon" style="--offset-left: -70px;">
                     - *krzyk*: Polish for scream {/*noun*/}
                     - *ogon*: Polish for tail
