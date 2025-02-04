@@ -72,7 +72,8 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                 <GenerationHeader name="I"/>
                 <PokemonPl name="Blastoise" card="sm9-25" pl="Żółwierz">
                     <td slot="etymology">
-                        From *żółw* "turtle, tortoise" and *żołnierz* "soldier"
+                        - *żółw*: Polish for turtle, tortoise
+                        - *żołnierz*: Polish for soldier
                     </td>
                     <td slot="notes">
                         In Polish, the same word *żółw* is used for all species of the <a href="https://species.wikimedia.org/wiki/Testudines">Testudines</a> order.<br/>
@@ -81,19 +82,27 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                 </PokemonPl>
                 <PokemonPl name="Ekans" card="sm35-36" pl="Zołop" style="--offset-left: -110px;">
                     <td slot="etymology">
-                        From a part of *Połozowate* "<a href="https://en.wikipedia.org/wiki/Colubridae">Colubridae</a>" backwards
+                        - *połozowate*: Polish for <a href="https://en.wikipedia.org/wiki/Colubridae">Colubridae</a>
+                            - From a part of this word backwards.
                     </td>
                     <td slot="notes">
                         Partially inspired by the German name, "Rettan".
                     </td>
                 </PokemonPl>
-                <PokemonPlSimple name="Arbok" card="swsh35-34" pl="Arbok">From *kobra* "cobra" backwards.<br/>Same as original</PokemonPlSimple>
+                <PokemonPlSimple name="Arbok" card="swsh35-34" pl="Arbok">
+                    - *kobra*: Polish for cobra; spelled backwards
+                        - Same as original
+                </PokemonPlSimple>
                 <PokemonPlSimple name="Pikachu" card="sm10-54" pl="Pikachu">Same as original</PokemonPlSimple>
                 <PokemonPlSimple name="Raichu" card="sm12-67" pl="Raichu" style="--offset-left: -60px;">Same as original</PokemonPlSimple>
-                <PokemonPlSimple name="Sandshrew" card="sv3pt5-27" pl="Sandomysz">From *sand* and *mysz* "mouse"</PokemonPlSimple>
+                <PokemonPlSimple name="Sandshrew" card="sv3pt5-27" pl="Sandomysz">
+                    - *sand*
+                    - *mysz*: Polish for mouse
+                </PokemonPlSimple>
                 <PokemonPl name="Sandslash" card="sv6-98" pl="Sancernik">
                     <td slot="etymology">
-                        From *sand* and *pancernik* "armadillo"
+                        - *sand*
+                        - *pancernik*: Polish for armadillo
                     </td>
                     <td slot="notes">
                         I was originally going with "Sandolin" (from *sand* and *pangolin*), but that sounded too similar to a brand name.
@@ -109,39 +118,68 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                 <GenerationHeader name="II"/>
                 <PokemonPl name="Sudowoodo" card="xy9-67" pl="Łżewo">
                     <td slot="etymology">
-                        From *łże* "he/she/it lies" (inflected form of *łgać* "to lie") and *drzewo* "tree"
+                        - *łże*: inflected{/*present tense, singular 3rd person*/} form of *łgać*, Polish for lie (to state the untruth)
+                        - *drzewo*: Polish for tree
                     </td>
                     <td slot="notes">
-                        Not coined by me! It comes from <a href="https://ar.hn/2023/12/pokemon-crystal-pl/">Dark Archon's Polish Pokémon Crystal patch</a>.
+                        - Not coined by me! It comes from <a href="https://ar.hn/2023/12/pokemon-crystal-pl/">Dark Archon's Polish Pokémon Crystal patch</a>.
+                        - "Łgać" is dated and not easy to pronounce. The same applies to its inflected forms. Nowadays, Polish speakers more commonly use "kłamać".
                     </td>
                 </PokemonPl>
-                <PokemonPlSimple name="Unown" card="sm8-90" pl="Icognito" style="--offset-left: -100px;">From *incognito*, Latin for "unknown". Same as the German name</PokemonPlSimple>
-                <PokemonPlSimple name="Forretress" card="xy2-60" pl="Fortyszka" style="--offset-left: -60px;">From *forteca* "fortress" and *szyszka* "pinecone"</PokemonPlSimple>
+                <PokemonPlSimple name="Unown" card="sm8-90" pl="Icognito" style="--offset-left: -100px;">
+                    - *incognito*: Latin for unknown
+                        - Same as the German name
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Forretress" card="xy2-60" pl="Fortyszka" style="--offset-left: -60px;">
+                    - *forteca*: Polish for fortress
+                    - *szyszka*: Polish for pinecone
+                </PokemonPlSimple>
                 <PokemonPl name="Tyranitar" card="swsh3-88" pl="Tyranitar" style="--offset-left: -120px;">
-                    <td slot="etymology">Same as original</td>
+                    <td slot="etymology">Same as the original</td>
                     <td slot="notes">
                         A lot of Polish Pokémon fans call this one "Tyrek". Yes, much like one of the <a href="https://en.wikipedia.org/wiki/Poznań_Goats">Poznań Goats</a>. I think it makes me keep the original name.
                     </td>
                 </PokemonPl>
                 <GenerationHeader name="III"/>
-                <PokemonPlSimple name="Nosepass" card="sv3-107" pl="Kompanos">From *kompas* "compass", *nos* "nose", and *kompan* "companion, comrade"</PokemonPlSimple>
+                <PokemonPlSimple name="Nosepass" card="sv3-107" pl="Kompanos">
+                    - *kompas*: Polish for compass
+                    - *nos*: Polish for nose
+                    - *kompan*: Polish for companion, comrade
+                </PokemonPlSimple>
                 <PokemonPl name="Wailord" card="swsh4-32" pl="Wielord" style="--offset-left: -70px;">
                     <td slot="etymology">
-                        From *wieloryb* "whale" and *lord*
+                        - *wieloryb*: Polish for whale
+                        - *lord*
                     </td>
                     <td slot="notes">
                         Fun fact: *wieloryb* comes from Proto-Slavic *\*velьrybъ*, so it is also reflected in other Slavic languages. By surface anaylsis, it comes from *wiele ryb*, meaning "many fish". It's one of the reasons I thought whales are fish when I was little, but they're in fact mammals.
                     </td>
                 </PokemonPl>
-                <PokemonPlSimple name="Torkoal" card="sv6-30" pl="Żółwęgiel">From *żółw* "turtle, tortoise" and *węgiel* "coal"</PokemonPlSimple>
-                <PokemonPlSimple name="Lileep" card="bw10-3" pl="Lilip">From *lilia* "lily" and *polip* "polyp".<br/>Similar to the English name</PokemonPlSimple>
-                <PokemonPlSimple name="Spheal" card="sm12-49" pl="Fokula">From *foka* "seal" and *kula* "ball"</PokemonPlSimple>
-                <PokemonPlSimple name="Beldum" card="sv5-113" pl="Lahant">From rearranging the syllables of *hantla* "dumbbell"</PokemonPlSimple>
+                <PokemonPlSimple name="Torkoal" card="sv6-30" pl="Żółwęgiel">
+                    - *żółw*: Polish for turtle, tortoise
+                    - *węgiel*: Polish for coal
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Lileep" card="bw10-3" pl="Lilip">
+                    - *lilia*: Polish for lily
+                    - *polip*: Polish for polyp
+                    - Similar to the English name
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Spheal" card="sm12-49" pl="Fokula">
+                    - *foka*: Polish for seal
+                    - *kula*: Polish for ball
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Beldum" card="sv5-113" pl="Lahant">
+                    - *hantla*: Polish for dumbbell; the syllables are rearranged
+                </PokemonPlSimple>
                 <GenerationHeader name="IV"/>
-                <PokemonPlSimple name="Carnivine" card="swsh12pt5-12" pl="Venuliana">From *Venus flytrap* and *liana* (climbing woody vine, usually tropical)</PokemonPlSimple>
+                <PokemonPlSimple name="Carnivine" card="swsh12pt5-12" pl="Venuliana">
+                    - *Venus flytrap*
+                    - *liana*: climbing woody vine, usually tropical
+                </PokemonPlSimple>
                 <PokemonPl name="Gliscor" card="xy6-37" pl="Skorpioszyb">
                     <td slot="etymology">
-                        From *szybować* "to glide" and *skorpion* "scorpion"
+                        - *szybować*: Polish for glide
+                        - *skorpion*: Polish for scorpion
                     </td>
                     <td slot="notes">
                         I considered *Szyborpion* from the same words.
@@ -149,23 +187,40 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                 </PokemonPl>
                 <PokemonPl name="Probopass" card="sv6-102" pl="Nosagnes">
                     <td slot="etymology">
-                        From *nos* "nose" and *magnes* "magnet"
+                        - *nos*: Polish for nose
+                        - *magnes*: Polish/Latin for magnet
                     </td>
                     <td slot="notes">
                         This almost makes it Nosepass's German name "Nasgnet", but I came up with Nosepass's Polish name first.
                     </td>
                 </PokemonPl>
                 <GenerationHeader name="V"/>
+                <PokemonPl name="Dewott" card="swsh4-34" pl="Wydronin">
+                    <td slot="etymology">
+                        - *wydra*: Polish for otter
+                        - 浪人 *rōnin*: Japanese for samurai without a master
+                    </td>
+                    <td slot="notes">
+                        Inspired by the German name, "Zwottronin".
+                    </td>
+                </PokemonPl>
                 <PokemonPl name="Conkeldurr" card="sv6-105" pl="Starbeton">
                     <td slot="etymology">
-                        From *stary* "old" and *beton* "concrete (building material)"
+                        - *stary*: Polish for old
+                        - *beton*: Polish for concrete (building material)
                     </td>
                     <td slot="notes">
                         I had this idea for the longest time, and I feel like it rolls off the tongue really well.
                     </td>
                 </PokemonPl>
-                <PokemonPlSimple name="Rufflet" card="swsh10-131" pl="Korzeł" style="--offset-top: -45px;">From *karzeł* "dwarf" and *orzeł* "eagle"</PokemonPlSimple>
-                <PokemonPlSimple name="Vullaby" card="sm9-92" pl="Sępisklę">From *sęp* "vulture" and *pisklę* "chick"</PokemonPlSimple>
+                <PokemonPlSimple name="Rufflet" card="swsh10-131" pl="Korzeł" style="--offset-top: -45px;">
+                    - *karzeł*: Polish for dwarf
+                    - *orzeł*: Polish for eagle
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Vullaby" card="sm9-92" pl="Sępisklę">
+                    - *sęp*: Polish for vulture
+                    - *pisklę*: Polish for chick
+                </PokemonPlSimple>
                 <GenerationHeader name="VI"/>
                 <PokemonPlSimple name="Scatterbug" card="sv1-8" pl="Robakona">
                     - *robak*: Polish for bug
@@ -179,17 +234,46 @@ import GenerationHeader from '../components/GenerationHeader.astro'
                 <PokemonPlSimple name="Inkay" card="sv6pt5-33" pl="Osietusz">From *osiem* "eight; as in the number of limbs of an octopus" and *tusz* "ink"</PokemonPlSimple>
                 */ }
                 <GenerationHeader name="VII"/>
-                <PokemonPlSimple name="Crabrawler" card="sv3-114" pl="Kraboks">From *krab* "crab" and *boks* "boxing".<br/>Similar to the German name *Krabbox*</PokemonPlSimple>
+                <PokemonPlSimple name="Crabrawler" card="sv3-114" pl="Kraboks">
+                    - *krab*: Polish for crab
+                    - *boks*: Polish for boxing
+                    - Similar to the German name *Krabbox*
+                </PokemonPlSimple>
                 <GenerationHeader name="VIII"/>
-                <PokemonPlSimple name="Clobbopus" card="sv8-112" pl="Oktoks" style="--offset-left: -70px;">From *octopus* and *boks* "boxing"</PokemonPlSimple>
-                <PokemonPlSimple name="Frosmoth" card="sv5-46" pl="Ciemróz">From *ciem*, inflected form of *ćma* "moth", and *mróz* "frost"</PokemonPlSimple>
+                <PokemonPlSimple name="Clobbopus" card="sv8-112" pl="Oktoks" style="--offset-left: -70px;">
+                    - *octopus*
+                    - *boks*: Polish for boxing
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Frosmoth" card="sv5-46" pl="Ciemróz">
+                    - *ciem*: inflected{/*plural genitive */} form of *ćma*, Polish for moth
+                    - *mróz*: Polish for frost
+                </PokemonPlSimple>
                 <GenerationHeader name="IX"/>
-                <PokemonPlSimple name="Tandemaus" card="sv8-157" pl="Myszpół">From *mysz* "mouse" and *zespół* "team"</PokemonPlSimple>
-                <PokemonPlSimple name="Maushold" card="sv8-158" pl="Rodzimyszy">From *rodzina* "family", *rodzić* "to give birth", and *myszy* "mice"</PokemonPlSimple>
-                <PokemonPlSimple name="Scream Tail" card="sv4-86" pl="Krzykogon" style="--offset-left: -70px;">From *krzyk* "scream" and *ogon* "tail"</PokemonPlSimple>
-                <PokemonPlSimple name="Iron Treads" card="sv5-118" pl="Żelazopona" style="--offset-left: -50px;">From *żelazo* "iron" and *opona* "tyre"</PokemonPlSimple>
-                <PokemonPlSimple name="Iron Hands" card="sv5-61" pl="Żelazodłonie" style="--offset-left: -70px;">From *żelazo* "iron" and *dłoń* "palm (part of a hand)"</PokemonPlSimple>
-                <PokemonPlSimple name="Iron Boulder" card="sv7-71" pl="Żelazogłaz" style="--offset-left: -70px;">From *żelazo* "iron" and *głaz* "boulder"</PokemonPlSimple>
+                <PokemonPlSimple name="Tandemaus" card="sv8-157" pl="Myszpół">
+                    - *mysz*: Polish for mouse
+                    - *zespół*: Polish for team
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Maushold" card="sv8-158" pl="Rodzimyszy">
+                    - *rodzina*: Polish for family
+                    - *rodzić*: Polish for give birth
+                    - *myszy*: Polish for mice
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Scream Tail" card="sv4-86" pl="Krzykogon" style="--offset-left: -70px;">
+                    - *krzyk*: Polish for scream {/*noun*/}
+                    - *ogon*: Polish for tail
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Iron Treads" card="sv5-118" pl="Żelazopona" style="--offset-left: -50px;">
+                    - *żelazo*: Polish for iron
+                    - *opona*: Polish for tyre
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Iron Hands" card="sv5-61" pl="Żelazodłonie" style="--offset-left: -70px;">
+                    - *żelazo*: Polish for iron
+                    - *dłonie*: inflected{/*plural nominative*/} form of *dłoń*, Polish for palm (part of a hand)
+                </PokemonPlSimple>
+                <PokemonPlSimple name="Iron Boulder" card="sv7-71" pl="Żelazogłaz" style="--offset-left: -70px;">
+                    - *żelazo*: Polish for iron
+                    - *głaz*: Polish for boulder
+                </PokemonPlSimple>
                 <PokemonPlSimple name="Terapagos" card="sv8-161" pl="Terapagos" style="--offset-left: -50px;">Same as original</PokemonPlSimple>
             </tbody>
         </table>
