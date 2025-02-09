@@ -1,0 +1,26 @@
+---
+//import { Image } from 'astro:assets';
+
+interface Props {
+    id: string,
+    name: string,
+    pronouns: string,
+}
+
+const {id, name, pronouns} = Astro.props;
+//const img = import(`../img/${id}.png`)
+---
+
+<li class:list={[id]}>
+    <article class="clearfix">
+        {/* <Image
+            src={img}
+            height="100"
+            width="100"
+            alt={name}
+            class="float-end ms-3"
+        />*/}
+        <h3>{name} ({pronouns})</h3>
+        <slot />
+    </article>
+</li>
