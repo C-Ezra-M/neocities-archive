@@ -1,0 +1,13 @@
+.athlete-red      { --entry-color: #EFABABCC; }
+.athlete-orange   { --entry-color: #EFCDABCC; }
+.athlete-yellow   { --entry-color: #EFEFABCC; }
+.athlete-lime     { --entry-color: #ABEFABCC; }
+.athlete-green    { --entry-color: #98CD98CC; }
+.athlete-cyan     { --entry-color: #ABEFEFCC; }
+.athlete-blue     { --entry-color: #ABABEFCC; }
+.athlete-pink     { --entry-color: #EFCDEFCC; }
+.athlete-magenta  { --entry-color: #EFABEFCC; }
+.athlete-purple   { --entry-color: #CD98CDCC; }
+.athlete-white    { --entry-color: #EFEFEFCC; }
+.athlete-gray     { --entry-color: #CDCDCDCC; }
+.athlete-black    { --entry-color: #ABABABCC; }
