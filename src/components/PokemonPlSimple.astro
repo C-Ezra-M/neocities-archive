@@ -2,9 +2,18 @@
 import PokemonPl from './PokemonPl.astro';
 
 interface Props {
+    /** The Pokémon's English name. */
 	name: string;
+    /** The card ID on the pokemontcg.io API. */
     card: string;
+    /** The proposed Polish name. */
     pl: string;
+    /** The style of the Pokémon image. Mostly used to change crop coordinates from the defaults:
+     * ```css
+     * --offset-left: -85px;
+       --offset-top -55px;
+        ```
+     */
     style: string;
 }
 
