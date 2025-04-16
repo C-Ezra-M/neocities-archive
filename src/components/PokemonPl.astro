@@ -39,11 +39,11 @@ console.log("HANDLING CARD: " + card)
 ---
 
 <tr>
-    <td>#{dexno.toString().padStart(4,"0")} {name}</td>
-    <td><div class="cropped-card-image" style={style}><Image src={image} width="300" height="419" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
-    <td>{pl}</td>
-    <slot name="etymology" />
-    <slot name="notes"/>
+    <td class="full-width">#{dexno.toString().padStart(4,"0")} {name}</td>
+    <td class="full-width"><div class="cropped-card-image" style={style}><Image src={image} width="300" height="419" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
+    <td class="full-width"><em class="table-cell-header">New name</em>{pl}</td>
+    <td class="full-width"><em class="table-cell-header block">Etymology</em><slot name="etymology" /></td>
+    <td class="full-width optional"><em class="table-cell-header block">Notes</em><div class="information"><slot name="notes"/></div></td>
 </tr>
 
 <style>

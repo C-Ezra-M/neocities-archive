@@ -21,6 +21,6 @@ const { name, card, pl, style } = Astro.props;
 ---
 
 <PokemonPl name={name} card={card} pl={pl} style={style}>
-    <td slot="etymology"><slot /></td>
-    <td slot="notes"></td>
+    <Fragment slot="etymology"><slot /></Fragment>
+    <Fragment slot="notes"></Fragment>
 </PokemonPl>

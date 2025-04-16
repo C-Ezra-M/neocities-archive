@@ -112,3 +112,36 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 1rem;
     }
 }
+
+em.table-cell-header {
+    display: none;
+    font-weight: bold;
+    font-style: normal;
+    &::after {
+        content: ': ';
+    }
+}
+
+@media screen and (width < 670px) {
+    table.responsive-table {
+        thead {
+            display: none;
+        }
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        :is(td, th).full-width {
+            flex: 1 1 100%;
+        }
+        :is(td, th).optional:has(> .information:empty) {
+            display: none;
+        }
+        em.table-cell-header {
+            &.block {
+                display: block;
+            }
+            display: inline;
+        }
+    }
+}
