@@ -1,7 +1,7 @@
 ---
 interface Props {
 	title: string;
-	body: string;
+	body?: string;
 	href: string;
 }
 
@@ -15,7 +15,7 @@ const { href, title, body } = Astro.props;
 			<span>&rarr;</span>
 		</h2>
 		<p>
-			{body}
+			{body || <slot />}
 		</p>
 	</a>
 </li>
