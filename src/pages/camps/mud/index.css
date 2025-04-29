@@ -1,12 +1,13 @@
-.win-token      { --entry-color: #ABEFABCC; }
-.immunity-token { --entry-color: #EFABABCC; }
-.revenge-token  { --entry-color: #ABEFEFCC; }
-.swap-token     { --entry-color: #ABABEFCC; }
-.guess-token    { --entry-color: #EFABEFCC; }
-.extra-token    { --entry-color: #EFEFABCC; }
-.kamikaze-token { --entry-color: #EFCDABCC; }
-.flow-token     { --entry-color: #ABEFCDCC; }
-.break-token    { --entry-color: #CDABEFCC; }
-.preserve-token { --entry-color: #EFEFEFCC; }
-.null-token     { --entry-color: #CDCDCDCC; }
-.contrary-token { --entry-color: #ABABABCC; }
+.green,     .win-token      { --entry-color: #ABEFABCC; }
+.red,       .immunity-token { --entry-color: #EFABABCC; }
+.cyan,      .revenge-token  { --entry-color: #ABEFEFCC; }
+.blue,      .swap-token     { --entry-color: #ABABEFCC; }
+.pink,      .guess-token    { --entry-color: #EFABEFCC; }
+.yellow,    .extra-token    { --entry-color: #EFEFABCC; }
+.orange,    .kamikaze-token { --entry-color: #EFCDABCC; }
+.turquoise, .flow-token     { --entry-color: #ABEFCDCC; }
+.purple,    .break-token    { --entry-color: #CDABEFCC; }
+.white,     .preserve-token { --entry-color: #EFEFEFCC; }
+.gray,      .null-token     { --entry-color: #CDCDCDCC; }
+.black,     .contrary-token { --entry-color: #ABABABCC; }
+.brown                      { --entry-color: #CDBCABCC; }

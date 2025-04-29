@@ -15,6 +15,11 @@ html {
     scroll-padding-top: 68px;
 }
 
+@font-face {
+    font-family: 'sitelen seli kiwen asuki';
+    src: url('/sitelenselikiwenasuki.ttf');
+}
+
 @property --percentage {
     syntax: "<percentage>";
     inherits: false;
@@ -144,4 +149,14 @@ em.table-cell-header {
             display: inline;
         }
     }
+}
+
+a:not(:hover, :active) {
+    text-decoration: none;
+}
+
+.sp {
+    font-family: 'sitelen seli kiwen asuki';
+    font-size: larger;
+    vertical-align: middle;
 }
