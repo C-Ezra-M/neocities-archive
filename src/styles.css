@@ -155,8 +155,25 @@ a:not(:hover, :active) {
     text-decoration: none;
 }
 
+@counter-style mute {
+    system: cyclic;
+    symbols: "mute";
+}
+
+@counter-style simple-pu {
+    system: fixed;
+    symbols: "wan" "tu";
+    suffix: ":  ";
+    fallback: mute;
+}
+
 .sp {
     font-family: 'sitelen seli kiwen asuki';
-    font-size: larger;
-    vertical-align: middle;
+    &.inline {
+        font-size: larger;
+        vertical-align: middle;
+    }
+    ol {
+        list-style-type: simple-pu;
+    }
 }
