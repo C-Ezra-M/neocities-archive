@@ -18,5 +18,8 @@
   "devDependencies": {
     "bootstrap": "^5.3.3",
     "sass": "^1.83.0"
+  },
+  "imports": {
+    "#*": "./src/*"
   }
 }
