@@ -1,9 +1,0 @@
-.cropped-card-image {
-    width: 130px;
-    height: 130px;
-    overflow: hidden;
-    > img {
-        margin-left: var(--offset-left, -85px);
-        margin-top: var(--offset-top, -55px);
-    }
-}
