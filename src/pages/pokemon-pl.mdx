@@ -1,7 +1,8 @@
 import Layout from '#layouts/Layout.astro';
 import PokemonPl from '#components/PokemonPl.astro';
 import PokemonPlSimple from '#components/PokemonPlSimple.astro';
-import GenerationHeader from '#components/GenerationHeader.astro'
+import GenerationHeader from '#components/GenerationHeader.astro';
+import SeeAlso from '#components/SeeAlso.astro';
 
 <Layout title="Polish Pokémon names | C.Ezra.M">
     <main class="fs-6">
@@ -20,6 +21,7 @@ import GenerationHeader from '#components/GenerationHeader.astro'
         ```
 
         ## Quick pronunciation guide
+        <SeeAlso>[Polish phonology](https://en.wikipedia.org/wiki/Polish_phonology)</SeeAlso>
 
         This mainly applies to contexts where there are native words. Loanwords that are unchanged from the original spelling are pronounced regarding the origin language's pronunciation rules. Thus, *weekend* is pronounced like in English, but *Waszyngton* (Washington) is pronounced with a V sound instead of a W sound.
 
@@ -31,11 +33,10 @@ import GenerationHeader from '#components/GenerationHeader.astro'
           - Ó/U - as OO in *boot*
           - Y - as I in *thin*
           - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
-        - All letters are pronounced, but if there is a difficult cluster of 3 or more consonants, the middle letter can be skipped: *kostka* (dice) → *kos-ka*, *sześćset* (six hundred) → *sześ-set* OR *szej-set*.
-            - In those cases, the word's inflected forms explain the spelling, as can be seen in the genitive: *kostka* → *kostek*, *sześćset* → *sześciuset*.
         - S is always devoiced, so it's pronounced like in *sock*.
         - T never becomes a tongue flap, so it's pronounced like in the word *tap*!
         - C is pronounced like TS in *parts*.
+        - G is always a hard G.
         - J is pronounced like Y in *yen*.
         - Ł is pronounced like W in *week*.
         - W is pronounced like V in *vine*.
@@ -43,6 +44,8 @@ import GenerationHeader from '#components/GenerationHeader.astro'
         - Ć, Ś, Ź, DŹ are pronounced like CH in *chip*, SH in *ship*, G in *regime*, and J in *jinn*, respectively. Those are iotized. The same applies to CI, SI, ZI, and DZI in most cases.
         - CZ, SZ, Ż, DŻ are pronounced like CH in *chop*, SH in *show*, S in *vision*, and J in *jar*, respectively. Those are not iotized.
         - Most words are stressed on the penultimate syllable.
+
+        Under Polish phonotactics, it is common to simplify some difficult consonant clusters in the middle of a word: *kostka* (dice) → *kos-ka*, *sześćset* (six hundred) → *sześ-set* OR *szej-set*. In those cases, the word's inflected forms, or other related words, explain the spelling, as can be seen in the genitive: *ko**stk**a* → *ko**st**e**k***, *sze**śćs**et* → *sze**ści**u**s**et*. In other cases, especially difficult onset clusters like in *rtęć* (mercury) or *źdźbło* (blade [of a grass or cereal]), they are mostly preserved for historical reasons.
 
         # Rules for making names
         - They all shall be family-friendly.
@@ -295,10 +298,14 @@ import GenerationHeader from '#components/GenerationHeader.astro'
                     - *mróz*: Polish for frost
                 </PokemonPlSimple>
                 <GenerationHeader name="IX"/>
-                <PokemonPlSimple name="Tandemaus" card="sv8-157" pl="Myszpół">
-                    - *mysz*: Polish for mouse
-                    - *zespół*: Polish for team
-                </PokemonPlSimple>
+                <PokemonPl name="Tandemaus" card="sv8-157" pl="Myszpół">
+                    <Fragment slot="etymology">
+                        - *mysz*: Polish for mouse
+                        - *zespół*: Polish for team
+                        - *pół*: Polish for half
+                    </Fragment>
+                    <Fragment slot="notes">*pół* is supported by Tandemaus' Violet Pokédex entry: "[...] They split any food they find exactly in half and then eat it together." It also implies that it's a "half" of Maushold.</Fragment>
+                </PokemonPl>
                 <PokemonPlSimple name="Maushold" card="sv8-158" pl="Rodzimyszy">
                     - *rodzina*: Polish for family
                     - *rodzić*: Polish for "[to] give birth"
