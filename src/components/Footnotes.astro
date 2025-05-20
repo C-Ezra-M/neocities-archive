@@ -1,0 +1,20 @@
+---
+interface Props {
+    group: string;
+    classes?: string[];
+}
+
+const { group = "", classes = [] } = Astro.props;
+---
+
+<aside data-footnotes id={"footnotes" + (group ? "-" + group : "")} class:list={["footnotes", ...classes]}>
+    <ol style={group ? {} : { listStyleType: group }}>
+        <slot />
+    </ol>
+</aside>
+
+<style>
+    .footnotes {
+        font-size: 0.8rem;
+    }
+</style>

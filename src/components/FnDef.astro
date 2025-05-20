@@ -1,0 +1,13 @@
+---
+import { slug } from 'github-slugger'
+
+interface Props {
+    name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<li id={"fn-" + slug(name)}>
+    <slot />
+</li>
