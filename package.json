@@ -11,9 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.8",
-    "astro": "^5.2.3",
-    "localforage": "^1.10.0"
+    "@astrojs/mdx": "^4.2.6",
+    "astro": "^5.7.13",
+    "localforage": "^1.10.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "bootstrap": "^5.3.3",
