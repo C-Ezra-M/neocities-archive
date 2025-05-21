@@ -1,13 +1,30 @@
 ---
 import { slug } from 'github-slugger'
+import { footnote } from './footnotes'
 
 interface Props {
-    name: string;
+    name?: string;
+    group?: string;
 }
 
-const { name } = Astro.props;
+const { name, group } = Astro.props;
+const content = await Astro.slots.render('');
+const sluggedName = slug(name);
+const fn = footnote({
+    content: content ? content : null,
+    slug: name ? sluggedName : null,
+    group: group ? slug(group) : null,
+})
 ---
 
-<li id={"fn-" + slug(name)}>
-    <slot />
+<li id={fn.htmlId()}>
+    {
+        fn.hasContent()
+        ? fn.content
+        : (
+            fn.hasSlug()
+            ? 
+            :
+        )
+    }
 </li>

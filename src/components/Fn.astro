@@ -1,6 +1,7 @@
 ---
 import { slug } from 'github-slugger'
-import { allFootnotes } from './footnotes';
+import { allFootnotes, Footnote, footnote } from './footnotes';
+import { Error } from './Error.astro'
 
 interface Props {
     name: string;
@@ -10,15 +11,18 @@ interface Props {
 const { name, group = "" } = Astro.props;
 
 const slugIdent = slug(name);
-allFootnotes.get().set(slugIdent, {group: })
+footnote(new Footnote({
+    slug: slugIdent,
+
+}))
 ---
 
-<a class="fn" href={"#fn-" + slugIdent}>
-    [{getNum(slugIdent)}]
+<a class="fn-inline" href={"#fn-" + slugIdent}>
+    {}
 </a>
 
 <style>
-    .fn {
+    .fn-inline {
         vertical-align: super;
     }
 </style>
