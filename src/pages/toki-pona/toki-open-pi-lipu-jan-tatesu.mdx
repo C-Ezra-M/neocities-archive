@@ -1,5 +1,7 @@
 import Layout from '#layouts/Layout.astro';
 import Poem from '#components/Poem.astro';
+import Fn from '#components/Fn.astro';
+import Footnotes from '#components/Footnotes.astro';
 
 <Layout title="toki open pi lipu &quot;jan Tatesu&quot; | C.Ezra.M">
     <main lang="tok">
@@ -7,33 +9,35 @@ import Poem from '#components/Poem.astro';
 
         ## o sona e ni!
 
-        jan [Adam Mickiewicz](https://en.wikipedia.org/wiki/Adam_Mickiewicz)[^1] li sitelen e lipu "<cite>jan Tatesu</cite>"[^2].
+        jan [Adam Mickiewicz](https://en.wikipedia.org/wiki/Adam_Mickiewicz)<Fn>jan Atan Misewi</Fn> li sitelen e lipu "<cite>jan Tatesu</cite>"<Fn>toki Posuka la, nimi ona li lipu "[<cite>Pan Tadeusz</cite>](https://en.wikipedia.org/wiki/Pan_Tadeusz)". toki pona la, nimi ni li kalama ni: "<cite>Pan Tatesu</cite>"</Fn>.
 
         linja ale lon lipu "<cite>jan Tatesu</cite>" li jo e lili kalama luka luka tu wan. ante toki mi la, mi wile awen e nasin ni. tan ni la, mi ala e lili sitelen li pana e nimi "a" mute. linja li jo kin e nanpa.
 
         mi pana e toki ni tawa [lipu tenpo](https://liputenpo.org). ona li lon [nanpa supa](/). ona li kama jo e pona tan [jan Ke Tami](https://janketami.wordpress.com/).
 
+        <Footnotes/>
+
         ## toki open a
 
         <Poem>
-            {/* Litwo, Ojczyzno moja! ty jesteś jak zdrowie; */} ma Lijatuwa o, ma mama mi o! sina
+            {/* Litwo, Ojczyzno moja! ty jesteś jak zdrowie; */} ma Lijatuwa<Fn>ma Lijatuwa – **Lietuva**</Fn> o, ma mama mi o! sina
             {/* Ile cię trzeba cenić, ten tylko się dowie, */} sama pona a. jan li weka e sina li
             {/* Kto cię stracił. Dziś piękność twą w całej ozdobie */} lukin pona e sina. mi wile e sina
             {/* Widzę i opisuję, bo tęsknię po tobie. */} la, mi lukin li toki e pona sina a.
             
-            {/* [5] Panno święta, co Jasnej bronisz Częstochowy */} [5] meli sewi, o awen e ma Sentokowa,
-            {/* I w Ostrej świecisz Bramie! Ty, co gród zamkowy */} o suno lon lupa Asulo! o awen e
-            {/* Nowogródzki ochraniasz z jego wiernym ludem! */} ma Nawakuta e kulupu nasin ona!
+            {/* [5] Panno święta, co Jasnej bronisz Częstochowy */} [5] meli sewi, o awen e ma Sentokowa,<Fn group="poem">ma Sentokowa – [Częstochowa](https://en.wikipedia.org/wiki/Częstochowa), ona li ma jan lon ma Posuke.</Fn>
+            {/* I w Ostrej świecisz Bramie! Ty, co gród zamkowy */} o suno lon lupa Asulo<Fn group="poem">lupa Asulo – [Aušros \[vartai\]](https://en.wikipedia.org/wiki/Gate_of_Dawn), ona li lupa open pi ma jan Vilnius.</Fn>! o awen e
+            {/* Nowogródzki ochraniasz z jego wiernym ludem! */} ma Nawakuta<Fn group="poem">ma Nawakuta – [Навагрудак (Navahrudak)](https://en.wikipedia.org/wiki/Novogrudok), ona li ma jan lon ma Pelalusi.</Fn> e kulupu nasin ona!
             
             {/* Jak mnie dziecko do zdrowia powróciłaś cudem */} kepeken nasa la, sina pana e pona
             {/* (Gdy od płaczącej matki pod Twoją opiekę */} tawa mi a. mama li pana e mi tawa
-            {/* [10] Ofiarowany, martwą podniosłem powiekę */} [10] awen sina la, mi tawa e selo oko.
+            {/* [10] Ofiarowany, martwą podniosłem powiekę */} [10] awen sina la, mi tawa e selo oko.<Fn group="poem">oko – sike lukin lon lawa sina!</Fn>
             {/* I zaraz mogłem pieszo do Twych świątyń progu */} mi ken tawa open pi tomo sewi sina.
             {/* Iść za wrócone życie podziękować Bogu) */} mi pana e pona tawa sewi tan lon mi.
             {/* Tak nas powrócisz cudem na Ojczyzny łono!... */} nasa la sina tawa mama e mi ale!
             {/* Tymczasem przenoś moję duszę utęsknioną */} tenpo ni la, o tawa e kon wile mi a
             {/* [15] Do tych pagórków leśnych, do tych łąk zielonych, */} [15] tawa nena lon ma kasi, tawa ma suli
-            {/* Szeroko nad błękitnym Niemnem rozciągnionych; */} laso lon poka pi linja telo Njemen a,
+            {/* Szeroko nad błękitnym Niemnem rozciągnionych; */} laso lon poka pi linja telo Njemen<Fn group="poem">linja telo Njemen – telo Niemen.</Fn> a,
             {/* Do tych pól malowanych zbożem rozmaitem, */} tawa ma sitelen kepeken pan mute a.
             {/* Wyzłacanych pszenicą, posrebrzanych żytem; */} ma li jelo li walo tan pan. ona kin li
             {/* Gdzie bursztynowy świerzop, gryka jak śnieg biała, */} jo e kasi jelo e pan sama ko lete
@@ -50,7 +54,6 @@ import Poem from '#components/Poem.astro';
             </p>
         </aside>
         
-        [^1]: jan Atan Misewi
-        [^2]: toki Posuka la, nimi ona li lipu "[<cite>Pan Tadeusz</cite>](https://en.wikipedia.org/wiki/Pan_Tadeusz)". toki pona la, nimi ni li kalama ni: "<cite>Pan Tatesu</cite>"
-</main>
+        <Footnotes group="poem"/>
+    </main>
 </Layout>

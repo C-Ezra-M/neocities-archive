@@ -1,0 +1,24 @@
+---
+import { slug } from 'github-slugger'
+import { allFootnotes } from './footnotes';
+
+interface Props {
+    name: string;
+    group?: string;
+}
+
+const { name, group = "" } = Astro.props;
+
+const slugIdent = slug(name);
+allFootnotes.get().set(slugIdent, {group: })
+---
+
+<a class="fn" href={"#fn-" + slugIdent}>
+    [{getNum(slugIdent)}]
+</a>
+
+<style>
+    .fn {
+        vertical-align: super;
+    }
+</style>
