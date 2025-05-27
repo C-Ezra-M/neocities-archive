@@ -1,5 +1,12 @@
 import { atom, computed } from 'nanostores'
 
+/*
+ * BE DEAD SIMPLE ABOUT IT.
+ * - Fn: link to a footnote
+ * - FnDef: footnote definition
+ * - Footnotes: formatting for a footnote list
+ */
+
 /** The plain interface for footnote objects. It is functionally the same as `Footnote`, but has no methods. */
 export interface PlainFootnote {
     /** The footnote's ID, which is slugged. The same as the key in the map. */
