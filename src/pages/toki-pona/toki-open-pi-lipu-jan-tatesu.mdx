@@ -10,21 +10,22 @@ import Footnotes from '#components/Footnotes.astro';
 
         ## o sona e ni!
 
-        jan [Adam Mickiewicz](https://en.wikipedia.org/wiki/Adam_Mickiewicz)<Fn name="1"/> li sitelen e lipu "<cite>jan Tatesu</cite>".<Fn name="2"/>
+        jan [Adam Mickiewicz](https://en.wikipedia.org/wiki/Adam_Mickiewicz)<Fn name="inli"/><Fn name="misewi"/> li sitelen e lipu "<cite>jan Tatesu</cite>".<Fn name="tatesu"/>
 
         linja ale lon lipu "<cite>jan Tatesu</cite>" li jo e kalama luka luka tu wan. ante toki mi la, mi wile awen e nasin ni. tan ni la, mi ala e sitelen lili li pana e nimi "a" mute. linja li jo kin e nanpa.
 
-        toki ni li lon [nanpa supa pi lipu tenpo](https://liputenpo.org/lipu/nanpa-supa/). [jan Ke Tami](https://janketami.wordpress.com/) li alasa e pakala.
+        toki ni li lon [lipu tenpo nanpa supa](https://liputenpo.org/lipu/nanpa-supa/). [jan Ke Tami](https://janketami.wordpress.com/) li alasa e pakala.
 
         <Footnotes>
-            <Fn name="1">jan Atan Misewi</Fn>
-            <Fn name="2">toki Posuka la, nimi ona li lipu "[<cite>Pan Tadeusz</cite>](https://en.wikipedia.org/wiki/Pan_Tadeusz)". toki pona la, nimi ni li kalama sama ni: "<cite>Pan Tatesu</cite>"</Fn>
+            <FnDef name="inli">lipu ni li kepeken toki Inli</FnDef>
+            <FnDef name="misewi">jan Atan Misewi</FnDef>
+            <FnDef name="tatesu">toki Posuka la, nimi ona li lipu "[<cite>Pan Tadeusz</cite>](https://en.wikipedia.org/wiki/Pan_Tadeusz)". toki pona la, nimi ni li kalama sama ni: "<cite>Pan Tatesu</cite>"</FnDef>
         </Footnotes>
 
         ## toki open a
 
         <Poem>
-            ma Lijatuwa<Fn>ma Lijatuwa – **Lietuva**</Fn> o, ma mama mi o! sina
+            <Fn name="lijatuwa">ma Lijatuwa</Fn> o, ma mama mi o! sina
             sama pona a. jan li weka e sina li
             lukin pona e sina. mi wile e sina
             la, mi lukin li toki e pona sina a.
@@ -51,6 +52,7 @@ import Footnotes from '#components/Footnotes.astro';
         </Poem>
         
         <Footnotes>
+            <FnDef name="lijatuwa">ma Lijatuwa – **Lietuva**.</FnDef>
             <FnDef name="sentokowa">ma Sentokowa – [Częstochowa](https://en.wikipedia.org/wiki/Częstochowa), ona li ma jan lon ma Posuke.</FnDef>
             <FnDef name="asulo">lupa Asulo – [Aušros \[vartai\]](https://en.wikipedia.org/wiki/Gate_of_Dawn), ona li lupa open pi ma jan Vilnius.</FnDef>
             <FnDef name="nawakuta">ma Nawakuta – [Навагрудак (Navahrudak)](https://en.wikipedia.org/wiki/Novogrudok), ona li ma jan lon ma Pelalusi.</FnDef>
