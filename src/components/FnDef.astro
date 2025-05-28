@@ -1,30 +1,23 @@
 ---
 import { slug } from 'github-slugger'
-import { footnote } from './footnotes'
+//* TODO: show multiple backlinks if the ref is used multiple times on the page
 
 interface Props {
     name?: string;
-    group?: string;
 }
 
-const { name, group } = Astro.props;
-const content = await Astro.slots.render('');
-const sluggedName = slug(name);
-const fn = footnote({
-    content: content ? content : null,
-    slug: name ? sluggedName : null,
-    group: group ? slug(group) : null,
-})
+const { name } = Astro.props;
+const nameSlug = slug(name);
+const id = "fn-" + nameSlug;
+const href = "#afn-" + nameSlug;
 ---
 
-<li id={fn.htmlId()}>
-    {
-        fn.hasContent()
-        ? fn.content
-        : (
-            fn.hasSlug()
-            ? 
-            :
-        )
-    }
+<li class="footnote" id={id}>
+    <a class="footnote-name" href={href}>[^]</a> <span class="footnote-note"><slot /></span>
 </li>
+
+<style>
+    .footnote:target {
+        background-color: #BBBB1144;
+    }
+</style>

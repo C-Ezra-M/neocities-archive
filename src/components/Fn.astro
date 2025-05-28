@@ -1,28 +1,37 @@
 ---
 import { slug } from 'github-slugger'
-import { allFootnotes, Footnote, footnote } from './footnotes';
-import { Error } from './Error.astro'
+import { useFootnote, getFootnoteNumber, getFootnoteUsageCount } from './footnotes'
 
 interface Props {
     name: string;
-    group?: string;
 }
 
-const { name, group = "" } = Astro.props;
-
-const slugIdent = slug(name);
-footnote(new Footnote({
-    slug: slugIdent,
-
-}))
+const { name } = Astro.props;
+const nameSlug = slug(name);
+const href = "#fn-" + nameSlug;
+let id = "afn-" + nameSlug;
+const hasSlot = Astro.slots.has("default");
+useFootnote(nameSlug)
+const usageCount = getFootnoteUsageCount(nameSlug);
+if (usageCount >= 2) {
+    id += "-" + (usageCount - 2);
+}
 ---
 
-<a class="fn-inline" href={"#fn-" + slugIdent}>
-    {}
-</a>
+{
+    hasSlot
+    ? <a class="fn-inline" id={id} href={href}><slot /></a>
+    : <a class="fn-super" id={id} href={href}>[{getFootnoteNumber(nameSlug)}]</a>
+}
 
 <style>
-    .fn-inline {
+    .fn-super {
         vertical-align: super;
+        font-size: 0.6em;
+    }
+
+    .fn-inline {
+        text-decoration: underline dotted;
+        cursor: help;
     }
 </style>

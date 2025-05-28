@@ -1,16 +1,13 @@
 ---
-import {  }
-
 interface Props {
-    group: string;
     classes?: string[];
 }
 
-const { group = "", classes = [] } = Astro.props;
+const { classes = [] } = Astro.props;
 ---
 
-<aside data-footnotes id={"footnotes" + (group ? "-" + group : "")} class:list={["footnotes", ...classes]}>
-    <ol style={group ? {} : { listStyleType: group }}>
+<aside data-footnotes class:list={["footnotes", ...classes]}>
+    <ol>
         <slot />
     </ol>
 </aside>
