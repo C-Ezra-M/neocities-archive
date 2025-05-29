@@ -20,8 +20,8 @@ if (usageCount >= 2) {
 
 {
     hasSlot
-    ? <a class="fn-inline" id={id} href={href}><slot /></a>
-    : <a class="fn-super" id={id} href={href}>[{getFootnoteNumber(nameSlug)}]</a>
+    ? <a class="fn fn-inline" id={id} href={href}><slot /></a>
+    : <a class="fn fn-super" id={id} href={href}>[{getFootnoteNumber(nameSlug)}]</a>
 }
 
 <style>
@@ -33,5 +33,9 @@ if (usageCount >= 2) {
     .fn-inline {
         text-decoration: underline dotted;
         cursor: help;
+    }
+
+    .fn:target {
+        background-color: #BBBB1144;
     }
 </style>

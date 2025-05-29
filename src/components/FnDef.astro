@@ -1,6 +1,7 @@
 ---
 import { slug } from 'github-slugger'
-//* TODO: show multiple backlinks if the ref is used multiple times on the page
+import { getFootnoteUsageCount } from '#components/footnotes'
+import { range } from 'itertools'
 
 interface Props {
     name?: string;
@@ -10,13 +11,23 @@ const { name } = Astro.props;
 const nameSlug = slug(name);
 const id = "fn-" + nameSlug;
 const href = "#afn-" + nameSlug;
+const backlinkCount = getFootnoteUsageCount(nameSlug);
 ---
 
 <li class="footnote" id={id}>
-    <a class="footnote-name" href={href}>[^]</a> <span class="footnote-note"><slot /></span>
+    {
+        backlinkCount === 1
+        ? <a class="footnote-link" href={href}>^</a>
+        : [...range(backlinkCount)].map(i => (
+            <><a class="footnote-link" href={href + (i === 0 ? "" : "-" + (i - 1))}>{i + 1}</a> </>
+        ))
+    } <span class="footnote-note"><slot /></span>
 </li>
 
 <style>
+    .footnote-link {
+        vertical-align: top;
+    }
     .footnote:target {
         background-color: #BBBB1144;
     }

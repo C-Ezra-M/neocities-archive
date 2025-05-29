@@ -1,4 +1,6 @@
 ---
+import { footnotes } from '#components/footnotes.ts';
+footnotes.clear(); // ensures footnote numbers are reset, prevents spills of them onto other pages
 interface Props {
 	title: string;
 }
