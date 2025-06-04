@@ -2,6 +2,7 @@
 import { slug } from 'github-slugger'
 import { getFootnoteUsageCount } from '#components/footnotes'
 import { range } from 'itertools'
+import Error from './Error.astro';
 
 interface Props {
     name?: string;
@@ -18,9 +19,13 @@ const backlinkCount = getFootnoteUsageCount(nameSlug);
     {
         backlinkCount === 1
         ? <a class="footnote-link" href={href}>^</a>
-        : [...range(backlinkCount)].map(i => (
-            <><a class="footnote-link" href={href + (i === 0 ? "" : "-" + (i - 1))}>{i + 1}</a> </>
-        ))
+        : (
+            backlinkCount === 0
+            ? <Error>Error: Footnote "{nameSlug}" is unused.</Error>
+            : [...range(backlinkCount)].map(i => (
+                <><a class="footnote-link" href={href + (i === 0 ? "" : "-" + (i - 1))}>{i + 1}</a> </>
+            ))
+        )
     } <span class="footnote-note"><slot /></span>
 </li>
 
