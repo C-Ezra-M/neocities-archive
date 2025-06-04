@@ -12,7 +12,7 @@ export function getFootnoteNumber(slug: string): number {
 }
 
 export function getFootnoteUsageCount(slug: string): number {
-    return footnotes.entries().toArray().find(e => e[0] === slug)[1];
+    return footnotes.entries().toArray().find(e => e[0] === slug)?.[1] ?? 0;
 }
 
 export function useFootnote(slug: string): number {
