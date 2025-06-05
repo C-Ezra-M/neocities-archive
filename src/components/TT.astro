@@ -13,8 +13,7 @@ export const slug = tooltipSlugger.slug('tt');
 
     tool-tip + * {
         opacity: 0;
-        display: none;
-        transition: display cubic-bezier(0,1,0,50) .2s allow-discrete, opacity ease-in-out .2s;
+        transition: opacity ease-in-out .2s, display cubic-bezier(0,1,0,50) .2s allow-discrete;
         background-color: #111111dd;
         color: #eeeeee;
         max-height: 3rem;
@@ -26,9 +25,16 @@ export const slug = tooltipSlugger.slug('tt');
         font-size: 90%;
         top: 0;
         left: 0;
+        -webkit-user-select: none;
+        user-select: none;
+        @starting-style {
+            display: none;
+        }
         &.visible {
             display: block;
             opacity: 100%;
+            -webkit-user-select: initial;
+            user-select: initial;
         }
         > .paren {
             position: fixed;
