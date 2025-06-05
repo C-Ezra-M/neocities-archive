@@ -1,6 +1,8 @@
 ---
 import { footnotes } from '#components/footnotes.ts';
+import { tooltipSlugger } from '#components/tooltips.ts';
 footnotes.clear(); // ensures footnote numbers are reset, prevents spills of them onto other pages
+tooltipSlugger.reset();
 interface Props {
 	title: string;
 }
