@@ -1,0 +1,54 @@
+---
+import { chunked, enumerate } from "itertools"
+import TT from "./TT.astro"
+
+// Short for "toki pona number"
+
+function nasinPu(n: number) {
+    const out: number[] = []
+    const units = [100, 20, 5, 2, 1]
+    for (let i of units) {
+        while (n >= i) {
+            out.push(i)
+            n -= i
+        }
+    }
+    return out
+}
+
+function nasinNanpaPona(n: number) {
+    let nAsStr = n.toFixed(0) // currently no way to interpret decimals
+    if (nAsStr.length % 2 !== 0) {
+        nAsStr = "0" + nAsStr
+    }
+    const chunks = [...chunked(nAsStr, 2)].map(e => e.join(''))
+    const out = []
+    for (let [i, c] of enumerate(chunks)) {
+        if (c[0] === '0') {
+            c = c[1]
+        }
+        out.splice(out.length, 0, ...nasinPu(parseInt(c)))
+        if (i !== chunks.length - 1) {
+            out.push(100)
+        }
+    }
+    return out
+}
+
+function numArrayToTokiPona(n: number[]) {
+    return n.map(e => (
+        e === 1 ? "wan" :
+        e === 2 ? "tu" :
+        e === 5 ? "luka" :
+        e === 20 ? "mute" :
+        e === 100 ? "ale" : "ERROR!!"
+    ))
+}
+
+function numToTokiPona(n: number) {
+    return numArrayToTokiPona(nasinNanpaPona(n)).join(' ')
+}
+
+const { n } = Astro.props;
+---
+<TT text={numToTokiPona(parseInt(n))}>{n}</TT>
