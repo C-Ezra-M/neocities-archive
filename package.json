@@ -18,7 +18,8 @@
     "itertools": "^2.4.1",
     "localforage": "^1.10.0",
     "nanostores": "^1.0.1",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "bootstrap": "^5.3.3",
