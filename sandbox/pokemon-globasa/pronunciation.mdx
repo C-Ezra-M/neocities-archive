@@ -1,0 +1,113 @@
+import Layout from '#layouts/Layout.astro';
+import PokemonPl from '#components/PokemonPl.astro';
+import PokemonPlSimple from '#components/PokemonPlSimple.astro';
+import GenerationHeader from '#components/GenerationHeader.astro';
+import SeeAlso from '#components/SeeAlso.astro';
+
+<Layout title="Polish Pokémon names | C.Ezra.M">
+    <main class="fs-6">
+        # Polish pronunciation
+
+        <SeeAlso>[Polish phonology](https://en.wikipedia.org/wiki/Polish_phonology)</SeeAlso>
+        
+        This is my attempt to describe Polish phonology and phonotactics.
+
+        ## Alphabet
+
+        The Polish alphabet extends the Latin alphabet, and has 32 letters. Q, V, and X are only in loanwords.
+
+        ```
+        A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż
+        a ą b c ć d e ę f g h i j k l ł m n ń o ó p r s ś t u w y z ź ż
+        ```
+
+        > **Fun fact!** X actually used to be used in native words, e.g. *xiądz* (priest). X was removed from the core alphabet at some point, and was replaced with *ks*, so this example is nowadays spelled *ksiądz*.
+
+        ## Pronunciation
+
+        This mainly applies to contexts where there are native words. Loanwords that are unchanged from the original spelling are pronounced regarding the origin language's pronunciation rules. Thus, *weekend* is pronounced like in English, but *Waszyngton* (Washington) is pronounced with a V sound instead of a W sound.
+
+        Most words are stressed on the penultimate syllable.
+
+        ## Vowels
+        All vowel sounds are consistent, short, and never distinguished by length:
+        - A - as in *back*
+        - E - as in *left*
+        - I - as Y in *very*
+        - O - as in *wrong*
+        - Ó/U - as OO in *boot*
+        - Y - as I in *thin*
+        - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
+
+        Ą and Ę may shift into a single oral vowel or into a V(C) structure, where *C* is *m*, *n*, or *ń*.
+
+        > **Fun fact!** Polish is the only Slavic language to have preserved nasal vowels.
+
+        <table class="table">
+            <tr>
+                <th>Shift</th>
+                <th>ą</th>
+                <th>ę</th>
+                <th>Condition</th>
+            </tr>
+            <tr>
+                <td>denasalization</td>
+                <td>wziął → wzioł<br/>(he) took</td>
+                <td>wzięła → wzieła<br/>(she) took</td>
+                <td>before ł or at the end of a word</td>
+            </tr>
+            <tr>
+                <td>addition of *m*</td>
+                <td>dąb → domb<br/>oak (n)</td>
+                <td>dębowy → dembowy<br/>oak (adj)</td>
+                <td>before b/p</td>
+            </tr>
+            <tr>
+                <td>addition of *n*</td>
+                <td>piątka → piontka<br/>five (n)</td>
+                <td>wędka → wentka<br/>fishing rod</td>
+                <td>before c/dz, k/g, t/d</td>
+            </tr>
+            <tr>
+                <td>addition of *ń*</td>
+                <td>wziąć → wziońć<br/>(to) take</td>
+                <td>pięć → pieńć<br/>five (num)</td>
+                <td>before ć/dź</td>
+            </tr>
+        </table>
+
+        ## Consonants
+
+        - C is pronounced like TS in *parts*.
+        - Ć, Ś, Ź, DŹ are pronounced like CH in *chip*, SH in *ship*, G in *regime*, and J in *jinn*, respectively. Those are iotized. The same applies to CI, SI, ZI, and DZI in most cases.
+        - CZ, SZ, Ż, DŻ are pronounced like CH in *chop*, SH in *show*, S in *vision*, and J in *jar*, respectively. Those are not iotized.
+        - G is always a hard G.
+        - H and CH are pronounced a lot like H in English, but lean closer to K.
+        - J is pronounced like Y in *yen*.
+        - Ł is pronounced like W in *week*.
+        - Ń is pronounced like NY in *canyon*.
+        - RZ is pronounced like Ż (see above).
+        - S is always devoiced, so it's pronounced like in *sock*.
+        - T never becomes a tongue flap, so it's pronounced like in the word *tap*!
+        - W is pronounced like V in *vine*.
+        - All other consonants are pronounced like you'd expect if you spoke English, that is: B, D, F, K, L, M, N, P, Z.
+
+        > **Fun fact!** Many other Slavic languages cannot distinguish between /v/ and /w/, so they only end up using /v/, even in loanwords. Polish used to use the /ɫ/ sound (same as the dark L in English), but as [delateralization](https://en.wikipedia.org/wiki/Delateralization) took its course, it shifted to /w/. The orthography and several dialects still using /ɫ/ are evidence of this. In other Slavic languages, except Belarusian, it shifted to /l/ instead.
+
+        ## Phonotactics
+
+        **Final obstruents:** They are devoiced: *dług* (debt) → *dłuk*. It is still written with a *g* because of inflection: *dług-ø* → *dług-u*.
+
+        **Consonant clusters (not onset):** It's common to simplify some difficult consonant clusters in the middle of a word: *kostka* (dice, ankle) → *kos-ka*, *sześćset* (six hundred) → *sześ-set* OR *szej-set*. In those cases, the word's inflected forms, or other related words, explain the spelling, as can be seen in the genitive: *ko**stk**a* → *ko**st**e**k***, *sze**śćs**et* → *sze**ści**u**s**et*.
+
+        ### Assimilation
+        
+        - Voiced obstruents right before voiceless consonants become voiceless: *książka* (book) → *ksiąszka*.
+        - Voiced obstruents right after voiceless consonants in the onset become voiceless: *przemiana* (transformation) → *pszemiana*.
+        - Voiceless obstruents immediately before voiced obstruents in the middle of a word become voiced: *prośba* (request) → *proź-ba*.
+        
+        ### Onset consonant clusters
+        
+        Idiosyncracies like *rtęć* (mercury) or *źdźbło* (blade [of a grass or cereal]) are mostly preserved for historical reasons. For this reason, Poles often insert a very short vowel between the consonants in everyday speech.
+    </main>
+</Layout>
