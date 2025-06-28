@@ -10,18 +10,20 @@ import SeeAlso from '#components/SeeAlso.astro';
 
         <SeeAlso>[Polish phonology](https://en.wikipedia.org/wiki/Polish_phonology)</SeeAlso>
         
-        This is my attempt to describe Polish phonology and phonotactics.
+        This is my attempt to describe Polish phonology and phonotactics. The Wikipedia article has a lot more detail, though.
+
+        IPA transcriptions for phonemes are provided, but I skipped exact phones. (Phonemes can encompass many phones; therefore, a phone is a more specific sound than a phoneme.)
 
         ## Alphabet
 
-        The Polish alphabet extends the Latin alphabet, and has 32 letters. Q, V, and X are only in loanwords.
+        The Polish alphabet extends the Latin alphabet, and has 32 letters. Q, V, and X are only in loanwords. Providing it makes it easier to understand the phonology.
 
         ```
         A Ą B C Ć D E Ę F G H I J K L Ł M N Ń O Ó P R S Ś T U W Y Z Ź Ż
         a ą b c ć d e ę f g h i j k l ł m n ń o ó p r s ś t u w y z ź ż
         ```
 
-        > **Fun fact!** X actually used to be used in native words, e.g. *xiądz* (priest). X was removed from the core alphabet at some point, and was replaced with *ks*, so this example is nowadays spelled *ksiądz*.
+        > **Fun fact!** X actually used to be used in native words, e.g. *xiądz* (priest). X was removed from the core alphabet at some point, and was replaced with *ks*, so this example is nowadays spelled *ksiądz*. In some cases, it was replaced with *gz*: *egzamin* (exam), which is a learned borrowing from Latin.
 
         ## Pronunciation
 
@@ -30,6 +32,25 @@ import SeeAlso from '#components/SeeAlso.astro';
         Most words are stressed on the penultimate syllable.
 
         ## Vowels
+
+        ### Table
+
+        #### Oral vowels
+
+        ||Front|Center|Back|
+        |-|-|-|-
+        |Close|i|y /ɨ/|u|
+        |Open-mid|e /ɛ/, ę /ɛ̃/||o /ɔ/, ą /ɔ̃/|
+        |Open||a /ä/||
+
+        #### Nasal vowels
+
+        ||Front|Center|Back|
+        |-|-|-|-
+        |Open-mid|ę /ɛ̃/||ą /ɔ̃/|
+
+        ### Description
+
         All vowel sounds are consistent, short, and never distinguished by length:
         - A - as in *back*
         - E - as in *left*
@@ -39,44 +60,35 @@ import SeeAlso from '#components/SeeAlso.astro';
         - Y - as I in *thin*
         - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
 
+        > **Fun fact!** Polish is the only modern Slavic language to have preserved nasal vowels.
+        > 
+        > However, it appears that a lot of literature about the Polish language, especially the newer one, refutes the existence of nasal vowels. Instead, they claim Ą and Ę are pronounced /ɔŋ/ and /ɛŋ/, respectively.
+
         Ą and Ę may shift into a single oral vowel or into a V(C) structure, where *C* is *m*, *n*, or *ń*.
 
-        > **Fun fact!** Polish is the only Slavic language to have preserved nasal vowels.
-
-        <table class="table">
-            <tr>
-                <th>Shift</th>
-                <th>ą</th>
-                <th>ę</th>
-                <th>Condition</th>
-            </tr>
-            <tr>
-                <td>denasalization</td>
-                <td>wziął → wzioł<br/>(he) took</td>
-                <td>wzięła → wzieła<br/>(she) took</td>
-                <td>before ł or at the end of a word</td>
-            </tr>
-            <tr>
-                <td>addition of *m*</td>
-                <td>dąb → domb<br/>oak (n)</td>
-                <td>dębowy → dembowy<br/>oak (adj)</td>
-                <td>before b/p</td>
-            </tr>
-            <tr>
-                <td>addition of *n*</td>
-                <td>piątka → piontka<br/>five (n)</td>
-                <td>wędka → wentka<br/>fishing rod</td>
-                <td>before c/dz, k/g, t/d</td>
-            </tr>
-            <tr>
-                <td>addition of *ń*</td>
-                <td>wziąć → wziońć<br/>(to) take</td>
-                <td>pięć → pieńć<br/>five (num)</td>
-                <td>before ć/dź</td>
-            </tr>
-        </table>
+        |Shift|ą|ę|Condition
+        |-|-|-|-
+        |denasalization|wziął → wzioł<br/>(he) took|wzięła → wzieła<br/>(she) took|before ł or at the end of a word
+        |addition of *m*|dąb → domb<br/>oak (n)|dębowy → dembowy<br/>oak (adj)|before b/p
+        |addition of *n*|piątka → piontka<br/>five (n)|wędka → wentka<br/>fishing rod|before c/dz, t/d
+        |addition of *ń*|wziąć → wziońć<br/>(to) take|pięć → pieńć<br/>five (num)|before ć/dź
 
         ## Consonants
+
+        ### Table
+
+        ||Labial|Alveolar|Retroflex|Palatal|Velar|
+        |-|-|-|-|-|-|
+        |Nasal|m|n||ń /ɳ/|(/ŋ/)|
+        |Plosive|b, p|d, t|||g, k|
+        |Affricate||dz, c /ts/|dż /d͡ʐ/, cz /t͡ʂ/|dź /d͡ʑ/, ć /t͡ɕ/||
+        |Fricative|w /v/, f|z, s|ż /ʐ/, sz /ʂ/|ź /ʑ/, ś /ɕ/|h /x/|
+        |Approximant||l||j|ł /w/|
+        |Trill||r||||
+
+        > Sources can't agree on whether phonemic /ŋ/ exists in Polish or not. Those that say so deny the existence of nasal phonemes. Otherwise, [ŋ] is just considered an allophone of /n/ before /k/ or /g/.
+
+        ### Description
 
         - C is pronounced like TS in *parts*.
         - Ć, Ś, Ź, DŹ are pronounced like CH in *chip*, SH in *ship*, G in *regime*, and J in *jinn*, respectively. Those are iotized. The same applies to CI, SI, ZI, and DZI in most cases.
@@ -92,22 +104,30 @@ import SeeAlso from '#components/SeeAlso.astro';
         - W is pronounced like V in *vine*.
         - All other consonants are pronounced like you'd expect if you spoke English, that is: B, D, F, K, L, M, N, P, Z.
 
+        > **Fun fact!** "Iotized" is just a fancy term for palatalization, used in the context of Slavic languages.
+
         > **Fun fact!** Many other Slavic languages cannot distinguish between /v/ and /w/, so they only end up using /v/, even in loanwords. Polish used to use the /ɫ/ sound (same as the dark L in English), but as [delateralization](https://en.wikipedia.org/wiki/Delateralization) took its course, it shifted to /w/. The orthography and several dialects still using /ɫ/ are evidence of this. In other Slavic languages, except Belarusian, it shifted to /l/ instead.
 
         ## Phonotactics
 
-        **Final obstruents:** They are devoiced: *dług* (debt) → *dłuk*. It is still written with a *g* because of inflection: *dług-ø* → *dług-u*.
+        **Final obstruents:** They are devoiced: *dług* (debt) → /dwuk/. It is still written with a *g* because of inflection: *dług-ø* → *dług-u*.
 
-        **Consonant clusters (not onset):** It's common to simplify some difficult consonant clusters in the middle of a word: *kostka* (dice, ankle) → *kos-ka*, *sześćset* (six hundred) → *sześ-set* OR *szej-set*. In those cases, the word's inflected forms, or other related words, explain the spelling, as can be seen in the genitive: *ko**stk**a* → *ko**st**e**k***, *sze**śćs**et* → *sze**ści**u**s**et*.
+        **Consonant clusters (not onset):** It's common to simplify some difficult consonant clusters in the middle of a word: *kostka* (dice, knuckle, ankle) → /kɔs.ka/, *sześćset* (six hundred) → /ʂɛɕ.sɛt/ OR /ʂɛj.sɛt/. In those cases, the word's inflected forms, or other related words, explain the spelling, as can be seen in the genitive: *ko**stk**a* → *ko**st**e**k***, *sze**śćs**et* → *sze**ści**u**s**et*.
 
         ### Assimilation
         
         - Voiced obstruents right before voiceless consonants become voiceless: *książka* (book) → *ksiąszka*.
         - Voiced obstruents right after voiceless consonants in the onset become voiceless: *przemiana* (transformation) → *pszemiana*.
         - Voiceless obstruents immediately before voiced obstruents in the middle of a word become voiced: *prośba* (request) → *proź-ba*.
+            - It is possible to cause H/CH to be voiced in this way: *klechda* (legend) -> /klɛɣda/.
         
         ### Onset consonant clusters
         
-        Idiosyncracies like *rtęć* (mercury) or *źdźbło* (blade [of a grass or cereal]) are mostly preserved for historical reasons. For this reason, Poles often insert a very short vowel between the consonants in everyday speech.
+        Idiosyncracies like *rtęć* (mercury) or *źdźbło* (blade [of a grass or cereal]) are mostly preserved for historical reasons. For this reason, Poles often insert a very short vowel between the consonants in everyday speech. They are written like this because of the reduction of [yers](https://en.wikipedia.org/wiki/Yer), very short vowels that existed in Proto-Slavic.
+
+        In the below list, an asterisk (\*) indicates that the term was reconstructed, never attested during the language's supposed lifetime.
+        
+        - *rtęć* comes from *\*rьtǫtь*.
+        - *źdźbło* comes from Old Polish *śćbło*, Proto-Slavic *\*stьblo*. That in turn comes from Proto-Indo-European *\*stebʰ-* (to harden), from which Proto-Germanic *\*stabaz* also descends, making the English word *staff* a cognate.
     </main>
 </Layout>
