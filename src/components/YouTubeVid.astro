@@ -1,9 +1,11 @@
 ---
 interface Props {
     id: string,
+    width?: number,
+    height?: number,
 }
 
-const { id } = Astro.props;
+const { id, width = 560, height = 315 } = Astro.props;
 const { PROD } = import.meta.env
 ---
 
@@ -11,8 +13,10 @@ const { PROD } = import.meta.env
     {
         PROD
         ? <iframe
-            width="560"
-            height="315"
+            class="youtube-embed"
+            style={{aspectRatio: `${width} / ${height}`}}
+            width={width}
+            height={height}
             src={"https://www.youtube.com/embed/" + id}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -21,3 +25,9 @@ const { PROD } = import.meta.env
         : <a href={`https://www.youtube.com/watch?v=${id}`}>Watch on YouTube</a>
     }
 </div>
+<style>
+    .youtube-embed {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
