@@ -1,1 +1,10 @@
-<span class="sp inline" lang="tok"><slot /></span>
+---
+
+interface Props {
+    font?: string;
+}
+
+const { font } = Astro.props;
+---
+
+<span class="sp inline" style={{fontFamily: font}} lang="tok"><slot /></span>
