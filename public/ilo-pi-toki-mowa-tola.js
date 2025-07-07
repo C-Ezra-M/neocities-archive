@@ -32,7 +32,6 @@ export const listOfWords = new Map(Object.entries({
     loku: ['pimeja'],
     lowa: ['lawa'],
     lu: ['anu'],
-    lune: ['kin'],
     ma: ['jo'],
     mama: ['mama'],
     mawi: ['lili'],
@@ -97,6 +96,7 @@ export const listOfWords = new Map(Object.entries({
     sun: ['kala'],
     suta: ['jelo'],
     taje: ['pana'],
+    tase: ['kin'],
     taki: ['waso'],
     taleko: ['weka'],
     tali: ['majuna'],
@@ -122,6 +122,9 @@ export const listOfWords = new Map(Object.entries({
     wenki: ['kalama'],
     wensi: ['sewi'],
     wese: ['soweli'],
+
+    // Deprecated words
+    lune: ['kin'],
 }))
 
 export function relexWordIntoTokiPona(word) {
