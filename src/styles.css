@@ -20,6 +20,11 @@ html {
     src: url('/sitelenselikiwenasuki.ttf');
 }
 
+@font-face {
+    font-family: 'nasin nanpa';
+    src: url('/nasin-nanpa-4.0.2.otf');
+}
+
 @property --percentage {
     syntax: "<percentage>";
     inherits: false;
