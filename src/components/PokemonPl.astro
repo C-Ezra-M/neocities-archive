@@ -20,22 +20,30 @@ interface Props {
 
 const { name, card, pl, style } = Astro.props;
 let image, dexno, artist;
+const { PROD } = import.meta.env
 
-const cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
-    .then(resp => resp.json())
-    .then(d => d.data)
-    .catch(e => {
+if (PROD) {
+    const cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
+        .then(resp => resp.json())
+        .then(d => d.data)
+        .catch(e => {
+            throw new Error(`Error while handling card ${card}`, {cause: e})
+        })
+    
+    try {
+        image = cardData.images.large
+        dexno = cardData.nationalPokedexNumbers?.[0] ?? "????"
+        artist = cardData.artist ?? "(NOT FOUND)"
+    } catch (e) {
         throw new Error(`Error while handling card ${card}`, {cause: e})
-    })
-
-try {
-    image = cardData.images.large
-    dexno = cardData.nationalPokedexNumbers?.[0] ?? "????"
-    artist = cardData.artist ?? "(NOT FOUND)"
-} catch (e) {
-    throw new Error(`Error while handling card ${card}`, {cause: e})
+    }
+    console.log("HANDLING CARD: " + card)
+} else {
+    dexno = "????"
+    artist = "(NOT FOUND)"
+    let [ set, cardno ] = card.split('-')
+    image = `https://images.pokemontcg.io/${set}/${cardno}_hires.png`
 }
-console.log("HANDLING CARD: " + card)
 ---
 
 <tr>
