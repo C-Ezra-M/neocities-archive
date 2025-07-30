@@ -8,13 +8,12 @@ interface Props {
 }
 
 const {id, name, color} = Astro.props;
-const img = import(`../img/mud-${id}.png`)
 ---
 
 <li class:list={[color]}>
     <article class="clearfix">
-        <Image
-            src={img}
+        <img
+            src=`/mud-${id}.png`
             height="100"
             width="100"
             alt={name}

@@ -8,13 +8,12 @@ interface Props {
 }
 
 const {id, name, tier} = Astro.props;
-const img = import(`../img/${id}.png`)
 ---
 
 <li class:list={[id]}>
     <article class="clearfix">
-        <Image
-            src={img}
+        <img
+            src=`/${id}.svg`
             height="100"
             width="110"
             alt={name}
