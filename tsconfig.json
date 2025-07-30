@@ -3,6 +3,8 @@
   "compilerOptions": {
     "resolvePackageJsonImports": true,
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "strictNullChecks": true,
+    "allowJs": true
   }
 }
