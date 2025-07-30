@@ -10,17 +10,19 @@ interface Props {
     pl: string;
     /** The style of the Pokémon image. Mostly used to change crop coordinates from the defaults:
      * ```css
-     * --offset-left: -85px;
-       --offset-top -55px;
+     * --offset-left: -75px;
+       --offset-top -50px;
         ```
      */
     style: string;
+    /** Base transcription, to be converted into IPA. Used when graphemes don't give off the intended pronunciation. */
+    pron?: string;
 }
 
-const { name, card, pl, style } = Astro.props;
+const { name, card, pl, style, pron } = Astro.props;
 ---
 
-<PokemonPl name={name} card={card} pl={pl} style={style}>
+<PokemonPl name={name} card={card} pl={pl} style={style} pron={pron}>
     <Fragment slot="etymology"><slot /></Fragment>
     <Fragment slot="notes"></Fragment>
 </PokemonPl>

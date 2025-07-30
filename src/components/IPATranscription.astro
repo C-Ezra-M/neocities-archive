@@ -1,0 +1,12 @@
+---
+import phonemize from './phonemize';
+
+interface Props {
+    word: string,
+}
+
+const { word } = Astro.props;
+const transcription = phonemize(word);
+---
+
+<span class="ipa">/{transcription}/</span>

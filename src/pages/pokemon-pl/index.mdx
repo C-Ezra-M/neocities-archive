@@ -1,7 +1,9 @@
 import Layout from '#layouts/Layout.astro';
 import PokemonPl from '#components/PokemonPl.astro';
+import PokemonPlSettings from '#components/PokemonPlSettings.astro';
 import PokemonPlSimple from '#components/PokemonPlSimple.astro';
 import GenerationHeader from '#components/GenerationHeader.astro';
+import HorizontalList from '#components/HorizontalList.astro';
 import SeeAlso from '#components/SeeAlso.astro';
 
 <Layout title="Polish Pokémon names | C.Ezra.M">
@@ -26,78 +28,78 @@ import SeeAlso from '#components/SeeAlso.astro';
         The pronunciation rules mainly apply to contexts where there are native words. Loanwords that are unchanged from the original spelling are pronounced regarding the origin language's pronunciation rules. Thus, *weekend* is pronounced like in English, but *Waszyngton* (Washington) is pronounced with a V sound instead of a W sound.
 
         - All vowel sounds are consistent, short, and never distinguished by length:
-          - A - as in *back*
-          - E - as in *left*
-          - I - as Y in *very*
-          - O - as in *wrong*
-          - Ó/U - as OO in *boot*
-          - Y - as I in *thin*
-          - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
-        - S is always devoiced, so it's pronounced like in *sock*.
-        - T never becomes a tongue flap, so it's pronounced like in the word *tap*!
+            - A - as in *back*
+            - E - as in *left*
+            - I - as Y in *very*
+            - O - as in *wrong*
+            - Ó/U - as OO in *boot*
+            - Y - as I in *thin*
+            - Ą and Ę are just O and E, but pronounced nasally, like in French *chanson* (song) or *italien* (Italian).
         - C is pronounced like TS in *parts*.
+        - Ć, Ś, Ź, DŹ are pronounced like CH in *chip*, SH in *ship*, G in *regime*, and J in *jinn*, respectively. Those are palatalized.
+        - CI, SI, ZI, and DZI are pronounced like Ć, Ś, Ź, DŹ, respectively, when they precede vowels.
+        - CI, SI, ZI, and DZI are pronounced like ĆI, ŚI, ŹI, DŹI, respectively, when they precede consonants.
+        - CZ, SZ, Ż, DŻ are pronounced like CH in *chop*, SH in *show*, S in *vision*, and J in *jar*, respectively. Those are not palatalized.
         - G is always a hard G.
+        - H and CH are pronounced a lot like H in English, but lean closer to K. Both are voiceless.
         - J is pronounced like Y in *yen*.
+        - L is always a clear L, never a dark L like in *call*.
         - Ł is pronounced like W in *week*.
-        - W is pronounced like V in *vine*.
         - Ń is pronounced like NY in *canyon*.
-        - H and CH are pronounced a lot like H in English, but lean closer to K.
-        - Ć, Ś, Ź, DŹ are pronounced like CH in *chip*, SH in *ship*, G in *regime*, and J in *jinn*, respectively. Those are iotized. The same applies to CI, SI, ZI, and DZI in most cases.
-        - CZ, SZ, Ż, DŻ are pronounced like CH in *chop*, SH in *show*, S in *vision*, and J in *jar*, respectively. Those are not iotized.
-        - Most words are stressed on the penultimate syllable.
+        - R is trilled (like in Spanish *perro*).
+        - RZ is pronounced like Ż (see above).
+        - W is pronounced like V in *vine*.
 
-        # Rules for making names
+        ## Rules for making names
         - They all shall be family-friendly.
         - They must fit within 12 characters. I don't care if the older games only permit 10. It was a limit placed out of necessity to fit on a Game Boy screen, but later games obviously have more space.
 
-        # Table of contents
-        - <a href="#gen-i">Generation I</a>
-        - <a href="#gen-ii">Generation II</a>
-        - <a href="#gen-iii">Generation III</a>
-        - <a href="#gen-iv">Generation IV</a>
-        - <a href="#gen-v">Generation V</a>
-        - <a href="#gen-vi">Generation VI</a>
-        - <a href="#gen-vii">Generation VII</a>
-        - <a href="#gen-viii">Generation VIII</a>
-        - <a href="#gen-ix">Generation IX</a>
+        ## Settings
+        <PokemonPlSettings />
+
+        ## Table of contents
+        <HorizontalList>
+        - [I](#gen-i)
+        - [II](#gen-ii)
+        - [III](#gen-iii)
+        - [IV](#gen-iv)
+        - [V](#gen-v)
+        - [VI](#gen-vi)
+        - [VII](#gen-vii)
+        - [VIII](#gen-viii)
+        - [IX](#gen-ix)
+        </HorizontalList>
         
         <table class="table table-striped table-light responsive-table">
             <thead>
                 <tr>
                     <th>Pokémon</th>
                     <th>Artwork</th>
-                    <th>New name</th>
                     <th>Etymology</th>
                     <th>Notes</th>
                 </tr>
             </thead>
             <tbody>
                 <GenerationHeader name="I"/>
-                <PokemonPl name="Blastoise" card="sm9-25" pl="Żółwierz">
-                    <Fragment slot="etymology">
-                        - *żółw*: Polish for turtle, tortoise
-                        - *żołnierz*: Polish for soldier
-                    </Fragment>
-                    <Fragment slot="notes">
-                        In Polish, the same word *żółw* is used for all species of the <a href="https://species.wikimedia.org/wiki/Testudines">Testudines</a> order.<br/>
-                        Although it is less common, a classifier can be used to distinguish a sea turtle (*żółw morski*) from a tortoise (*żółw lądowy*). The terrapin has its own word as well (*terapena*).
-                    </Fragment>
-                </PokemonPl>
+                <PokemonPlSimple name="Blastoise" card="sm9-25" pl="Żółwierz">
+                    - *żółw*: Polish for turtle, tortoise
+                    - *żołnierz*: Polish for soldier
+                </PokemonPlSimple>
                 <PokemonPl name="Ekans" card="sm35-36" pl="Zołop" style="--offset-left: -110px;">
                     <Fragment slot="etymology">
-                        - *połozowate*: Polish for <a href="https://en.wikipedia.org/wiki/Colubridae">Colubridae</a>
+                        - *połozowate*: Polish for [*Colubridae*](https://en.wikipedia.org/wiki/Colubridae)
                             - From a part of this word backwards.
                     </Fragment>
                     <Fragment slot="notes">
-                        Partially inspired by the German name, "Rettan".
+                        Simply reversing the word for snake, "wąż", felt too boring. This one is partially inspired by the German name, "Rettan", from "Natter", also the word for the *Colubridae*.
                     </Fragment>
                 </PokemonPl>
                 <PokemonPlSimple name="Arbok" card="swsh35-34" pl="Arbok">
                     - *kobra*: Polish for cobra; spelled backwards
                         - Same as the original
                 </PokemonPlSimple>
-                <PokemonPlSimple name="Pikachu" card="sm10-54" pl="Pikachu">Same as the original</PokemonPlSimple>
-                <PokemonPlSimple name="Raichu" card="sm12-67" pl="Raichu" style="--offset-left: -60px;">Same as the original</PokemonPlSimple>
+                <PokemonPlSimple name="Pikachu" card="sm10-54" pl="Pikachu" pron="Pikaczu">Same as the original</PokemonPlSimple>
+                <PokemonPlSimple name="Raichu" card="sm12-67" pl="Raichu" pron="Rajczu" style="--offset-left: -60px;">Same as the original</PokemonPlSimple>
                 <PokemonPlSimple name="Sandshrew" card="sv3pt5-27" pl="Sandomysz">
                     - *sand*
                     - *mysz*: Polish for mouse
@@ -111,12 +113,16 @@ import SeeAlso from '#components/SeeAlso.astro';
                         I was the originally going with "Sandolin" (from *sand* and *pangolin*), but that sounded too similar to a brand name.
                     </Fragment>
                 </PokemonPl>
-                <PokemonPlSimple name="Nidoran♀" card="xy5-66" pl="Nidoran♀">Same as the original. Pronounced "Nidoran samica" (lit. "Nidoran female").</PokemonPlSimple>
+                <PokemonPlSimple name="Nidoran♀" card="xy5-66" pl="Nidoran♀" pron="Nidoran samica">Same as the original. Pronounced "Nidoran-samica" (lit. "Nidoran female").</PokemonPlSimple>
                 <PokemonPlSimple name="Nidorina" card="sv3pt5-30" pl="Nidorina">Same as the original</PokemonPlSimple>
-                <PokemonPlSimple name="Nidoqueen" card="sm9-56" pl="Nidoqueen">Same as the original</PokemonPlSimple>
-                <PokemonPlSimple name="Nidoran♂" card="sv10-117" pl="Nidoran♂">Same as the original. Pronounced "Nidoran samiec" (lit. "Nidoran male").</PokemonPlSimple>
-                <PokemonPlSimple name="Nidorino" card="xy11-44" pl="Nidorino" style="--offset-left: -110px;">Same as the original</PokemonPlSimple>
+                <PokemonPlSimple name="Nidoqueen" card="sm9-56" pl="Nidoqueen" pron="Nidokłin">Same as the original</PokemonPlSimple>
+                <PokemonPlSimple name="Nidoran♂" card="sv10-117" pl="Nidoran♂" pron="Nidoran samiec">Same as the original. Pronounced "Nidoran-samiec" (lit. "Nidoran male").</PokemonPlSimple>
+                <PokemonPlSimple name="Nidorino" card="hgss4-46" pl="Nidorino" style="--offset-left: -105px;">Same as the original</PokemonPlSimple>
                 <PokemonPlSimple name="Nidoking" card="sv3pt5-34" pl="Nidoking" style="--offset-left: -90px;">Same as the original</PokemonPlSimple>
+                <PokemonPlSimple name="Vileplume" card="sm3-6" pl="Raflezła" style="--offset-left: -65px;">
+                    - *Rafflesia*
+                    - *zła* (*zły*-F): Polish for bad, mean, evil
+                </PokemonPlSimple>
                 <PokemonPl name="Voltorb" card="sv3pt5-100" pl="Kulomba">
                     <Fragment slot="etymology">
                         - *kula*: Polish for ball
@@ -124,41 +130,58 @@ import SeeAlso from '#components/SeeAlso.astro';
                         - *kulomb*: Polish for coulomb (SI unit of electric charge, symbol: C)
                     </Fragment>
                     <Fragment slot="notes">
-                        The original idea, "Kulomb", was not coined by me! It comes from <a href="https://ar.hn/2023/12/pokemon-crystal-pl/">Dark Archon's Polish Pokémon Crystal patch</a>. But I love the pun so well that it landed on this list!
+                        The original idea, "Kulomb", was not coined by me! It comes from [Dark Archon's Polish Pokémon Crystal patch](https://ar.hn/2023/12/pokemon-crystal-pl/). But I love the pun so well that it landed on this list!
                         I had to change it so that it's not the exact same as an actual word.
                     </Fragment>
                 </PokemonPl>
-                <PokemonPl name="Gyarados" card="hgss1-4" pl="Garados" style="--offset-left: -48px; --offset-top: -88px;">
+                <PokemonPlSimple name="Electrode" card="swsh2-57" pl="Elomba">
+                    - *el-*: Polish clipping of *elektro-*, prefix meaning *electro-* (seen in business names)
+                    - *bomba*: Polish for bomb
+                </PokemonPlSimple>
+                <PokemonPl name="Gyarados" card="hgss1-4" pl="Garados" style="--offset-left: -45px; --offset-top: -75px;">
                     <Fragment slot="etymology">Same as the German name</Fragment>
                     <Fragment slot="notes">
                         A lot of Polish Pokémon fans mispronounce "Gyarados" as "Guyardos" due to inconsistencies early on in <i>Pokémon the Series</i>' Polish dub. So I decided to change it to the almost identical German name.
                     </Fragment>
                 </PokemonPl>
-                <PokemonPlSimple name="Eevee" card="svp-43" pl="Eevee" style="--offset-left: -100px;">Same as the original</PokemonPlSimple>
+                <PokemonPlSimple name="Eevee" card="svp-43" pl="Eevee" pron="Iwi" style="--offset-left: -90px;">Same as the original</PokemonPlSimple>
                 <GenerationHeader name="II"/>
                 <PokemonPl name="Sudowoodo" card="xy9-67" pl="Łżewo">
                     <Fragment slot="etymology">
-                        - *łże*: inflected{/*present tense, singular 3rd person*/} form of *łgać*, Polish for lie (to state the untruth)
+                        - *łże* (*łgać*-3.S.PRES): Polish for lie (to state the untruth)
                         - *drzewo*: Polish for tree
                     </Fragment>
                     <Fragment slot="notes">
-                        - Not coined by me! It comes from <a href="https://ar.hn/2023/12/pokemon-crystal-pl/">Dark Archon's Polish Pokémon Crystal patch</a>.
-                        - "Łgać" is dated and not easy to pronounce. The same applies to its inflected forms. Nowadays, Polish speakers more commonly use "kłamać".
+                        - Not coined by me! It comes from [Dark Archon's Polish Pokémon Crystal patch](https://ar.hn/2023/12/pokemon-crystal-pl/).
+                        - Polish speakers more commonly use "kłamać" instead of "łgać", as the latter has taken more of a derogatory aspect.
                     </Fragment>
                 </PokemonPl>
-                <PokemonPlSimple name="Unown" card="sm8-90" pl="Icognito" style="--offset-left: -100px;">
+                {/* <PokemonPlSimple name="Slowking" card="sv7-58" pl="Królangsam">
+                    - *król*: Polish for king
+                    - *langsam*: German for slow
+                </PokemonPlSimple> */}
+                <PokemonPlSimple name="Unown" card="sm8-90" pl="Icognito" pron="Ikognito" style="--offset-left: -100px;">
                     - *incognito*: Latin for unknown
-                        - Same as the German name
+                    - Same as the German name
                 </PokemonPlSimple>
                 <PokemonPlSimple name="Forretress" card="xy2-60" pl="Fortyszka" style="--offset-left: -60px;">
                     - *forteca*: Polish for fortress
                     - *szyszka*: Polish for pinecone
                 </PokemonPlSimple>
+                <PokemonPl name="Sneasel" card="swsh9-86" pl="Śniegłas">
+                    <Fragment slot="etymology">
+                        - *śnieg*: Polish for snow
+                        - *łasica*: Polish for weasel
+                    </Fragment>
+                    <Fragment slot="notes">
+                        I was debating with myself whether to soften the S at the end by making it a Ś. I ultimately decided not to.
+                    </Fragment>
+                </PokemonPl>
                 <PokemonPlSimple name="Slugma" card="swsh11-21" pl="Ślimagma">
                     - *ślimak*: Polish for snail, slug
                     - *magma*
                 </PokemonPlSimple>
-                <PokemonPl name="Magcargo" card="swsh8-35" pl="Magcargo">
+                <PokemonPl name="Magcargo" card="swsh8-35" pl="Magcargo" pron="Magkargo">
                     <Fragment slot="etymology">
                         - *magma*
                         - *escargot*: French for snail, slug
@@ -166,13 +189,13 @@ import SeeAlso from '#components/SeeAlso.astro';
                         - Same as the original
                     </Fragment>
                     <Fragment slot="notes">
-                        I initially wanted "Magmargo", but thought about the escargot/cargo pun. The C is pronounced like K here, like originally.
+                        I initially wanted "Magmargo", but thought about the escargot/cargo pun.
                     </Fragment>
                 </PokemonPl>
-                <PokemonPl name="Tyranitar" card="swsh3-88" pl="Tyranitar" style="--offset-left: -120px;">
+                <PokemonPl name="Tyranitar" card="swsh3-88" pl="Tyranitar" style="--offset-left: -100px;">
                     <Fragment slot="etymology">Same as the original</Fragment>
                     <Fragment slot="notes">
-                        A lot of Polish Pokémon fans call this one "Tyrek". Yes, much like one of the <a href="https://en.wikipedia.org/wiki/Poznań_Goats">Poznań Goats</a>. I think it makes me keep the original name.
+                        A lot of Polish Pokémon fans call this one "Tyrek". Yes, much like one of the [Poznań Goats](https://en.wikipedia.org/wiki/Poznań_Goats). I think it makes me keep the original name.
                     </Fragment>
                 </PokemonPl>
                 <GenerationHeader name="III"/>
@@ -181,24 +204,44 @@ import SeeAlso from '#components/SeeAlso.astro';
                     - *nos*: Polish for nose
                     - *kompan*: Polish for companion, comrade
                 </PokemonPlSimple>
-                <PokemonPl name="Wailord" card="swsh4-32" pl="Wielord" style="--offset-left: -70px;">
+                <PokemonPl name="Mawile" card="sv3-143" pl="Paszczusia">
+                    <Fragment slot="etymology">
+                        - *paszcza*: Polish for maw
+                        - *-usia*: Polish feminine diminutive suffix
+                    </Fragment>
+                    <Fragment slot="notes">
+                        Another name I considered is "Futakusia", from Japanese [二口女 *futakuchi-onna*](https://en.wikipedia.org/wiki/Futakuchi-onna) ("two-mouthed woman"), *kusić* ("to tempt"), and *-usia*.
+
+                        The *-usia* suffix is often used in an endearing aspect.
+                    </Fragment>
+                </PokemonPl>
+                {/*<PokemonPlSimple name="Aggron" card="sv6-122" pl="Pulgazaur">
+                    - 불가사리: [Pulgasari](https://en.wikipedia.org/wiki/Bulgasari_(creature))
+                    - *-zaur*: Polish suffix common for dinosaur names
+                </PokemonPlSimple>*/}
+                <PokemonPl name="Wailord" card="swsh4-32" pl="Wielord" style="--offset-left: -60px;">
                     <Fragment slot="etymology">
                         - *wieloryb*: Polish for whale
                         - *lord*
                     </Fragment>
                     <Fragment slot="notes">
-                        Fun fact: *wieloryb* comes from Proto-Slavic *\*velьrybъ*, so it is also reflected in other Slavic languages. By surface anaylsis, it comes from *wiele ryb*, meaning "many fish". It's one of the reasons I thought whales are fish when I was little, but they're in fact mammals.
+                        The word *wieloryb* can be analyzed as *wiele ryb*, meaning "many fish". It's one of the reasons I thought whales are fish when I was little, but they're in fact mammals.
                     </Fragment>
                 </PokemonPl>
                 <PokemonPlSimple name="Torkoal" card="sv6-30" pl="Żółwęgiel">
                     - *żółw*: Polish for turtle, tortoise
                     - *węgiel*: Polish for coal
                 </PokemonPlSimple>
-                <PokemonPlSimple name="Lileep" card="bw10-3" pl="Lilip">
-                    - *lilia*: Polish for lily
-                    - *polip*: Polish for polyp
-                    - Similar to the English name
-                </PokemonPlSimple>
+                <PokemonPl name="Lileep" card="bw10-3" pl="Lilip">
+                    <Fragment slot="etymology">
+                        - *lilia*: Polish for lily
+                        - *polip*: Polish for polyp
+                        - Similar to the English name
+                    </Fragment>
+                    <Fragment slot="notes">
+                        I will need to change it because Lileep is *not* a polyp.
+                    </Fragment>
+                </PokemonPl>
                 <PokemonPlSimple name="Absol" card="xyp-XY178" pl="Absol" style="--offset-left: -70px;">
                     Same as the original
                 </PokemonPlSimple>
@@ -206,7 +249,16 @@ import SeeAlso from '#components/SeeAlso.astro';
                     - *foka*: Polish for seal
                     - *kula*: Polish for ball
                 </PokemonPlSimple>
-                <PokemonPl name="Walrein" card="sv8-45" pl="Morsir">
+                <PokemonPl name="Sealeo" card="swsh6-38" pl="Fokongler">
+                    <Fragment slot="etymology">
+                        - *foka*: Polish for seal
+                        - *żongler*: Polish for juggler
+                    </Fragment>
+                    <Fragment slot="notes">
+                        Inspired by the French name, "Phogleur".
+                    </Fragment>
+                </PokemonPl>
+                <PokemonPl name="Walrein" card="sv8-45" pl="Morsir" pron="Morser">
                     <Fragment slot="etymology">
                         - *mors*: Polish for walrus
                         - *Sir*: English honorific title
@@ -215,9 +267,14 @@ import SeeAlso from '#components/SeeAlso.astro';
                         Unintentional, but it sounds like "More, sir!"
                     </Fragment>
                 </PokemonPl>
-                <PokemonPlSimple name="Beldum" card="sv5-113" pl="Lahant">
-                    - *hantla*: Polish for dumbbell; the syllables are rearranged
-                </PokemonPlSimple>
+                <PokemonPl name="Beldum" card="sv5-113" pl="Hantala">
+                    <Fragment slot="etymology">
+                        - *hantla*: Polish for dumbbell
+                    </Fragment>
+                    <Fragment slot="notes">
+                        Originally "Lahant", from the same word, but it didn't flow as well.
+                    </Fragment>
+                </PokemonPl>
                 <GenerationHeader name="IV"/>
                 <PokemonPlSimple name="Torterra" card="sm5-9" pl="Ziemółw" style="--offset-left: -60px">
                     - *ziemia*: Polish for Earth, land, soil
@@ -237,10 +294,16 @@ import SeeAlso from '#components/SeeAlso.astro';
                         - *papla*: Polish for chatterbox, blabbermouth
                     - *papuga*: Polish for parrot
                 </PokemonPlSimple>
-                <PokemonPlSimple name="Carnivine" card="swsh12pt5-12" pl="Venuliana">
-                    - *Venus flytrap*
-                    - *liana*: climbing woody vine, usually tropical
-                </PokemonPlSimple>
+                <PokemonPl name="Carnivine" card="swsh12pt5-12" pl="Łowimuch">
+                    <Fragment slot="etymology">
+                        - *muchołówka*: Polish for Venus flytrap
+                            - *mucha*: Polish for fly (insect)
+                            - *łowić*: Polish for hunt (v)
+                    </Fragment>
+                    <Fragment slot="notes">
+                        Originally "Venuliana", from *Venus flytrap* and *liana* (climbing woody vine, usually tropical).
+                    </Fragment>
+                </PokemonPl>
                 <PokemonPl name="Gliscor" card="xy6-37" pl="Skorpioszyb">
                     <Fragment slot="etymology">
                         - *szybować*: Polish for "[to] glide"
@@ -310,7 +373,7 @@ import SeeAlso from '#components/SeeAlso.astro';
                 </PokemonPlSimple>
                 <PokemonPlSimple name="Vullaby" card="sm9-92" pl="Sępisklę">
                     - *sęp*: Polish for vulture
-                    - *pisklę*: Polish for chick
+                    - *pisklę*: Polish for chick, hatchling
                 </PokemonPlSimple>
                 <GenerationHeader name="VI"/>
                 <PokemonPlSimple name="Scatterbug" card="sv1-8" pl="Robakona">
@@ -321,9 +384,15 @@ import SeeAlso from '#components/SeeAlso.astro';
                     - *kokon*: Polish for cocoon
                     - 粉 *kona*: Japanese for powder, dust
                 </PokemonPlSimple>
-                {/* 
-                <PokemonPlSimple name="Inkay" card="sv6pt5-33" pl="Osietusz">From *osiem* "eight; as in the number of limbs of an octopus" and *tusz* "ink"</PokemonPlSimple>
-                */ }
+                <PokemonPl name="Inkay" card="sv6pt5-33" pl="Ożeżtusz">
+                    <Fragment slot="etymology">
+                        - *ożeż*: Polish for "holy moley!"
+                        - *tusz*: Polish for ink
+                    </Fragment>
+                    <Fragment slot="notes">
+                        Initially "Osietusz", from *osiem* ("eight"; as in the number of limbs of an octopus) and *tusz* ("ink"). However, I decided that I needed something more family-friendly. I don't like either of the names, though.
+                    </Fragment>
+                </PokemonPl>
                 <GenerationHeader name="VII"/>
                 <PokemonPlSimple name="Crabrawler" card="sv3-114" pl="Kraboks">
                     - *krab*: Polish for crab
@@ -344,7 +413,7 @@ import SeeAlso from '#components/SeeAlso.astro';
                     - *boks*: Polish for boxing
                 </PokemonPlSimple>
                 <PokemonPlSimple name="Frosmoth" card="sv5-46" pl="Ciemróz">
-                    - *ciem*: inflected{/*plural genitive */} form of *ćma*, Polish for moth
+                    - *ciem* (*ćma*-P.GEN): Polish for moth
                     - *mróz*: Polish for frost
                 </PokemonPlSimple>
                 <GenerationHeader name="IX"/>
@@ -361,6 +430,10 @@ import SeeAlso from '#components/SeeAlso.astro';
                     - *rodzić*: Polish for "[to] give birth"
                     - *myszy*: Polish for mice
                 </PokemonPlSimple>
+                <PokemonPlSimple name="Squawkabilly" card="sv10-160" pl="Arokadu">
+                    - *arogancki*: Polish for arrogant
+                    - *kakadu*: Polish for cockatoo
+                </PokemonPlSimple>
                 <PokemonPl name="Flamigo" card="sv1-165" pl="Flamigo">
                     <Fragment slot="etymology">Same as the original</Fragment>
                     <Fragment slot="notes">No need to change anything. Flamigo's English name is perfect.</Fragment>
@@ -375,7 +448,7 @@ import SeeAlso from '#components/SeeAlso.astro';
                 </PokemonPlSimple>
                 <PokemonPlSimple name="Iron Hands" card="sv5-61" pl="Żelazodłonie" style="--offset-left: -70px;">
                     - *żelazo*: Polish for iron
-                    - *dłonie*: inflected{/*plural nominative*/} form of *dłoń*, Polish for palm (part of a hand)
+                    - *dłonie*: Polish for palms (palm: part of a hand)
                 </PokemonPlSimple>
                 <PokemonPlSimple name="Iron Boulder" card="sv7-71" pl="Żelazogłaz" style="--offset-left: -70px;">
                     - *żelazo*: Polish for iron
@@ -385,7 +458,7 @@ import SeeAlso from '#components/SeeAlso.astro';
             </tbody>
         </table>
 
-        # Disclaimer
+        ## Disclaimer
         All artwork used on this page is © Pokémon / Nintendo / Creatures / GAME FREAK. This page is not affiliated with any of these entities.
     </main>
 </Layout>

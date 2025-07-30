@@ -127,6 +127,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+body:not(.ipa-enabled) .ipa {
+    display: none;
+}
+
 .entry-list {
     list-style: none;
     padding-left: 0;
@@ -144,6 +148,19 @@ em.table-cell-header {
     font-style: normal;
     &::after {
         content: ': ';
+    }
+}
+
+.lg-hide {
+    display: none;
+}
+
+@media screen and (width >= 670px) {
+    .lg-hide {
+        display: revert;
+    }
+    .sm-hide {
+        display: none;
     }
 }
 

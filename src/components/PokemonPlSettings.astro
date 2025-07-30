@@ -1,0 +1,14 @@
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="enableIpa">
+    <label class="form-check-label" for="enableIpa">Enable IPA transcriptions</label>
+</div>
+
+<script>
+    document.getElementById("enableIpa")?.addEventListener("change", function() {
+        if ((this as HTMLInputElement).checked) {
+            document.body.classList.add("ipa-enabled")
+        } else {
+            document.body.classList.remove("ipa-enabled")
+        }
+    })
+</script>

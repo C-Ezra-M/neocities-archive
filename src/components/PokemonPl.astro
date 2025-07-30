@@ -1,6 +1,7 @@
 ---
 import Image from 'astro/components/Image.astro';
 import { Debug } from 'astro:components';
+import IPATranscription from './IPATranscription.astro';
 
 interface Props {
     /** The Pokémon's English name. */
@@ -11,14 +12,17 @@ interface Props {
     pl: string;
     /** The style of the Pokémon image. Mostly used to change crop coordinates from the defaults:
      * ```css
-     * --offset-left: -85px;
-       --offset-top -55px;
+     * --offset-left: -75px;
+       --offset-top -50px;
         ```
      */
     style: string;
+    /** Base transcription, to be converted into IPA. Used when graphemes don't give off the intended pronunciation. */
+    pron?: string;
 }
 
 const { name, card, pl, style } = Astro.props;
+const pronunciation = Astro.props.pron ?? pl;
 let image, dexno, artist;
 const { PROD } = import.meta.env
 
@@ -47,21 +51,25 @@ if (PROD) {
 ---
 
 <tr>
-    <td class="full-width">#{dexno.toString().padStart(4,"0")} {name}</td>
-    <td class="full-width"><div class="cropped-card-image" style={style}><Image src={image} width="300" height="419" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
-    <td class="full-width"><em class="table-cell-header">New name</em>{pl}</td>
+    <th class="full-width">
+        #{dexno.toString().padStart(4,"0")}
+        <br class="lg-hide"/> {pl}
+        <br class="lg-hide ipa"/> <IPATranscription word={pronunciation} />
+        {pl != name ? (<t><br class="lg-hide"/> ({name})</t>) : <></>}
+    </th>
+    <td class="full-width"><div class="cropped-card-image" style={style}><img src={image} width="275" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
     <td class="full-width"><em class="table-cell-header block">Etymology</em><slot name="etymology" /></td>
     <td class="full-width optional"><em class="table-cell-header block">Notes</em><div class="information"><slot name="notes"/></div></td>
 </tr>
 
 <style>
     .cropped-card-image {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 120px;
         overflow: hidden;
         > img {
-            margin-left: var(--offset-left, -85px);
-            margin-top: var(--offset-top, -55px);
+            margin-left: var(--offset-left, -75px);
+            margin-top: var(--offset-top, -50px);
         }
     }
 </style>
