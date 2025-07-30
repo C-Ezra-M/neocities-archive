@@ -25,6 +25,18 @@ html {
     src: url('/nasin-nanpa-4.0.2.otf');
 }
 
+@font-face {
+    font-family: 'Public Sans';
+    src: url('/PublicSans-VariableFont_wght.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Public Sans';
+    src: url('/PublicSans-Italic-VariableFont_wght.ttf');
+    font-style: italic;
+}
+
 @property --percentage {
     syntax: "<percentage>";
     inherits: false;
