@@ -8,7 +8,7 @@
         rgb(var(--accent-light)) 30%,
         white 60%
     );
-    --bs-body-font-family: "Inter Variable Text", "Inter", sans-serif;
+    --bs-body-font-family: "Public Sans", sans-serif;
     --bs-body-bg: #eceac5;
 }
 html {
