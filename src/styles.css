@@ -119,6 +119,9 @@ blockquote {
     background-color: #eeeeeeaa;
     border-left: 0.3rem solid #996611;
     padding: 0.5rem 1rem;
+    > p:last-child {
+        margin-bottom: 0;
+    }
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
