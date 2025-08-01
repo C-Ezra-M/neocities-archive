@@ -12,7 +12,7 @@ import SeeAlso from '#components/SeeAlso.astro';
         
         This is my attempt to describe Polish phonology and phonotactics. The Wikipedia article has a lot more detail, though.
 
-        IPA transcriptions for phonemes are provided, but I skipped exact phones. (Phonemes can encompass many phones; therefore, a phone is a more specific sound than a phoneme.)
+        IPA transcriptions for phonemes (annotated /.../) are provided, but I tried to avoid going into phones (annotated [...]) as much as possible. Graphemes are annotated ⟨...⟩.
 
         ## Alphabet
 
@@ -59,10 +59,10 @@ import SeeAlso from '#components/SeeAlso.astro';
 
         |Shift|ą|ę|Condition
         |-|-|-|-
-        |denasalization |wziął → /vʑjɔw/<br/>(he) took|wzięła → /vʑjɛwa/<br/>(she) took|before l or ł
+        |denasalization |wziął → /vʑɔw/<br/>(he) took|wzięła → /vʑɛwa/<br/>(she) took|before l or ł
         |addition of /m/|dąb → /dɔmp/<br/>oak (n)|dębowy → /dɛmbɔvɘ/<br/>oak (adj)|before b/p
         |addition of /n/|piątka → /pjɔntka/<br/>five (n)|wędka → /vɛntka/<br/>fishing rod|before t/d, c/dz, cz/dż
-        |addition of /ɳ/|wziąć → /vʑjɔɲt͡ɕ/<br/>take (v)|pięć → /pjɛɲt͡ɕ/<br/>five (num)|before ś/ź, ć/dź
+        |addition of /ɳ/|wziąć → /vʑɔɲt͡ɕ/<br/>take (v)|pięć → /pjɛɲt͡ɕ/<br/>five (num)|before ś/ź, ć/dź
         |addition of /ŋ/|mąka → /mɔŋka/<br/>flour|ręka → /rɛŋka/<br/>hand (n)|before k/g
         |no change      |wąsy → /vɔw̃sɘ/<br/>mustache|węch → /vɛw̃x/<br/>(sense of) smell|before f/w, s/z, sz/ż/rz, h/ch
         |no change (Ą)<br/>denasalization (Ę) |są → /sɔw̃/<br/>(they) are|się → /ɕɛ/<br/>*reflexive pronoun*|word-finally
@@ -131,19 +131,19 @@ import SeeAlso from '#components/SeeAlso.astro';
 
         ### Assimilation
 
-        - Voiced obstruents right before voiceless consonants become voiceless: *książka* (book) → /kɕɔ̃ʂka/.
+        - Voiced obstruents right before voiceless consonants become voiceless: *książka* (book) → /kɕɔw̃ʂka/.
         - In the onset, voiced obstruents right after voiceless consonants become voiceless: *przemiana* (transformation) → /pʂɛ.mja.na/.
         - In the middle of a word, voiceless obstruents immediately before voiced obstruents become voiced: *prośba* (request) → /prɔʑ.ba/.
             - This is the only instance when a phonemic /ɣ/ may appear: *klechda* (legend) -> /klɛɣ.da/.
-            - Unlike in English, this kind of assimilation does not happen before sonorants: *tandetny* (trashy) -> /tan.det.nɘ/.
+            - Unlike in English, this kind of assimilation does not happen before sonorants: *tandetny* (trashy) -> /tan.dɛt.nɘ/.
         
         ### Onset consonant clusters
         
         Idiosyncracies like *rtęć* ("mercury, quicksilver") or *źdźbło* ("blade [of a grass or cereal]") are mostly preserved for historical reasons. For this reason, Poles often insert a very short vowel between the consonants in everyday speech. They are written like this because of the reduction of [yers](https://en.wikipedia.org/wiki/Yer), very short vowels that existed in Proto-Slavic.
 
-        |Modern Polish|Old Polish|Proto-Slavic|
-        |-|-|-|
-        |*rtęć*|(the same)|*\*rьtǫtь*|
-        |*źdźbło*|*śćbło*|*\*stьblo*|
+        |Modern Polish|Old Polish|Proto-Slavic|Cognates|
+        |-|-|-|-|
+        |*rtęć*|(the same)|*\*rьtǫtь*|Czech *rtuť* ("mercury, quicksilver")<br />Slovak *ortuť* ("mercury, quicksilver")
+        |*źdźbło*|*śćbło*|*\*stьblo*|Ukrainian *стебло́ stebló* ("stalk, stem")<br />Serbo-Croatian *ста́бло stáblo* ("tree, trunk")
     </main>
 </Layout>
