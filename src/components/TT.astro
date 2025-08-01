@@ -1,0 +1,90 @@
+---
+import { tooltipSlugger } from "./tooltips";
+
+const { text } = Astro.props;
+
+export const slugNote = tooltipSlugger.slug('ttn');
+export const slug = tooltipSlugger.slug('tt');
+---
+<tool-tip id={slug} aria-describedby={slugNote}><slot /></tool-tip><span id={slugNote}><span class="paren"> (</span>{text}<span class="paren">)</span></span><style>
+    tool-tip {
+        text-decoration: underline dotted;
+        text-underline-offset: 0.2em;
+    }
+
+    tool-tip + * {
+        opacity: 0;
+        transition: opacity ease-in-out .2s, display cubic-bezier(0,1,0,50) .2s allow-discrete;
+        background-color: #111111dd;
+        color: #eeeeee;
+        /*max-height: 3rem;*/
+        max-width: 15rem;
+        text-align: center;
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        font-size: 90%;
+        top: 0;
+        left: 0;
+        -webkit-user-select: none;
+        user-select: none;
+        @starting-style {
+            display: none;
+        }
+        &.visible {
+            display: block;
+            opacity: 100%;
+            -webkit-user-select: initial;
+            user-select: initial;
+        }
+        > .paren {
+            position: fixed;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            white-space: pre;
+            left: 0;
+            top: 0;
+        }
+    }
+</style><script>
+    import { computePosition, flip, shift, offset } from "@floating-ui/dom"
+
+    class Tooltip extends HTMLElement {
+        tooltipNote: HTMLSpanElement;
+        connectedCallback() {
+            this.tooltipNote = this.parentElement.querySelector(`#${this.id} + #${this.getAttribute('aria-describedby')}`);
+            [
+                ['mouseenter', this.showTooltip],
+                ['mouseleave', this.hideTooltip],
+                ['focus', this.showTooltip],
+                ['blur', this.hideTooltip],
+            ].forEach(([event, listener]) => {
+                this.addEventListener(event, listener);
+            });
+        }
+
+        update() {
+            computePosition(this, this.tooltipNote, {
+                placement: 'top',
+                middleware: [offset(3), flip(), shift({ padding: 5 })],
+            }).then(({ x, y }) => {
+                Object.assign(this.tooltipNote.style, {
+                    left: `${x}px`,
+                    top: `${y}px`,
+                });
+            });
+        }
+
+        showTooltip() {
+            this.tooltipNote.classList.add('visible')
+            this.update();
+        }
+
+        hideTooltip() {
+            this.tooltipNote.classList.remove('visible')
+        }
+    }
+    
+    customElements.define('tool-tip', Tooltip)
+</script>
