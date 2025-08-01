@@ -74,9 +74,14 @@ import './index.css';
                 </Fragment>
             </TokenType>
             <TokenType name="Break Token" id="break-token" tier="D">
-                <p slot="challenge">
-                    You are excused from the challenge without having to provide a reason. The excusal cooldown will be set to 1 challenge less.
-                </p>
+                <Fragment slot="challenge">
+                    <p>
+                        You are excused from the challenge without having to provide a reason. The excusal cooldown will be set to 1 challenge less.
+                    </p>
+                    <p>
+                        **NOTE:** As of Episode 5, you can't use this token.
+                    </p>
+                </Fragment>
             </TokenType>
             <TokenType name="Preserve Token" id="preserve-token" tier="B">
                 <p slot="shared">
@@ -104,5 +109,49 @@ import './index.css';
                 </Fragment>
             </TokenType>
         </ul>
+
+        ### Extra information on token usage
+
+        When multiple tokens are used in an elimination, they apply in the following order:
+        1. Kamikaze Token
+        2. Revenge Token
+        3. Win Token
+        4. Guess Token
+        5. Swap Token
+        6. Immunity Token
+
+        During a challenge, multiple tokens may be used. But in an elimination, only one token may be used.
+
+        ### Token probabilities
+
+        The probabilities are used for these wheels:
+        - [High Break Token probability](https://wheelofnames.com/xba-ezu)
+        - [Low Break Token probability](https://wheelofnames.com/vzp-vv2)
+
+        |Tier|Without a Break Token|With a Break Token|
+        |-|-|-|
+        |D|17%|3%|
+        |C|14% per token<br/>42% in total|15% per token<br/>45% in total|
+        |B|8% per token<br/>24% in total|10% per token<br/>30% in total|
+        |A|4% per token<br/>12% in total|5% per token<br/>15% in total|
+        |S|1%|2%|
+
+        ### Tokens as rewards
+
+        #### Challenges
+        |Achievement|Token 1|Token 2|
+        |-|-|-|
+        |1st place|100%|100%|
+        |2nd place|100%|25%|
+        |3rd place|100%|2%|
+        |4th-6th place|25%|—|
+        |7th-10th place|25%|—|
+
+        #### Eliminations
+        |Achievement|Reward|
+        |-|-|
+        |Most likes|1 guaranteed token|
+        |2nd most likes|25% chance to get a token|
+        |3rd most likes|2% chance to get a token|
     </main>
 </Layout>
