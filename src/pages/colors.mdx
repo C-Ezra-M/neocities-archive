@@ -1,0 +1,78 @@
+import Layout from '#layouts/Layout.astro';
+
+<Layout title="Colors | C.Ezra.M">
+    <main>
+        # OKLCH color palette
+
+        <table style="width: 100%; table-layout: fixed; font-size: 0.65em; border: 1rem solid #738CFF; background-color: #738CFF;">
+            <caption style="padding: 0.5rem">
+            This palette uses the Oklch color space, recalculated automatically into sRGB. Colors in <span style="font-style: italic">italics</span> alter from the attributes set by the column or row.
+            </caption>
+            <tr>
+                <th></th>
+                <th>h=N/A<br/>c=0</th>
+                <th>h=30<br/>c=0.25</th>
+                <th>h=70<br/>c=0.25</th>
+                <th>h=70<br/>c=0.10</th>
+                <th>h=105<br/>c=0.25</th>
+                <th>h=130<br/>c=0.25</th>
+                <th>h=190<br/>c=0.25</th>
+                <th>h=260<br/>c=0.25</th>
+                <th>h=290<br/>c=0.25</th>
+                <th>h=325<br/>c=0.25</th>
+            </tr>
+            <tr>
+                <th>L=1</th>
+                <td style="background-color: oklch(1 0    0)">White</td>
+                <td style=""></td>
+                <td style=""></td>
+                <td style=""></td>
+                <td style="background-color: oklch(1 0.06 105); font-style: italic">Cream</td>
+                <td style="background-color: oklch(1 0.12 150); font-style: italic">Spring</td>
+                <td style=""></td>
+                <td style=""></td>
+                <td style=""></td>
+                <td style=""></td>
+            </tr>
+            <tr>
+                <th>L=0.9</th>
+                <td style="background-color: oklch(0.85 0    0); font-style: italic">Silver</td>
+                <td style="background-color: oklch(0.9 0.25 30)">Coral</td>
+                <td style="background-color: oklch(0.9 0.25 70)">Gold</td>
+                <td style="background-color: oklch(0.9 0.10 70)">Beige</td>
+                <td style="background-color: oklch(0.95 0.25 105); font-style: italic">Yellow</td>
+                <td style="background-color: oklch(0.9 0.25 130)">Lime</td>
+                <td style="background-color: oklch(0.9 0.25 190)">Cyan</td>
+                <td style="background-color: oklch(0.9 0.25 260)">Sky</td>
+                <td style="background-color: oklch(0.9 0.25 290)">Lilac</td>
+                <td style="background-color: oklch(0.9 0.25 325)">Pink</td>
+            </tr>
+            <tr>
+                <th>L=0.7</th>
+                <td style="color: white; background-color: oklch(0.6 0    0); font-style: italic">Gray</td>
+                <td style="color: white; background-color: oklch(0.7 0.25 30)">Red</td>
+                <td style="color: white; background-color: oklch(0.7 0.25 70)">Orange</td>
+                <td style="color: white; background-color: oklch(0.7 0.10 70)">Tan</td>
+                <td style="color: white; background-color: oklch(0.65 0.25 105); font-style: italic">Olive</td>
+                <td style="color: white; background-color: oklch(0.65 0.25 130); font-style: italic">Green</td>
+                <td style="color: white; background-color: oklch(0.65 0.25 190); font-style: italic">Turquoise</td>
+                <td style="color: white; background-color: oklch(0.65 0.25 260); font-style: italic">Blue</td>
+                <td style="color: white; background-color: oklch(0.7 0.25 290)">Lavender</td>
+                <td style="color: white; background-color: oklch(0.7 0.25 325)">Magenta</td>
+            </tr>
+            <tr>
+                <th>L=0.4</th>
+                <td style="color: white; background-color: oklch(0 0 0); font-style: italic">Black</td>
+                <td style="color: white; background-color: oklch(0.4 0.25 30)">Maroon</td>
+                <td style="color: white; background-color: oklch(0.55 0.25 70); font-style: italic">Bronze</td>
+                <td style="color: white; background-color: oklch(0.4 0.10 70)">Brown</td>
+                <td style=""></td>
+                <td style="color: white; background-color: oklch(0.4 0.25 130)">Forest</td>
+                <td style="color: white; background-color: oklch(0.4 0.25 190)">Teal</td>
+                <td style="color: white; background-color: oklch(0.4 0.25 260)">Navy</td>
+                <td style="color: white; background-color: oklch(0.4 0.25 290)">Indigo</td>
+                <td style="color: white; background-color: oklch(0.4 0.25 325)">Purple</td>
+            </tr>
+        </table>
+    </main>
+</Layout>
