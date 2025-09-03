@@ -2,6 +2,7 @@
 import Image from 'astro/components/Image.astro';
 import { Debug } from 'astro:components';
 import IPATranscription from './IPATranscription.astro';
+import { appendFile, open, readFile, writeFile } from 'fs/promises'
 
 interface Props {
     /** The Pokémon's English name. */
@@ -23,31 +24,69 @@ interface Props {
 
 const { name, card, pl, style } = Astro.props;
 const pronunciation = Astro.props.pron ?? pl;
-let image, dexno, artist;
-const { PROD } = import.meta.env
-
-if (PROD) {
-    const cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
-        .then(resp => resp.json())
-        .then(d => d.data)
-        .catch(e => {
-            throw new Error(`Error while handling card ${card}`, {cause: e})
-        })
+const cacheFilePath = "pokemon-tcg-cache.jsonl";
+const { PROD } = import.meta.env;
+let image, dexno, artist, path, cache = [], newCacheItem = {};
+try {
+    await appendFile(cacheFilePath, "") // create file
+    const cacheFileContent = await readFile(cacheFilePath, {encoding: 'utf-8'})
     
-    try {
-        image = cardData.images.large
-        dexno = cardData.nationalPokedexNumbers?.[0] ?? "????"
-        artist = cardData.artist ?? "(NOT FOUND)"
-    } catch (e) {
-        throw new Error(`Error while handling card ${card}`, {cause: e})
+    if (!cacheFileContent.match(/^[\0\s]*$/g)) {
+        cache = cacheFileContent.split("\n").filter(e => !!e).map(e => JSON.parse(e))
     }
-    console.log("HANDLING CARD: " + card)
-} else {
-    dexno = "????"
-    artist = "(NOT FOUND)"
-    let [ set, cardno ] = card.split('-')
-    image = `https://images.pokemontcg.io/${set}/${cardno}_hires.png`
+
+    if (PROD) {
+        let cardData;
+        const foundCacheEntry = cache.find(e => card in e);
+        console.log(foundCacheEntry)
+        if (foundCacheEntry) {
+            ({ image, dexno, artist } = foundCacheEntry[card])
+        } else {
+            cardData = await fetch("https://api.pokemontcg.io/v2/cards/" + card)
+            .then(async resp => {
+                const text = await resp.text();
+                //console.log(text);
+                return JSON.parse(text)
+            })
+            .then(d => d.data)
+            .catch(e => {
+                throw new Error(`Error while handling card ${card}`, {cause: e})
+            })
+            try {
+                image = cardData.images.large
+                dexno = cardData.nationalPokedexNumbers?.[0] ?? "????"
+                artist = cardData.artist ?? "(NOT FOUND)"
+                path = "/pokemon-pl/" + card + ".png";
+                const filePath = "public" + path;
+                newCacheItem[card] = { image: filePath, dexno, artist }
+                let f;
+                try {
+                    f = await open(filePath, "wx")
+                    const bytes = await (await fetch(image)).bytes()
+                    await f.write(bytes)
+                } catch(e) {
+                    console.log(e)
+                } finally {
+                    await f?.close()
+                }
+            } catch (e) {
+                throw new Error(`Error while handling card ${card}`, {cause: e})
+            }
+        }
+        console.log("HANDLING CARD: " + card)
+    } else {
+        dexno = "????"
+        artist = "(NOT FOUND)"
+        let [ set, cardno ] = card.split('-')
+        image = `https://images.pokemontcg.io/${set}/${cardno}_hires.png`
+    }
+} finally {
+const jsonString = JSON.stringify(newCacheItem);
+    if (jsonString !== "{}") {
+        await appendFile(cacheFilePath, jsonString + "\n")
+    }
 }
+path = image;
 ---
 
 <tr>
@@ -57,7 +96,7 @@ if (PROD) {
         <br class="lg-hide ipa"/> <IPATranscription word={pronunciation} />
         {pl != name ? (<t><br class="lg-hide"/> ({name})</t>) : <></>}
     </th>
-    <td class="full-width"><div class="cropped-card-image" style={style}><img src={image} width="275" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
+    <td class="full-width"><div class="cropped-card-image" style={style}><img src={path} width="275" height="383.65" loading="lazy" alt={name} title={`Art by ${artist}`}/></div></td>
     <td class="full-width"><em class="table-cell-header block">Etymology</em><slot name="etymology" /></td>
     <td class="full-width optional"><em class="table-cell-header block">Notes</em><div class="information"><slot name="notes"/></div></td>
 </tr>
