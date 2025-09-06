@@ -1,0 +1,267 @@
+@use "./small-images";
+@import "pkg:bootstrap/scss/functions";
+@import "pkg:bootstrap/scss/variables";
+@import "pkg:bootstrap/scss/variables-dark";
+@import "pkg:bootstrap/scss/maps";
+@import "pkg:bootstrap/scss/mixins";
+@import "pkg:bootstrap/scss/root";
+//@import "pkg:bootstrap/scss/tables";
+@import "pkg:bootstrap/scss/utilities";
+
+@import "pkg:bootstrap/scss/utilities/api";
+@import "pkg:bootstrap/scss/reboot";
+$enable-grid-classes: true;
+@import "pkg:bootstrap/scss/mixins/grid";
+@import "pkg:bootstrap/scss/grid";
+@import "pkg:bootstrap/scss/containers";
+@import "pkg:bootstrap/scss/helpers/clearfix";
+// @import "pkg:bootstrap/scss/forms";
+// @import "pkg:bootstrap/scss/buttons";
+@import "pkg:bootstrap/scss/images";
+// @import "pkg:bootstrap/scss/type";
+
+* {
+    box-sizing: border-box;
+}
+:root {
+    --title-bar-color: #0000BB;
+    --title-bar-gradient: linear-gradient(to bottom, #0000BB 0%, #0000EE 30%, #0000BB 100%);
+}
+html {
+    font-size: 12px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+body {
+    //background-color: #333377;
+    background-image: linear-gradient(to bottom, azure 60%, lime 80%);
+    display: flex;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+.navbar {
+    //order: 2;
+    width: 100%;
+    background-color: var(--title-bar-color);
+    background-image: var(--title-bar-gradient);
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    --navbar-height: 2.6em;
+    height: var(--navbar-height);
+    justify-content: space-between;
+    > .page-links {
+        flex: 1 0 0;
+    }
+    .site-logo {
+        height: 1.8em;
+    }
+    .navbar-body {
+        display: contents;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 0.3em;
+        padding: 0 0.5em;
+        margin: 0;
+        align-items: stretch;
+        > * {
+            display: flex;
+            align-items: center;
+            padding: 0.2em;
+        }
+        &.end-section {
+            background-color: #07E;
+            background-image: linear-gradient(to bottom, #06B 0%, #07E 30%, #06B 100%);
+            a {
+                color: white;
+            }
+        }
+        &.page-links > .link {
+            width: 120px;
+            display: none;
+            > a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                background-image: linear-gradient(to bottom, #03B 0%, #04E 30%, #03B 100%);
+                color: #EEE;
+                border-radius: 0.3em;
+                padding: 0.3em;
+                &:hover {
+                    background-image: linear-gradient(to bottom, #06B 0%, #07E 30%, #06B 100%);
+                }
+            }
+        }
+        &.page-menu {
+            display: none;
+            position: fixed;
+            bottom: var(--navbar-height);
+            background-color: #EEEEDD;
+        }
+    }
+    .start-section:has(.menu-button:hover) + .page-menu,
+    .page-menu:hover {
+        display: block;
+    }
+    .start-section {
+        padding-left: 0;
+        .menu-button {
+            padding: 0 1.5em 0 0;
+            background-image: radial-gradient(#3B3, #191);
+            cursor: pointer;
+            border-radius: 0 5% 5% 0 / 0 50% 50% 0;
+            &:hover {
+                background-image: radial-gradient(#3F3, #1C1);
+            }
+            .button-desc {
+                color: white;
+                font-weight: bold;
+                font-family: "Arial", "Helvetica", sans-serif;
+                font-size: 1.4em;
+                font-style: italic;
+            }
+        }
+    }
+    .gap {
+        flex: 1;
+    }
+}
+
+main {
+    background-color: #EEEEDD;
+    margin: 1.5em auto calc(3em + env(safe-area-inset-bottom));
+    width: clamp(90vw, 600px, 70vw);
+    border: 3px solid #000099;
+    position: relative;
+    border-radius: 0.4em;
+    overflow: hidden;
+    --title-bar-thickness: 2.4rem;
+    padding-bottom: 0.5em;
+    > h1 {
+        position: sticky;
+        top: 0;
+        height: var(--title-bar-thickness);
+        vertical-align: middle;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 0.5em;
+        background-color: var(--title-bar-color);
+        background-image: var(--title-bar-gradient);
+        color: #EEE;
+        font-family: Trebuchet MS, Tahoma, Arial, Helvetica, sans-serif;
+    }
+    > .page-content {
+        padding: 0.5em;
+        overflow: auto;
+        height: calc(100% - var(--title-bar-thickness) - 0.5em); /* hack to prevent scrollbar issues */
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.6em;
+}
+h1, h3 {
+    font-size: 1.25em;
+}
+h4, h5, h6 {
+    border-bottom: 1px solid currentColor;
+    font-style: italic;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1.2em;
+}
+h6 {
+    font-size: 1.1em;
+}
+
+.table {
+    width: revert;
+    border: 1px solid black;
+    padding: 1px;
+    > * > * > * {
+        padding: 0.2em;
+        border: 1px solid black;
+    }
+    > * > * > th {
+        background-color: #111111;
+        color: #EEEEEE;
+    }
+}
+
+:is(ul, ol, p):last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    background-color: #FFFFFFAA;
+    border-left: 4px solid black;
+    padding: 0 10px;
+}
+
+.link-card {
+    list-style: none;
+    display: flex;
+    background-color: #222211;
+    color: #EEEEFF;
+    &:hover {
+        background-color: #AA7733;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    a {
+        color: inherit !important;
+        padding: 1em;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.figure > img {
+    max-width: min(100%, 50vw);
+    border: 1px solid black;
+}
+a:link {
+    color: inherit;
+}
+a:visited {
+    color: inherit;
+}
+a:hover {
+    color: #BB7700;
+}
+a:active {
+    color: #000000;
+}
+
+form {
+    label:not(.form-check-label) {
+        display: block;
+    }
+    textarea {
+        width: 100%;
+    }
+}
+
+footer {
+    margin-bottom: 1em;
+}
+#footer-dialog {
+    position: fixed;
+    inset: 0;
+}

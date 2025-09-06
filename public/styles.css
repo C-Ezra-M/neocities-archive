@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'sitelen seli kiwen asuki';
+    src: url('/sitelenselikiwenasuki.ttf');
+}
+
+@font-face {
+    font-family: 'nasin nanpa';
+    src: url('/nasin-nanpa-4.0.2.otf');
+}
+
+body:not(.ipa-enabled) .ipa {
+    display: none;
+}
+
+.entry-list {
+    list-style: none;
+    padding-left: 0;
+    > li {
+        border-radius: 0.5rem;
+        background-color: var(--entry-color);
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+em.table-cell-header {
+    display: none;
+    font-weight: bold;
+    font-style: normal;
+    &::after {
+        content: ': ';
+    }
+}
+
+.lg-hide {
+    display: none;
+}
+
+@media screen and (width >= 670px) {
+    .lg-hide {
+        display: revert;
+    }
+    .sm-hide {
+        display: none;
+    }
+}
+
+@media screen and (width < 670px) {
+    table.responsive-table {
+        thead {
+            display: none;
+        }
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        :is(td, th).full-width {
+            flex: 1 1 100%;
+        }
+        :is(td, th).optional:has(> .information:empty) {
+            display: none;
+        }
+        em.table-cell-header {
+            &.block {
+                display: block;
+            }
+            display: inline;
+        }
+    }
+}
+
+@counter-style mute {
+    system: cyclic;
+    symbols: "mute";
+}
+
+@counter-style simple-pu {
+    system: fixed;
+    symbols: "wan" "tu";
+    suffix: ":  ";
+    fallback: mute;
+}
+
+.sp {
+    font-family: 'sitelen seli kiwen asuki';
+    &.inline {
+        font-size: larger;
+        vertical-align: middle;
+    }
+    ol {
+        list-style-type: simple-pu;
+    }
+}
+
+:where(body):not(.thm-beige) button {
+    border-radius: revert;
+    /* https://github.com/twbs/bootstrap/issues/41727 */
+}

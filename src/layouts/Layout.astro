@@ -1,9 +1,9 @@
 ---
-import { tooltipSlugger } from '#components/tooltips.ts';
+import { tooltipSlugger } from "#components/tooltips.ts";
 
 tooltipSlugger.reset();
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -11,30 +11,144 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<nav class="navbar">
-			<ul>
-				<li>
-					<a href="/">
-						<img src="/logo.svg" width="40" alt="Go to the main page" loading="lazy">
-					</a>
-				</li>
-				<li><a href="/faq">FAQ</a></li>
-				<li><a href="/camps">Camps</a></li>
-			</ul>
-		</nav>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" id="selected-theme" />
+        <script src="/bliss.js" is:inline></script><!--1.0.6-->
+        <noscript>
+            <link rel="stylesheet" href="/themes/beige.css" />
+        </noscript>
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-body">
+                <ul class="start-section">
+                    <li class="menu-button">
+                        <a href="/">
+                            <img
+                                src="/logo.svg"
+                                class="site-logo"
+                                width="40"
+                                alt="Go to the main page"
+                                loading="lazy"
+                            />
+                        </a>
+                        <span class="button-desc">C.Ezra.M</span>
+                    </li>
+                </ul>
+                <ul class="page-menu">
+                    <!--<li class="neocities-logo"><a href="https://neocities.org/site/cezram"><img src="/neocities.png" alt="Hosted by Neocities"></a></li>-->
+                    <li class="link"><a href="/pokemon-pl">Polish Pokémon names</a></li>
+                    <li class="link"><a href="/faq">FAQ</a></li>
+                    <li class="link"><a href="/camps">Camps</a></li>
+                </ul>
+                <ul class="end-section">
+                    <li><a href="/themes">Theme Selector:</a></li>
+                    <li class="theme-sel-container">
+                        <select id="theme-selector" title="Theme selector: select a theme to your liking! When you change the theme, the site will be reloaded. This only works if JavaScript is enabled.">
+                            <option value="beige" title="The default theme of the website! Professional-looking, it has been modified since, but mostly matches the first days of the site's existence.">Beige</option>
+                            <option value="tiny-orange" title="The second theme made for the site! Includes changes that make it more similar to old websites, notably a smaller font, hence the name, &quot;Tiny Orange&quot;!">Tiny Orange</option>
+                            <option value="mena" title="A theme resembling Luna in some way. Named for the Gothic word for 'moon'. FUN FACT: That word is a hapax legomenon, which means it was only attested once." data-js="true">Mena (JS)</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <noscript>
+            <dialog open closedby="any">
+                <form method="dialog">
+                    <p>I'd heavily recommend you to enable JavaScript.</p>
+                    <button autofocus>OK</button>
+                </form>
+            </dialog>
+        </noscript>
+        <slot />
+        <footer>
+            <div class="footer-body">
+                <a href="https://neocities.org/site/cezram"><img src="/neocities.png" alt="Hosted by Neocities"></a>
+            </div>
+        </footer>
+    </body>
 </html>
-<style is:global>
-	@import '../bootstrap.scss';
-	@import '../styles.css';
+<script>
+    import localforage from "localforage";
+    {
+        interface Theme {
+            name: string,
+            usesJs: boolean,
+        }
+        const themeSelector = $("#theme-selector") as HTMLSelectElement;
+        const THEME_LIST: Theme[] = $$(":scope > option", themeSelector).map((e: HTMLOptionElement) => ({ name: e.value, usesJs: !!e.dataset.js }))
+        const defaultTheme = THEME_LIST[0];
+        let 
+            name: string,
+            usesJs: boolean,
+            promise: Promise<Theme | null>;
+        const url = new URL(location.href);
+        const settings = url.searchParams;
+        if (name = settings.get("theme")) {
+            console.log("Automatically selected theme from URL parameters:", name)
+            promise = new Promise((resolve, reject) => {
+                let themeProps = THEME_LIST.find(e => e.name === name);
+                if (themeProps) {
+                    resolve(themeProps)
+                } else {
+                    reject(new RangeError(`Theme '${name}' not found`))
+                }
+            })
+        } else {
+            promise = localforage.getItem("theme")
+        }
+        promise.then((value: Theme) => {
+                ({name, usesJs} = value ?? defaultTheme);
+                console.log("Theme name:", name)
+                console.log("Theme uses extra JS:", usesJs)
+            })
+            .catch((e) => {
+                ({name, usesJs} = defaultTheme);
+            })
+            .then(() => {
+                ($("#selected-theme") as HTMLLinkElement).href = `/themes/${name}.css`;
+                $("body").classList.add(`thm-${name}`)
+                themeSelector.value = name;
+                if (usesJs) {
+                    import(/* @vite-ignore */ `/themes/${name}.js`)
+                    .then(() => { console.log(`Run scripts for theme '${name}'`) })
+                }
+            });
+        themeSelector.addEventListener("change", (e) => {
+            localforage.setItem("theme", {
+                name: themeSelector.value,
+                usesJs: !!themeSelector.selectedOptions[0].dataset.js,
+            }).then(() => {
+                // delete the "theme" param and reload
+                const previousUrl = url.toString()
+                url.searchParams.delete("theme")
+                const newUrl = url.toString()
+                
+                if (previousUrl !== newUrl) {
+                    location.href = newUrl
+                } else {
+                    location.reload()
+                }
+            });
+        });
+    }
+</script>
+<style>
+    .js-warning {
+        border: 3px solid red;
+        background-color: white;
+        padding: 0.5rem;
+    }
+    
+    .button-desc {
+        user-select: none;
+    }
 </style>

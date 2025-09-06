@@ -1,0 +1,13 @@
+.green,     .win-token      { --entry-color: #ABEFABCC; }
+.red,       .immunity-token { --entry-color: #EFABABCC; }
+.cyan,      .revenge-token  { --entry-color: #ABEFEFCC; }
+.blue,      .swap-token     { --entry-color: #ABABEFCC; }
+.pink,      .guess-token    { --entry-color: #EFABEFCC; }
+.yellow,    .extra-token    { --entry-color: #EFEFABCC; }
+.orange,    .kamikaze-token { --entry-color: #EFCDABCC; }
+.turquoise, .flow-token     { --entry-color: #ABEFCDCC; }
+.purple,    .break-token    { --entry-color: #CDABEFCC; }
+.white,     .preserve-token { --entry-color: #EFEFEFCC; }
+.gray,      .null-token     { --entry-color: #CDCDCDCC; }
+.black,     .contrary-token { --entry-color: #ABABABCC; }
+.brown                      { --entry-color: #CDBCABCC; }

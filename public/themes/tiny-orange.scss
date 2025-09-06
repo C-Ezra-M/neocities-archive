@@ -1,0 +1,156 @@
+@use "./small-images";
+@import "pkg:bootstrap/scss/functions";
+@import "pkg:bootstrap/scss/variables";
+@import "pkg:bootstrap/scss/variables-dark";
+@import "pkg:bootstrap/scss/maps";
+@import "pkg:bootstrap/scss/mixins";
+@import "pkg:bootstrap/scss/root";
+//@import "pkg:bootstrap/scss/tables";
+@import "pkg:bootstrap/scss/utilities";
+
+@import "pkg:bootstrap/scss/utilities/api";
+@import "pkg:bootstrap/scss/reboot";
+$enable-grid-classes: true;
+@import "pkg:bootstrap/scss/mixins/grid";
+@import "pkg:bootstrap/scss/grid";
+@import "pkg:bootstrap/scss/containers";
+@import "pkg:bootstrap/scss/helpers/clearfix";
+// @import "pkg:bootstrap/scss/forms";
+// @import "pkg:bootstrap/scss/buttons";
+@import "pkg:bootstrap/scss/images";
+@import "pkg:bootstrap/scss/type";
+
+html {
+    font-size: 12px;
+}
+body {
+    background-color: #AA7733;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 16px 8px;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    align-items: center;
+    > :is(main, nav, footer) {
+        background-color: #EEAA55;
+        padding: 6px;
+        width: 100%;
+        max-width: clamp(580px, 80vw, 1100px);
+    }
+}
+.navbar {
+    .navbar-body {
+        > ul:not(.page-menu) {
+            list-style: none;
+        }
+        > ul {
+            padding-left: 0;
+        }
+    }
+    .page-menu li {
+        display: inline;
+        &::before {
+            content: "• "
+        }
+    }
+    .button-desc {
+        display: none;
+    }
+}
+h1 {
+    white-space-collapse: preserve-spaces;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 16px;
+}
+h4, h5, h6 {
+    border-bottom: 1px solid currentColor;
+    font-style: italic;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 15px;
+}
+h6 {
+    font-size: 14px;
+}
+
+.table {
+    width: revert;
+    background-color: #FFFFFFAA;
+    &.table-striped > tbody > tr:nth-child(2n-1) {
+        background-color: #FFFFFFBB;
+    }
+    > * > * > * {
+        padding: 0.2em;
+        border: 1px solid black;
+    }
+}
+
+:is(ul, ol, p):last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    background-color: #FFFFFFAA;
+    border-left: 4px solid black;
+    padding: 0 10px;
+}
+
+.link-card {
+    list-style: none;
+    display: flex;
+    background-color: #222211;
+    color: #EEEEFF;
+    &:hover {
+        background-color: #AA7733;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    a {
+        color: inherit !important;
+        padding: 1em;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.figure > img {
+    max-width: min(100%, 50vw);
+    border: 1px solid black;
+}
+a:link {
+    color: #003388;
+}
+a:visited {
+    color: #338888;
+}
+a:hover {
+    color: #BB7700;
+}
+a:active {
+    color: #000000;
+}
+
+form {
+    label:not(.form-check-label) {
+        display: block;
+    }
+    textarea {
+        width: 100%;
+    }
+}

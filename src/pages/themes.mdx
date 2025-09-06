@@ -1,0 +1,41 @@
+import Layout from '#layouts/Layout.astro';
+import TP from '#components/TP.astro';
+
+<Layout title="Themes | C.Ezra.M">
+    <main>
+        # Themes
+        
+        Here is a list of themes used on this website.
+
+        ## [Beige](/?theme=beige) (ID: beige)
+
+        > The default theme of the website! Professional-looking, it has been modified since, but mostly matches the first days of the site's existence.
+
+        Released on January 24, 2025. It was the first theme released for this website.
+        
+        **This is a stable theme.**
+
+        ## [Tiny Orange](/?theme=tiny-orange) (ID: tiny-orange)
+
+        > The second theme made for the site! Includes changes that make it more similar to old websites, notably a smaller font, hence the name, &quot;Tiny Orange&quot;!
+
+        One day, I wanted to find if someone made an error message generator, now that Atom Smasher went offline. I found [one on barrarchiverio](https://barrarchiverio.cl/p/error/)! I got inspired by [barrarchiverio's front page](https://barrarchiverio.cl), even though that uses a white-on-black theme. So instead, I created this one, colored orange and brown.
+
+        **This is a stable theme.**
+
+        ## [Mena](/?theme=mena) (ID: mena)
+
+        > A theme resembling Luna in some way. Named for the Gothic word for 'moon'. FUN FACT: That word is a hapax legomenon, which means it was only attested once.
+
+        **This theme uses JavaScript.**
+
+        Luna is the default theme of Windows XP. It was named for the Latin word for Moon, so in reference to that I took the Gothic word for moon, 𐌼𐌴𐌽𐌰 *mena*. It is a *hapax legomenon*, as it was only used once in the Gothic-language corpus, specifically in [Mark 13:24](https://www.wulfila.be/gothic/browse/text/04/13.html#V24).
+
+        > 𐌰𐌺𐌴𐌹 𐌹𐌽 𐌾𐌰𐌹𐌽𐌰𐌽𐍃 𐌳𐌰𐌲𐌰𐌽𐍃 𐌰𐍆𐌰𐍂 𐌸𐍉 𐌰𐌲𐌻𐍉𐌽 𐌾𐌰𐌹𐌽𐌰 𐍃𐌰𐌿𐌹𐌻 𐍂𐌹𐌵𐌹𐌶𐌴𐌹𐌸 𐌾𐌰𐌷 𐌼𐌴𐌽𐌰 𐌽𐌹 𐌲𐌹𐌱𐌹𐌸 𐌻𐌹𐌿𐌷𐌰𐌸 𐍃𐌴𐌹𐌽.<br/>
+        > *akei in jainans dagans afar þo aglon jaina sauil riqizeiþ jah mena ni gibiþ liuhaþ sein.*
+        >
+        > "But in those days, after that tribulation, the sun shall be darkened, and the moon shall not give her light,"
+
+        **This is a beta theme.** Right now, it doesn't work the best on Android devices because they did not define a <code>safe-area-inset-bottom</code> variable to use with [<code>env()</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/env#safe-area-inset-top), causing text on the bottom to be obscured by buttons.
+    </main>
+</Layout>
