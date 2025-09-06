@@ -25,9 +25,14 @@
   },
   "devDependencies": {
     "bootstrap": "^5.3.7",
-    "sass": "^1.83.0"
+    "sass": "^1.90.0"
   },
   "imports": {
     "#*": "./src/*"
+  },
+  "exports": {
+    "./bootstrap/**": {
+      "sass": "./node_modules/bootstrap/scss/**"
+    }
   }
 }
