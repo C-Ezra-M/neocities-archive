@@ -1,14 +1,18 @@
 ---
 import Layout from '#layouts/Layout.astro';
 import Card from '#components/Card.astro';
+import { getCollection } from 'astro:content';
+import { format } from "date-format-parse";
 
-import { Image } from 'astro:assets';
-//import ezraArtwork from '#img/ezra.png';
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
 ---
 
 <Layout title="C.Ezra.M's home page">
 	<main>
-		<h1 class="fs-1">C.Ezra.M</h1>
+		<h1>C.Ezra.M</h1>
 		<img
 			src="/ezra.png"
 			alt="Ezra"
@@ -37,17 +41,23 @@ import { Image } from 'astro:assets';
 				href="/algotriacontathlon"
 				title="Algotriacontathlon"
 				body="A competition where 32 colors duke it out in 30 events to see who is truly the best!"
-			/>-->
-			<Card
+			/>--><!-- <Card
 				href="/blog"
 				title="C.Ezra.M's blog"
 				body="A space for Ezra to write about certain things."
-			/>
+			/> -->
 			<Card
 				href="/toki-pona"
 				title="ijo pi toki pona"
-			>Apparently I'm also an aspiring Tokiponist. The page's body content is in <i>toki pona taso</i>.</Card>
+			>toki! mi jan Esuwa!</Card>
 		</ul>
+		<h2>My blog</h2>
+		<p>Here are the five newest entries! Go to the <a href="/blog">blog home</a> to see the full list of entries.</p>
+		<ul>
+            {posts.slice(0, 5).map(post => (
+                <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM D, YYYY")}</li>
+            ))}
+        </ul>
 	</main>
 </Layout>
 <style>
