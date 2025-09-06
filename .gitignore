@@ -1,5 +1,8 @@
 # build output
 dist/
+public/bootstrap.css
+public/themes/*.css
+*.map
 
 # generated types
 .astro/
