@@ -1,0 +1,30 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  publicdir: public
+
+tasks:
+  run:
+    cmds:
+      - task: compile-sass
+      - npm run dev
+  build:
+    cmds:
+      - task: compile-sass
+      - npm run build
+  publish:
+    cmds:
+      - task: build
+      - neocities push dist
+  compile-sass:
+    cmds:
+      - npx sass "{{.publicdir}}" -p node --no-source-map # source maps have impeded local dev
+  serve:
+    cmds:
+      - python -m http.server -d dist 4321
+  build-serve:
+    cmds:
+      - task: build
+      - task: serve
