@@ -10,14 +10,14 @@ interface Props {
 const {id, name, tier} = Astro.props;
 ---
 
-<li class:list={[id]}>
+<li class:list={["token", id]}>
     <article class="clearfix">
         <img
             src=`/${id}.svg`
             height="100"
             width="110"
             alt={name}
-            class="float-end ms-3"
+            class="float-end ms-3 token-image"
         />
         <h3>{name} ({tier} tier)</h3>
         {Astro.slots.has("elimination") ? <h4>In eliminations:</h4> : <></>}

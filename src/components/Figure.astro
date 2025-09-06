@@ -8,6 +8,6 @@ const { src, caption } = Astro.props;
 ---
 
 <figure class="figure">
-    <img src={src} class="figure-img img-fluid rounded shadow mw-100" alt={caption} loading="lazy" />
+    <img src={src} class="figure-img img-fluid" alt={caption} loading="lazy" />
     <figcaption class="figure-caption">{caption}</figcaption>
 </figure>

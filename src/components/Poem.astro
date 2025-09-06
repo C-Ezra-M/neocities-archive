@@ -1,0 +1,11 @@
+<div class="poem">
+    <slot />
+</div>
+<style>
+    .poem {
+        white-space: pre-line;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
