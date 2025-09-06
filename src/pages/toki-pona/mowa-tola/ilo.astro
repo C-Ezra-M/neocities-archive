@@ -14,23 +14,23 @@ import Layout from '#layouts/Layout.astro';
         tpTextField.value = relexIntoTokiPona(mtTextField.value)
     })
 </script>
-<Layout title="ilo pi toki Mowa Tola | C.Ezra.M">
+<Layout title="ilo pi toki Mowa Tola | jan Esuwa">
     <main lang="tok">
         <h1>ilo pi toki <cite>Mowa Tola</cite></h1>
 
-        ilo ni li ante e toki pona tawa <a href="/toki-pona/mowa-tola">toki Mowa Tola</a>.
+        <p>ilo ni li ante e toki pona tawa <a href="/toki-pona/mowa-tola">toki Mowa Tola</a>.</p>
         
         <form>
             <div class="mb-3">
                 <label for="toki-pona" class="form-label">toki pona la</label>
-                <textarea id="toki-pona" class="form-control bg-light" rows="5"></textarea>
+                <textarea id="toki-pona" class="form-control bg-light" rows="5" cols="80"></textarea>
             </div>
             
             <button class="btn btn-primary" id="convert-to-mt" type="button">o ante e ni ↑ tawa toki <cite>Mowa Tola</cite>!</button> <button class="btn btn-primary" id="convert-to-tp" type="button">o ante e ni ↓ tawa toki pona!</button>
 
             <div class="mb-3">
                 <label for="mowa-tola" class="form-label">toki <cite>Mowa Tola</cite> la</label>
-                <textarea id="mowa-tola" class="form-control bg-light" rows="5"></textarea>
+                <textarea id="mowa-tola" class="form-control bg-light" rows="5" cols="80"></textarea>
             </div>
 
             <div class="form-text">ilo ni li ante e nimi "ale" e nimi "ali" tawa nimi "siko". ona li ante e nimi "siko" tawa nimi "ale" taso.</div>

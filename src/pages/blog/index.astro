@@ -11,6 +11,8 @@ const posts = (await getCollection('blog')).sort(
 <Layout title="Blog | C.Ezra.M">
     <main>
         <h1>C.Ezra.M's blog</h1>
+
+        <h2>Full list of blog entries</h2>
         <ul>
             {posts.map(post => (
                 <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM D, YYYY")}</li>
