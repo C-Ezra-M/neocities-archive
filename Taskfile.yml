@@ -16,8 +16,11 @@ tasks:
       - npm run build
   publish:
     cmds:
-      - task: build
       - neocities push dist
+  build-publish:
+    cmds:
+      - task: build
+      - task: publish
   compile-sass:
     cmds:
       - npx sass "{{.publicdir}}" -p node --no-source-map # source maps have impeded local dev
