@@ -22,7 +22,7 @@ const { Content } = await render(post);
             <small>
                 from
                 {format(post.data.date, "MMMM D, YYYY")}
-                {post.data.updateDate ? ` — updated on ${format(post.data.updateDate, "MMMM D, YYYY")}` : ''}
+                {post.data.updateDate ? ` — last updated on ${format(post.data.updateDate, "MMMM D, YYYY")}` : ''}
                 | <a href="/blog">back to blog home</a>
             </small>
         </p>

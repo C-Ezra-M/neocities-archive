@@ -7,6 +7,17 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const buildDate = new Date();
+const dateFormat = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+})
+const isoDate = buildDate.toISOString().slice(0, 10) // only date needed for now
+const longDate = buildDate.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+})
 ---
 
 <!doctype html>
@@ -44,9 +55,12 @@ const { title } = Astro.props;
                 </ul>
                 <ul class="page-menu">
                     <!--<li class="neocities-logo"><a href="https://neocities.org/site/cezram"><img src="/neocities.png" alt="Hosted by Neocities"></a></li>-->
-                    <li class="link"><a href="/pokemon-pl">Polish Pokémon names</a></li>
                     <li class="link"><a href="/faq">FAQ</a></li>
+                    <li class="link"><a href="/blog">Blog</a></li>
+                    <li class="link"><a href="/pokemon-pl">Polish Pokémon names</a></li>
                     <li class="link"><a href="/camps">Camps</a></li>
+                    <li class="link"><a href="/toki-pona">ijo pi toki pona</a></li>
+                    <li class="link"><a href="/acknowledgements">Acknowledgements</a></li>
                 </ul>
                 <ul class="end-section">
                     <li><a href="/themes">Theme Selector:</a></li>
@@ -71,7 +85,10 @@ const { title } = Astro.props;
         <slot />
         <footer>
             <div class="footer-body">
-                <a href="https://neocities.org/site/cezram"><img src="/neocities.png" alt="Hosted by Neocities"></a>
+                <p>
+                    <a href="https://neocities.org/site/cezram"><img src="/neocities.png" alt="Hosted by Neocities"></a>
+                </p>
+                <p>Last built on <time datetime={isoDate}>{longDate}</time> </p>
             </div>
         </footer>
     </body>
@@ -84,6 +101,7 @@ const { title } = Astro.props;
             usesJs: boolean,
         }
         const themeSelector = $("#theme-selector") as HTMLSelectElement;
+        // :scope is the element being referenced
         const THEME_LIST: Theme[] = $$(":scope > option", themeSelector).map((e: HTMLOptionElement) => ({ name: e.value, usesJs: !!e.dataset.js }))
         const defaultTheme = THEME_LIST[0];
         let 
