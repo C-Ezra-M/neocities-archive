@@ -8,6 +8,8 @@ const { src, caption } = Astro.props;
 ---
 
 <figure class="figure">
-    <img src={src} class="figure-img img-fluid" alt={caption} loading="lazy" />
+    <a href={src} target="_blank" rel="noreferrer">
+        <img src={src} class="figure-img img-fluid" alt={caption} loading="lazy" />
+    </a>
     <figcaption class="figure-caption">{caption}</figcaption>
 </figure>
