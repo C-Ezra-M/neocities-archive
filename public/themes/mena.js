@@ -31,7 +31,24 @@
             contents: ["ℹ️"],
             })
         ],
-    after: $(".end-section > :last-child"),
+        after: $(".end-section > :last-child"),
     })
-    
+    // <li class="neocities-logo"><a href="https://neocities.org/site/cezram"><img src="/neocities.png" alt="Hosted by Neocities"></a></li>
+    $.create("li", {
+        className: "profile-bar",
+        contents: [
+            $.create("a", {
+                href: "https://neocities.org/site/cezram",
+                className: "profile-picture-frame",
+                contents: [
+                    $.create("img", {
+                        src: "/neocitieslogo.png",
+                        height: 75,
+                        alt: "Neocities logo",
+                    })
+                ],
+            })
+        ],
+        before: $(".page-menu > :first-child"),
+    })
 }

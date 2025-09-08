@@ -1,4 +1,5 @@
 @use "./small-images";
+@use '../conscript_fonts';
 @import "pkg:bootstrap/scss/functions";
 @import "pkg:bootstrap/scss/variables";
 @import "pkg:bootstrap/scss/variables-dark";
@@ -29,7 +30,7 @@ body {
     flex-direction: column;
     gap: 20px;
     margin: 16px 8px;
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif, conscript_fonts.$font-stack;
     align-items: center;
     > :is(main, nav, footer) {
         background-color: #EEAA55;
@@ -129,8 +130,9 @@ blockquote {
     }
 }
 
+.figure > :not(figcaption) > img,
 .figure > img {
-    max-width: min(100%, 50vw);
+    max-width: min(600px, 100%);
     border: 1px solid black;
 }
 a:link {

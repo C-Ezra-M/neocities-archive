@@ -1,12 +1,5 @@
-@font-face {
-    font-family: 'sitelen seli kiwen asuki';
-    src: url('/sitelenselikiwenasuki.ttf');
-}
+@use 'conscript_fonts';
 
-@font-face {
-    font-family: 'nasin nanpa';
-    src: url('/nasin-nanpa-4.0.2.otf');
-}
 
 body:not(.ipa-enabled) .ipa {
     display: none;

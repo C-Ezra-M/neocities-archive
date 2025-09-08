@@ -1,4 +1,5 @@
 //@import '../bootstrap';
+@use '../conscript_fonts';
 @import "pkg:bootstrap/scss/functions";
 @import "pkg:bootstrap/scss/variables";
 @import "pkg:bootstrap/scss/variables-dark";
@@ -29,7 +30,7 @@ $enable-grid-classes: true;
         rgb(var(--accent-light)) 30%,
         white 60%
     );
-    --bs-body-font-family: "Public Sans", sans-serif;
+    --bs-body-font-family: "Public Sans", sans-serif, #{conscript_fonts.$font-stack};
     --bs-body-bg: #eceac5;
     --header-footer-height: 68px;
 }
@@ -162,6 +163,7 @@ main {
 }
 footer {
     background-color: black;
+    color: white;
     padding: 5px 20px;
     display: flex;
     min-height: 60px;
@@ -173,6 +175,9 @@ footer {
         display: flex;
         gap: 1rem;
         justify-content: space-between;
+        > p {
+            margin-bottom: 0;
+        }
     }
 }
 code {
@@ -224,6 +229,7 @@ a:not(:hover, :active) {
     }
 }
 
+.figure > :not(figcaption) > img,
 .figure > img {
     border-radius: 0.5rem;
     box-shadow: #000000 0 0 0.5rem;

@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'sitelen seli kiwen asuki';
+    src: url('/sitelenselikiwenasuki.ttf');
+}
+
+@font-face {
+    font-family: 'nasin nanpa';
+    src: url('/nasin-nanpa-4.0.2.otf');
+}
+
+@font-face {
+    font-family: 'Skeirs';
+    src: url('/Skeirs II.ttf');
+}
+
+$font-stack: 'nasin nanpa', 'Skeirs';

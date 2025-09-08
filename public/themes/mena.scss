@@ -1,4 +1,5 @@
 @use "./small-images";
+@use '../conscript_fonts';
 @import "pkg:bootstrap/scss/functions";
 @import "pkg:bootstrap/scss/variables";
 @import "pkg:bootstrap/scss/variables-dark";
@@ -37,7 +38,7 @@ body {
     //background-color: #333377;
     background-image: linear-gradient(to bottom, azure 60%, lime 80%);
     display: flex;
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-family: Tahoma, Arial, Helvetica, sans-serif, conscript_fonts.$font-stack;
     flex-direction: column;
     height: 100vh;
     justify-content: space-between;
@@ -67,13 +68,13 @@ body {
         list-style: none;
         display: flex;
         gap: 0.3em;
-        padding: 0 0.5em;
+        padding: 0;
         margin: 0;
         align-items: stretch;
         > * {
             display: flex;
             align-items: center;
-            padding: 0.2em;
+            padding: 0.2em 0.7em;
         }
         &.end-section {
             background-color: #07E;
@@ -104,6 +105,18 @@ body {
             position: fixed;
             bottom: var(--navbar-height);
             background-color: #EEEEDD;
+            border-radius: 1.2em 1.2em 0 0;
+            overflow: hidden;
+            .profile-bar {
+                background-color: #0000BB;
+                padding: 0.2em;
+                .profile-picture-frame {
+                    background-color: white;
+                    border-radius: 1em;
+                    border: 2px inset #000099;
+                    aspect-ratio: 1/1;
+                }
+            }
         }
     }
     .start-section:has(.menu-button:hover) + .page-menu,
@@ -123,7 +136,7 @@ body {
             .button-desc {
                 color: white;
                 font-weight: bold;
-                font-family: "Arial", "Helvetica", sans-serif;
+                font-family: "Arial", "Helvetica", sans-serif, conscript_fonts.$font-stack;
                 font-size: 1.4em;
                 font-style: italic;
             }
@@ -156,7 +169,7 @@ main {
         background-color: var(--title-bar-color);
         background-image: var(--title-bar-gradient);
         color: #EEE;
-        font-family: Trebuchet MS, Tahoma, Arial, Helvetica, sans-serif;
+        font-family: Trebuchet MS, Tahoma, Arial, Helvetica, sans-serif, conscript_fonts.$font-stack;
     }
     > .page-content {
         padding: 0.5em;
@@ -232,8 +245,9 @@ blockquote {
     }
 }
 
+.figure > :not(figcaption) > img,
 .figure > img {
-    max-width: min(100%, 50vw);
+    max-width: min(600px, 100%);
     border: 1px solid black;
 }
 a:link {
