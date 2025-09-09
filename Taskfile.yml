@@ -14,12 +14,20 @@ tasks:
     cmds:
       - task: compile-sass
       - npm run build
+  prepare:
+    dir: ./dist
+    cmds:
+      - mv not_found/index.html not_found.html
+      # Delete SCSS files
+      - rm **/*.scss
+      - rm *.scss
   publish:
     cmds:
       - neocities push dist
   build-publish:
     cmds:
       - task: build
+      - task: prepare
       - task: publish
   compile-sass:
     cmds:
