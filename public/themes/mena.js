@@ -1,4 +1,3 @@
-
 {
     const contents = $$("main > :not(h1:first-child)")
     const header = $("main > h1:first-child")
