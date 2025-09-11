@@ -3,6 +3,14 @@
     src: url('/sitelenselikiwenasuki.ttf');
 }
 
+// added to fix a specific issue with arrow glyphs (eight of the arrows in nasin nanpa have blank glyphs instead of no glyphs)
+// in the Kahla theme, the Andika font includes those glyphs
+@font-face {
+    font-family: 'Fairfax HD Arrows';
+    src: url('/FairfaxHD.ttf');
+    unicode-range: U+2190-21FF;
+}
+
 @font-face {
     font-family: 'nasin nanpa';
     src: url('/nasin-nanpa-4.0.2.otf');
@@ -13,4 +21,4 @@
     src: url('/Skeirs II.ttf');
 }
 
-$font-stack: 'nasin nanpa', 'Skeirs';
+$font-stack: 'Fairfax HD Arrows', 'nasin nanpa', 'Skeirs';
