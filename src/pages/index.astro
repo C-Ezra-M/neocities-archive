@@ -55,7 +55,7 @@ const posts = (await getCollection('blog')).sort(
 		<p>Here are the five newest entries! Go to the <a href="/blog">blog home</a> to see the full list of entries.</p>
 		<ul>
             {posts.slice(0, 5).map(post => (
-                <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM D, YYYY")}</li>
+                <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM D, YYYY")} {post.data.updateDate ? (" (last update: " + format(post.data.updateDate, "MMMM D, YYYY") + ")") : ""}</li>
             ))}
         </ul>
 		<h2>Other stuff (webrings, etc.)</h2>
