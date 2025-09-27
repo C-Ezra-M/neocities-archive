@@ -8,4 +8,8 @@ export default defineConfig({
     integrations: [mdx({
         rehypePlugins: [addTableClass, horizontalList]
     })],
+    redirects: {
+        "/pokemon-pl": "/pl/pokemon",
+        "/pokemon-pl/pronunciation": "/pl/pronunciation",
+    }
 });
