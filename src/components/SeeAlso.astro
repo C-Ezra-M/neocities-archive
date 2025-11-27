@@ -1,8 +1,11 @@
 <aside class="see-also">See also: <slot /></aside>
-<style>
+<style is:global>
     .see-also {
         padding-left: 1.2rem;
-        font-style: italic;
         margin-bottom: 1rem;
+    }
+
+    body:not(.thm-gardner) .see-also {
+        font-style: italic;
     }
 </style>

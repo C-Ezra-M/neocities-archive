@@ -25,7 +25,7 @@ const { PROD } = import.meta.env
         : <a href={`https://www.youtube.com/watch?v=${id}`}>Watch on YouTube</a>
     }
 </div>
-<style>
+<style is:global>
     .youtube-embed {
         max-width: 100%;
         height: auto;

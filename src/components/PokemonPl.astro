@@ -81,7 +81,7 @@ try {
 path = image;
 ---
 
-<tr>
+<tr class="pkmn-list-entry">
     <th class="full-width">
         #{dexno.toString().padStart(4,"0")}
         <br class="lg-hide"/> {pl}
@@ -93,7 +93,7 @@ path = image;
     <td class="full-width optional"><em class="table-cell-header block">Notes</em><div class="information"><slot name="notes"/></div></td>
 </tr>
 
-<style>
+<style is:global>
     .cropped-card-image {
         width: 120px;
         height: 120px;

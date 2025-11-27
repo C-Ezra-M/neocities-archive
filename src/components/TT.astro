@@ -6,7 +6,7 @@ const { text } = Astro.props;
 export const slugNote = tooltipSlugger.slug('ttn');
 export const slug = tooltipSlugger.slug('tt');
 ---
-<tool-tip id={slug} aria-describedby={slugNote}><slot /></tool-tip><span id={slugNote}><span class="paren"> (</span>{text}<span class="paren">)</span></span><style>
+<tool-tip id={slug} aria-describedby={slugNote}><slot /></tool-tip><span id={slugNote}><span class="paren"> (</span>{text}<span class="paren">)</span></span><style is:global>
     tool-tip {
         text-decoration: underline dotted;
         text-underline-offset: 0.2em;
