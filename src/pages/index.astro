@@ -58,8 +58,27 @@ const posts = (await getCollection('blog')).sort(
                 <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM D, YYYY")} {post.data.updateDate ? (" (last update: " + format(post.data.updateDate, "MMMM D, YYYY") + ")") : ""}</li>
             ))}
         </ul>
-		<h2>Other stuff (webrings, etc.)</h2>
+		<h2>Other stuff (webrings, badges, etc.)</h2>
+		<p><em>Note:</em> some of these badges can be clicked on!</p>
 		<iframe id="bucket-webring" style="width: 100%; height: 3rem; border: none;" src="https://webring.bucketfish.me/embed.html?name=C.Ezra.M"></iframe>
+		<div class="badges">
+			<a href="https://discord.gg/cNu3zpr"><img src="/badge/discord.gif" alt="Discord"></a>
+			<img src="/badge/he-him.png" alt="he/him">
+			<a href="https://yesterweb.org/no-to-web3/"><img src="/badge/no-web3.gif" alt="Keep the web free, say no to Web3"></a>
+			<a href="https://youtube.com/@C.Ezra.M"><img src="/badge/yt.gif" alt="YouTube channel"></a>
+			<img src="/badge/construction.png" alt="Under construction">
+			<img src="/badge/eyes.gif" alt="Best viewed with eyes">
+			<img src="/badge/pokemon.gif" alt="Pokémon">
+			<a href="https://github.com/C-Ezra-M"><img src="/badge/github.png" alt="GitHub"></a>
+			<img src="/badge/anybrow.gif" alt="best viewed with any browser">
+			<a href="https://en.wikipedia.org/wiki/Right_to_repair"><img src="/badge/repair.jpg" alt="I support right to repair"></a>
+			<img src="/badge/imissxp.gif" alt="I miss XP!"></a>
+		</div>
+		<ul>
+			<li>
+				<a href="https://bsky.app/profile/c-ezra-m.bsky.social">Bluesky profile (couldn't find a badge for this one)</a>
+			</li>
+		</ul>
 	</main>
 </Layout>
 <style>
