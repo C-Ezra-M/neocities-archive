@@ -1,7 +1,7 @@
 ---
 import Layout from '#layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { format } from "date-format-parse";
+import { format } from "date-fns";
 
 const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -15,7 +15,7 @@ const posts = (await getCollection('blog')).sort(
         <h2>Full list of blog entries</h2>
         <ul>
             {posts.map(post => (
-                <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM D, YYYY")}</li>
+                <li><a href={`/blog/${post.id}`}>{post.data.title}</a> — {format(post.data.date, "MMMM d, yyyy")}</li>
             ))}
         </ul>
     </main>

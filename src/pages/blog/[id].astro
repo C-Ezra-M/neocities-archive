@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '#layouts/Layout.astro';
-import { format } from "date-format-parse";
+import { format } from "date-fns";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
     const posts = await getCollection('blog');
@@ -21,8 +21,8 @@ const { Content } = await render(post);
         <p>
             <small>
                 from
-                {format(post.data.date, "MMMM D, YYYY")}
-                {post.data.updateDate ? ` — last updated on ${format(post.data.updateDate, "MMMM D, YYYY")}` : ''}
+                {format(post.data.date, "MMMM d, yyyy")}
+                {post.data.updateDate ? ` — last updated on ${format(post.data.updateDate, "MMMM d, yyyy")}` : ''}
                 | <a href="/blog">back to blog home</a>
             </small>
         </p>
