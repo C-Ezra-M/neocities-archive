@@ -19,7 +19,7 @@ const GRAPHEME_TO_PHONEME_TABLE = {
     d: "d",
     ni: ["ɳ", "j"],
     n: "n",
-    rz: "ʐ",
+    rz: "*ʐ", // interacts differently with assimilation
     ż: "ʐ",
     ci: ["t͡ɕ", "j"],
     dzi: ["d͡ʑ", "j"],
@@ -92,6 +92,8 @@ const VOICEDNESS_TABLE = {
     ɕ: "ʑ",
     k: "ɡ",
     x: "ɣ",
+    // 'rz' interacts differently with assimilation
+    "*ʐ": "*ʂ",
     // voiced to voiceless
     // bijection
     b: "p",
@@ -105,6 +107,7 @@ const VOICEDNESS_TABLE = {
     ʑ: "ɕ",
     ɡ: "k",
     ɣ: "x",
+    "*ʂ": "*ʐ",
 };
 
 const ASSIMILATION_TABLE = {
@@ -173,7 +176,9 @@ const ASSIMILATION_TABLE = {
                 "s",
                 "z",
                 "ʂ",
+                "*ʂ",
                 "ʐ",
+                "*ʐ",
                 "t͡ʂ",
                 "d͡ʐ",
                 "t͡s",
@@ -202,7 +207,9 @@ const ASSIMILATION_TABLE = {
                 "s",
                 "z",
                 "ʂ",
+                "*ʂ",
                 "ʐ",
+                "*ʐ",
                 "t͡ʂ",
                 "d͡ʐ",
                 "t͡ɕ",
@@ -251,7 +258,7 @@ export default function phonemize(text: string) {
     }
     ret = ret.flat(1);
     const final = ret.pop();
-    if (VOICED_CONSONANTS.includes(final)) {
+    if (VOICED_CONSONANTS.includes(final) || final === "*ʐ") {
         ret.push(VOICEDNESS_TABLE[final]);
     } else {
         ret.push(final);
@@ -325,6 +332,22 @@ export default function phonemize(text: string) {
                 break;
             }
         }
+        if (ret[i] === "*ʐ") {
+            // voiceless-voiced -> voiceless-voiceless (not necessarily word-initially)
+            if (
+                ret[i - 1] !== " " &&
+                ret[i - 1] !== "" &&
+                (VOICELESS_CONSONANTS.includes(ret[i - 1]) || i === ret.length)
+            ) {
+                console.log(
+                    `Assimilation: ${ret[i]} -> ${
+                        VOICEDNESS_TABLE[ret[i]]
+                    } before ${ret[i + 1]} in '${text}'`
+                );
+                ret[i] = VOICEDNESS_TABLE[ret[i]];
+                //break;
+            }
+        }
     }
-    return ret.join("");
+    return ret.join("").replaceAll("*", "");
 }
