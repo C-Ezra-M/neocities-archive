@@ -19,7 +19,8 @@ const tokiPonaRedirs = Object.fromEntries(
 // https://astro.build/config
 export default defineConfig({
     integrations: [mdx({
-        rehypePlugins: [addTableClass, horizontalList]
+        rehypePlugins: [addTableClass, horizontalList],
+        smartypants: false,
     })],
     redirects: {
         "/pokemon-pl": "/pl/pokemon",
@@ -27,4 +28,5 @@ export default defineConfig({
         //"/lojban": "/jbo", // was not accessible on the older site
         ...tokiPonaRedirs
     },
+    scopedStyleStrategy: 'class',
 });
