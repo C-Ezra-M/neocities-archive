@@ -12,6 +12,8 @@ import SeeAlso from '#components/SeeAlso.astro';
         
         This is my attempt to describe Polish phonology and phonotactics. The Wikipedia article has a lot more detail, though.
 
+        This mainly applies to contexts where there are native words. Loanwords that are unchanged from the original spelling are pronounced regarding the origin language's pronunciation rules. Thus, *weekend* is pronounced like in English, but *Waszyngton* (Washington) is pronounced with a V sound instead of a W sound.
+
         IPA transcriptions for phonemes (annotated /.../) are provided, but I tried to avoid going into phones (annotated [...]) as much as possible. Graphemes are annotated ⟨...⟩.
 
         ## Alphabet
@@ -25,17 +27,29 @@ import SeeAlso from '#components/SeeAlso.astro';
 
         > **Fun fact!** X actually used to be used in native words, e.g. *xiądz* ("priest"). X was removed from the core alphabet at some point, and was replaced with *ks* or *gz*, depending on the pronunciation, such as in *ksiądz*, *egzamin* ("exam").
 
-        ## Pronunciation
+        ## Stress
 
-        This mainly applies to contexts where there are native words. Loanwords that are unchanged from the original spelling are pronounced regarding the origin language's pronunciation rules. Thus, *weekend* is pronounced like in English, but *Waszyngton* (Washington) is pronounced with a V sound instead of a W sound.
+        Most words are stressed on the penultimate syllable (as in, the 2nd syllable, but counting from the end). However, there are cases where the stress is on the 3rd or 4th syllable from the end.
 
-        Most words are stressed on the penultimate syllable.
+        - 2nd syllable from the end:
+            - single words not indicated below
+            - in prepositional phrases with a personal pronoun: ***do** niej* ('to her'), ***na** nas* ('on us'), *prze**ze** mnie* ('because of me')
+        - 3rd syllable from the end:
+            - words from classical languages:
+                - words ending with *-ika*, *-yka*: ***ryt**mika* ("rhythmics"), ***mu**zyka* ("music")
+                - some longer words (only in the nominative singular, and no derived words with native affixes): *uni**wer**sytet* ("university")
+            - 1st- and 2nd-person plural past forms: *czy**ta**liśmy* ("to read": 1-PL-PAST), *czy**ta**liście* ("to read": 2-PL-PAST)
+            - 3rd-person plural conditional forms: *czy**ta**liby* ("to read": 3-VIR-PL-COND), *czy**ta**łyby* ("to read": 3-NVIR-PL-COND)
+        - 4th syllable from the end:
+            - 1st- and 2nd-person plural conditional forms: *czy**ta**libyśmy* ("to read": 1-VIR-PL-COND), *czy**ta**łybyście* ("to read": 2-NVIR-PL-COND)
 
         ## Vowels
 
         ### Tables
 
-        Modern Polish's oral vowel system is similar to languages like Ukrainian or Indonesian, having two front, two central, and two back vowel phonemes. Vowel length is not significant.
+        Modern Polish's oral vowel system is similar to languages like Ukrainian or Indonesian, having two front, two central, and two back vowel phonemes. These vowel positions alone are significant, other factors like length or tone are not.
+        
+        The close central vowel can be transcribed /ɘ/, /ɨ/, or (more rarely) /ɪ/. This article will use /ɘ/.
 
         ||Front|Center|Back|
         |-|-|-|-
@@ -43,17 +57,29 @@ import SeeAlso from '#components/SeeAlso.astro';
         |Mid|ɛ||ɔ|
         |Open||a||
 
-        The close central vowel can be transcribed /ɘ/, /ɨ/, or (more rarely) /ɪ/. This article will use /ɘ/.
+
+        While it is debated, there are two nasal vowel phonemes. Some sources support the below table, but others (especially newer ones) don't and consider nasal vowels as combinations of two sounds. In most positions, they would end with /ŋ/ or /w̃/. This article will transcribe those with /w̃/.
 
         ||Front|Center|Back|
         |-|-|-|-
         |Mid|(ɛ̃)||(ɔ̃)|
 
-        The phonological status of nasal vowels in modern Polish is debated. Some sources support the above table, but others don't and consider nasal vowels as diphthongs. In most positions, they would end with /ŋ/ or /w̃/. This article will transcribe those with /w̃/.
+        These are the graphemes used to represent each vowel sound:
 
-        > **Fun fact!** Polish is one of the few Slavic languages to preserve nasal vowels in some way. In other Slavic languages, they have merged with other vowels.
+        |Sound|Graphemes
+        |-|-
+        |/a/|a
+        |/ɛ/|e
+        |/i/|i
+        |/ɔ/|o
+        |/u/|ó, u
+        |/ɘ/|y
+        |(/ɛ̃/)|ę
+        |(/ɔ̃/)|ą
 
-        > **Fun fact!** The U/Ó split is a relic of when Ó represented the long O sound. At some point, when Polish stopped distinguishing vowels by length, Ó represented /o/, and eventually /u/. Some words have been respelled with the other letter of the two, such as *bruzda* ("furrow, groove") and *ogórek* ("cucumber").
+        > **Fun fact!** Polish is one of the few modern Slavic languages to preserve nasal vowels in some way. In other Slavic languages, they have merged with other vowels.
+
+        > **Fun fact!** The U/Ó split is a relic of when Ó represented the long O sound. At some point, when Polish stopped distinguishing vowels by length, Ó represented /o/, and eventually /u/. Some words have been respelled with the other letter of the two, such as *bruzda* ("furrow, groove") and *ogórek* ("cucumber"). The split still exists in some local dialects, such as the Podhale dialect.
 
         In Ą and Ę, the consonant may be reduced or shifted into another one.
 
@@ -64,14 +90,14 @@ import SeeAlso from '#components/SeeAlso.astro';
         |addition of /n/|piątka → /pjɔntka/<br/>five (n)|wędka → /vɛntka/<br/>fishing rod|before t/d, c/dz, cz/dż
         |addition of /ɳ/|wziąć → /vʑɔɲt͡ɕ/<br/>take (v)|pięć → /pjɛɲt͡ɕ/<br/>five (num)|before ś/ź, ć/dź
         |addition of /ŋ/|mąka → /mɔŋka/<br/>flour|ręka → /rɛŋka/<br/>hand (n)|before k/g
-        |no change      |wąsy → /vɔw̃sɘ/<br/>mustache|węch → /vɛw̃x/<br/>(sense of) smell|before f/w, s/z, sz/ż/rz, h/ch
+        |no change      |wąsy → /vɔw̃sɘ/<br/>mustache|węch → /vɛw̃x/<br/>(sense of) smell|before f/w, s/z, sz/ż/rz, h/ch<br/>in *ę* (name of the letter Ę)
         |no change (Ą)<br/>denasalization (Ę) |są → /sɔw̃/<br/>(they) are|się → /ɕɛ/<br/>*reflexive pronoun*|word-finally
 
-        In careful speech, Ę is pronounced /ɛw̃/ word-finally. Otherwise, it is pronounced /ɛ/.
+        In careful speech, Ę is pronounced /ɛw̃/ word-finally, except in *ę*, the name of the letter Ę. Otherwise, it is pronounced /ɛ/.
+        
+        Because this exception doesn't apply to verbs, it may be confusing if a verb has two present tense forms that end with *-ę* (1st person singular) and *-e* (3rd person singular). Despite the fact that Polish is a [pro-drop language](https://en.wikipedia.org/wiki/Pro-drop_language), they are nonetheless easy to distinguish: dropping pronouns mostly only happens to 1st- and 2nd-person contexts. /piʂɛ tɔ/ by itself is generally understood to be in 1st person: "Piszę to."
 
         ## Consonants
-
-        ### Table
 
         ||Labial|Alveolar|Retroflex|Palatal|Velar|
         |-|-|-|-|-|-|
@@ -136,19 +162,20 @@ import SeeAlso from '#components/SeeAlso.astro';
         - Voiced obstruents right before voiceless consonants become voiceless: *książka* (book) → /kɕɔw̃ʂka/.
         - In the onset, voiced obstruents right after voiceless consonants become voiceless: *przemiana* (transformation) → /pʂɛ.mja.na/.
         - In the middle of a word, voiceless obstruents immediately before voiced obstruents become voiced: *prośba* (request) → /prɔʑ.ba/.
-            - This is the only instance when a phonemic /ɣ/ may appear: *klechda* (legend) -> /klɛɣ.da/.
-            - Unlike in English, this kind of assimilation does not happen before sonorants: *tandetny* (trashy) -> /tan.dɛt.nɘ/.
+            - This is the only instance when a phonemic /ɣ/ may appear: *klechda* (legend) → /klɛɣ.da/.
+            - Unlike in English, this kind of assimilation does not happen before sonorants: *tandetny* (trashy) → /tan.dɛt.nɘ/.
+            - While *rz* and *ż* normally represent the same phoneme, *rz* **cannot cause regressive assimilation** and will always be subject to progressive assimilation, including in the middle of a word. Compare *pokrzywa* ("nettle") → /pɔ.kʂɘ.va/ and *także* ("also, too") → /taɡ.ʐɛ/.
         
         ### Onset consonant clusters
         
         Idiosyncracies like *rdza* ("rust"), *rtęć* ("mercury, quicksilver"), or *źdźbło* ("blade [of a grass or cereal]") are mostly preserved for historical reasons. For this reason, Poles often insert a very short vowel between the consonants in everyday speech. This shows a fossilized trace of otherwise reduced [yers](https://en.wikipedia.org/wiki/Yer), very short vowels that existed in Proto-Slavic, marked with \*ь/\*ĭ and \*ъ/\*ŭ.
 
-        |Modern Polish|Gloss|Old Polish|Proto-Slavic|Cognates|
+        |Modern Polish|Gloss|Old Polish|Proto-Slavic|Cognates in other Slavic languages|
         |-|-|-|-|-
         |*rdza*|rust|(unknown)|*\*rъďa*|Bulgarian *ръжда́ rǎždá*<br />Ukrainian *іржа́ iržá*
         |*rtęć*|mercury|*rtęć*|*\*rьtǫtь*|Czech *rtuť*<br />Slovak *ortuť*
-        |*srebro*|silver|*śrzebro*|*\*sьrebro*|Russian *серебро́ serebro*<br />Silesian *strzybło*<br />*\*sьrebro* is posited as a wanderword; compare Proto-Germanic *\*silubrą*, Proto-Berber *\*a-ẓrəf*
-        |*źdźbło*|blade of grass or cereal|*śćbło*|*\*stьblo*|Ukrainian *стебло́ stebló* ("stalk, stem")<br />Serbo-Croatian *ста́бло stáblo* ("tree, trunk")<br />Descended from Proto-Indo-European *\*stebʰ-*; compare English *staff*, Persian *ستبر setabr* ("thick")
+        |*srebro*|silver|*śrzebro*|*\*sьrebro*|Russian *серебро́ serebró*<br />Silesian *strzybło*
+        |*źdźbło*|blade of grass or cereal|*śćbło*|*\*stьblo*|Ukrainian *стебло́ stebló* ("stalk, stem")<br />Serbo-Croatian *ста́бло stáblo* ("tree, trunk")
 
         In Czech and Slovak, *r* and *l* may be syllabic, which led to the tongue twister *strč prst skrz krk*. In Polish and most other Slavic languages, only vowels may be syllabic.
     </main>

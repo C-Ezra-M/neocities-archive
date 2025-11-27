@@ -79,7 +79,7 @@ import '/public/camps/mud/index.css';
                         You are excused from the challenge without having to provide a reason. The excusal cooldown will be set to 1 challenge less.
                     </p>
                     <p>
-                        **NOTE:** As of Episode 5, you can't use this token.
+                        **Historical note:** During Episode 5, it was not allowed to use this token.
                     </p>
                 </Fragment>
             </TokenType>
@@ -105,7 +105,37 @@ import '/public/camps/mud/index.css';
                     - Guess Token: If you guessed more dislikes than you actually had, your dislike count is set to your guess. Otherwise, it remains unchanged.
                     - Kamikaze Token: Halves the target's dislikes and yours.
                     - Null Token: Has no effect, unless the token specifically targets the Contrary Token's user.
+                    - Split Token:
+                        - 2 contestants: Increases dislikes by 50% each.
+                        - 4 contestants: Increases dislikes by 25% each.
+                    - Double Token: Doubles the token's reversed effect, otherwise remains unchanged.
                     - All other tokens have no effect.
+                </Fragment>
+            </TokenType>
+            <TokenType name="Tether Token" id="tether-token" tier="A">
+                <Fragment slot="challenge">
+                    *Created by CRT.* Use it on another contestant. Both of you will be affected by the rewards and punishments of each other. This means that you can get the same tokens, but can also be both up for elimination.
+                </Fragment>
+            </TokenType>
+            <TokenType name="Double Token" id="double-token" tier="S">
+                <Fragment slot="elimination">
+                    *Created by Rubber Spatula.* Use it with another token, and its effect will be doubled.
+
+                    - Win Token: Quarters your dislikes.
+                    - Revenge Token: Gives 3/4ths of your dislikes to the target.
+                    - Guess Token: The difference between your guess and the number of dislikes is halved.
+                    - Extra Token: Allows you to cast two vote pairs instead of one.
+                    - Kamikaze Token: Quadruples the target's dislikes and yours.
+                    - Contrary Token: Doubles the reversed effects of each token.
+                    - All other tokens have no extra effect when doubled, and thus can't be used with them.
+                </Fragment>
+            </TokenType>
+            <TokenType name="Split Token" id="split-token" tier="A">
+                <Fragment slot="elimination">
+                    *Created by Snowball.* Depending on the number of contestants you use it on (2, or 4, including yourself), your dislikes are reduced.
+
+                    - 2 contestants: 50% each
+                    - 4 contestants: 25% each
                 </Fragment>
             </TokenType>
         </ul>
@@ -116,6 +146,7 @@ import '/public/camps/mud/index.css';
         1. Kamikaze Token
         2. Revenge Token
         3. Win Token
+        4. Split Token
         4. Guess Token
         5. Swap Token
         6. Immunity Token
@@ -125,8 +156,12 @@ import '/public/camps/mud/index.css';
         ### Token probabilities
 
         The probabilities are used for these wheels:
-        - [High Break Token probability](https://wheelofnames.com/xba-ezu)
-        - [Low Break Token probability](https://wheelofnames.com/vzp-vv2)
+        - [Wheel C (High Break Token probability)](https://wheelofnames.com/pcd-jxn)
+        - [Wheel D (Low Break Token probability)](https://wheelofnames.com/gn3-bt7)
+
+        Historical wheels without the new tokens:
+        - [Wheel A (High Break Token probability)](https://wheelofnames.com/xba-ezu)
+        - [Wheel B (Low Break Token probability)](https://wheelofnames.com/vzp-vv2)
 
         |Tier|Without a Break Token|With a Break Token|
         |-|-|-|
