@@ -1,0 +1,21 @@
+@use "./beige.scss";
+
+:root {
+    --bs-body-bg: #2f2e2a;
+    //--bs-body-font-weight: 500;
+}
+b, strong, th {
+    //font-weight: 800;
+}
+footer {
+    background-color: #374348;
+}
+.navbar {
+    --middle-color: #374348;
+    background-image:   linear-gradient(90deg, #374348 calc(var(--percentage) - 9%), var(--middle-color) var(--percentage), #374348 calc(var(--percentage) + 9%)),
+                        linear-gradient(45deg, #d6750d 15%, #70c42b 50%, #65ace4 85%);
+}
+blockquote {
+    background-color: #111111aa;
+    border-left: 0.3rem solid #996611;
+}
