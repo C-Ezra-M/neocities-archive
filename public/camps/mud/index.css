@@ -11,3 +11,19 @@
 .gray,      .null-token     { --entry-color: #CDCDCDCC; }
 .black,     .contrary-token { --entry-color: #ABABABCC; }
 .brown                      { --entry-color: #CDBCABCC; }
+
+html.dark {
+    .green,     .win-token      { --entry-color: #ABEFAB33; }
+    .red,       .immunity-token { --entry-color: #EFABAB33; }
+    .cyan,      .revenge-token  { --entry-color: #ABEFEF33; }
+    .blue,      .swap-token     { --entry-color: #ABABEF33; }
+    .pink,      .guess-token    { --entry-color: #EFABEF33; }
+    .yellow,    .extra-token    { --entry-color: #EFEFAB33; }
+    .orange,    .kamikaze-token { --entry-color: #EFCDAB33; }
+    .turquoise, .flow-token     { --entry-color: #ABEFCD33; }
+    .purple,    .break-token    { --entry-color: #CDABEF33; }
+    .white,     .preserve-token { --entry-color: #EFEFEF33; }
+    .gray,      .null-token     { --entry-color: #CDCDCD33; }
+    .black,     .contrary-token { --entry-color: #ABABAB33; }
+    .brown                      { --entry-color: #CDBCAB33; }
+}
