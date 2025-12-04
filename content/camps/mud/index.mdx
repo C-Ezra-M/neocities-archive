@@ -1,0 +1,191 @@
+---
+title: Mutually Unhinged Destruction (MUD)
+---
+
+import Layout from '#layouts/Layout.astro';
+import Card from '#components/Card.astro';
+import YouTubeVid from '#components/YouTubeVid.astro';
+import TokenType from '#components/TokenType.astro';
+import '/public/camps/mud/index.css';
+
+## Watch the latest episode!
+
+- [Click here to join the Discord server!](https://discord.gg/cNu3zpr)
+- [Watch the full MUD playlist!](https://www.youtube.com/playlist?list=PLhFwQtaMN24seftusKvsLhNuh-8Pwu6Pb)
+- [Browse the public MUD spreadsheet](https://docs.google.com/spreadsheets/d/1GgBQYfa9ZBK93Xufkp-YiTnami4uXyk37KDWy7-akt8/edit?usp=sharing)
+- [Create a tier list](https://tiermaker.com/create/mud-contestants-object-show-camp-17032605)
+    - [Read the inspirations behind each icon](/camps/mud/icons)
+
+<YouTubeVid id="_e8gn8sy37Y"/>
+
+> **News:** Debut signups are open! Join the Discord server to sign up!
+
+## What is MUD?
+<dfn>MUD</dfn> (short for <dfn>Mutually Unhinged Destruction</dfn>) is a camp started in 2025, jointly hosted by C.Ezra.M, TGiovans, and INEI.
+> *C.Ezra.M triumphantly re-enters the camp hosting scene with Mutually Unhinged Destruction, MUD for short! It is going to be a fun experience — for both you (the 40 contestants) and the host, who is exploring ways to improve his camps! One thing this camp has going for it is the 12 token types — pretty diverse, but not too chaotic!*
+
+## Token types
+<ul class="entry-list">
+    <TokenType name="Win Token" id="win-token" tier="C">
+        <p slot="elimination">Halves your dislikes.</p>
+        <p slot="challenge">Gives you an advantage in a challenge. Most frequently, it is realized by an increase to your challenge score. This only affects team averages.</p>
+    </TokenType>
+    <TokenType name="Immunity Token" id="immunity-token" tier="A">
+        <p slot="elimination">Removes all of your dislikes.</p>
+    </TokenType>
+    <TokenType name="Revenge Token" id="revenge-token" tier="B">
+        <p slot="elimination">Halves your dislikes while giving the other half to a contestant of your choice. *(That contestant must be up for elimination.)*</p>
+        <p slot="challenge">Lowers the challenge score of a contestant of your choice. *(That contestant must be on a different team.)* This only affects team averages.</p>
+    </TokenType>
+    <TokenType name="Swap Token" id="swap-token" tier="C">
+        <p slot="elimination">Swaps your votes *(both likes and dislikes)* with a contestant of your choice. *(That contestant must be up for elimination.)*</p>
+        <p slot="challenge">Swaps your challenge score with that of a contestant of your choice. *(That contestant must be on a different team.)* This only affects team averages.</p>
+    </TokenType>
+    <TokenType name="Guess Token" id="guess-token" tier="C">
+        <p slot="elimination">Guess how many dislikes you received! If you guess correctly, you will have 0 dislikes. If not, your new dislike count will be the difference between your guess and your actual dislike count.</p>
+    </TokenType>
+    <TokenType name="Extra Token" id="extra-token" tier="B">
+        <Fragment slot="elimination">
+            Allows you to cast extra vote pairs, depending on how many teams are up for elimination. A vote pair is a like and a dislike.
+            
+            - More than one team: You can cast 1 extra vote pair per team that is up for elimination.
+            - Only one team, or if there are no teams: You can cast 2 extra vote pairs.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Kamikaze Token" id="kamikaze-token" tier="A">
+        <p slot="elimination">
+            Doubles your dislikes, but also those of a contestant of your choice. *(That contestant must be up for elimination.)*
+        </p>
+        <Fragment slot="challenge">
+            Has a different effect depending on your placement in the challenge.
+            - In the top third: You get an advantage in the next challenge (same as using a Win Token) and immunity if your team would be up for elimination.
+            - In the bottom third: You are up for elimination.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Flow Token" id="flow-token" tier="B">
+        <Fragment slot="shared">
+            If you are targeted by another token, using a Flow Token redirects the effect onto a contestant of your choice. It is possible to create a chain in this way.
+
+            If the token is redirected to its user, the following happens:
+            - Revenge Token (eliminations): The votes go back to the original user.
+            - Revenge Token (challenges): The original user's challenge score is lowered.
+            - Kamikaze Token (eliminations): Only the original user's dislikes are doubled.
+            - Swap Token: Nothing happens (both in eliminations and in challenges).
+            - Flow Token: Nothing happens.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Break Token" id="break-token" tier="D">
+        <Fragment slot="challenge">
+            <p>
+                You are excused from the challenge without having to provide a reason. The excusal cooldown will be set to 1 challenge less.
+            </p>
+            <p>
+                **Historical note:** During Episode 5, it was not allowed to use this token.
+            </p>
+        </Fragment>
+    </TokenType>
+    <TokenType name="Preserve Token" id="preserve-token" tier="B">
+        <p slot="shared">
+            You can use it only alongside another token, and then you keep that token!
+        </p>
+    </TokenType>
+    <TokenType name="Null Token" id="null-token" tier="A">
+        <Fragment slot="shared">
+            Disables a token used by a contestant of your choice. *(That token is still consumed. If used in an elimination, the target must be up for elimination.)*
+
+            This doesn't work on the Break Token. If the target used a Preserve Token, both it and the token used with it have no effect. If used on someone that used a Contrary Token, the Null Token will activate first.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Contrary Token" id="contrary-token" tier="S">
+        <Fragment slot="elimination">
+            Reverses effects of all tokens.
+
+            - Win Token: Doubles your dislikes.
+            - Immunity Token: Erases all your likes.
+            - Revenge Token: You take half of the target's dislikes.
+            - Guess Token: If you guessed more dislikes than you actually had, your dislike count is set to your guess. Otherwise, it remains unchanged.
+            - Kamikaze Token: Halves the target's dislikes and yours.
+            - Null Token: Has no effect, unless the token specifically targets the Contrary Token's user.
+            - Split Token:
+                - 2 contestants: Increases dislikes by 50% each.
+                - 4 contestants: Increases dislikes by 25% each.
+            - Double Token: Doubles the token's reversed effect, otherwise remains unchanged.
+            - All other tokens have no effect.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Tether Token" id="tether-token" tier="A">
+        <Fragment slot="challenge">
+            *Created by CRT.* Use it on another contestant. Both of you will be affected by the rewards and punishments of each other. This means that you can get the same tokens, but can also be both up for elimination.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Double Token" id="double-token" tier="S">
+        <Fragment slot="elimination">
+            *Created by Rubber Spatula.* Use it with another token, and its effect will be doubled.
+
+            - Win Token: Quarters your dislikes.
+            - Revenge Token: Gives 3/4ths of your dislikes to the target.
+            - Guess Token: The difference between your guess and the number of dislikes is halved.
+            - Extra Token: Allows you to cast two vote pairs instead of one.
+            - Kamikaze Token: Quadruples the target's dislikes and yours.
+            - Contrary Token: Doubles the reversed effects of each token.
+            - All other tokens have no extra effect when doubled, and thus can't be used with them.
+        </Fragment>
+    </TokenType>
+    <TokenType name="Split Token" id="split-token" tier="A">
+        <Fragment slot="elimination">
+            *Created by Snowball.* Depending on the number of contestants you use it on (2, or 4, including yourself), your dislikes are reduced.
+
+            - 2 contestants: 50% each
+            - 4 contestants: 25% each
+        </Fragment>
+    </TokenType>
+</ul>
+
+### Extra information on token usage
+
+When multiple tokens are used in an elimination, they apply in the following order:
+1. Kamikaze Token
+2. Revenge Token
+3. Win Token
+4. Split Token
+4. Guess Token
+5. Swap Token
+6. Immunity Token
+
+During a challenge, multiple tokens may be used. But in an elimination, only one token may be used.
+
+### Token probabilities
+
+The probabilities are used for these wheels:
+- [Wheel C (High Break Token probability)](https://wheelofnames.com/pcd-jxn)
+- [Wheel D (Low Break Token probability)](https://wheelofnames.com/gn3-bt7)
+
+Historical wheels without the new tokens:
+- [Wheel A (High Break Token probability)](https://wheelofnames.com/xba-ezu)
+- [Wheel B (Low Break Token probability)](https://wheelofnames.com/vzp-vv2)
+
+|Tier|Without a Break Token|With a Break Token|
+|-|-|-|
+|D|17%|3%|
+|C|14% per token<br/>42% in total|15% per token<br/>45% in total|
+|B|8% per token<br/>24% in total|10% per token<br/>30% in total|
+|A|4% per token<br/>12% in total|5% per token<br/>15% in total|
+|S|1%|2%|
+
+### Tokens as rewards
+
+#### Challenges
+|Achievement|Token 1|Token 2|
+|-|-|-|
+|1st place|100%|100%|
+|2nd place|100%|25%|
+|3rd place|100%|2%|
+|4th-6th place|25%|—|
+|7th-10th place|2%|—|
+
+#### Eliminations
+|Achievement|Reward|
+|-|-|
+|Most likes|1 guaranteed token|
+|2nd most likes|25% chance to get a token|
+|3rd most likes|2% chance to get a token|

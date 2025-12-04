@@ -4,9 +4,10 @@ import { tooltipSlugger } from "#components/tooltips.ts";
 tooltipSlugger.reset();
 interface Props {
     title: string;
+    lang: string;
 }
 
-const { title } = Astro.props;
+const { title, lang } = Astro.props;
 const buildDate = new Date();
 const dateFormat = new Intl.DateTimeFormat("en-US", {
     month: "long",
@@ -21,7 +22,7 @@ const longDate = buildDate.toLocaleDateString("en-US", {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />

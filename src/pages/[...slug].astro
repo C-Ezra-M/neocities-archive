@@ -3,10 +3,10 @@ import { getCollection, render } from 'astro:content';
 import Layout from '#layouts/Layout.astro';
 import { format } from "date-fns";
 // 1. Generate a new path for every collection entry
-export async function getStaticPaths() {
-    const posts = await getCollection('blog');
+export async function getStaticPaths({ routePattern }) {
+    const posts = await getCollection('content');
     return posts.map(post => ({
-        params: { id: post.id },
+        params: { slug: post.id },
         props: { post },
     }));
 }
@@ -18,17 +18,17 @@ const { Content } = await render(post);
 <Layout title={`${post.data.title} | C.Ezra.M`}>
     <main>
         <h1>{post.data.title}</h1>
-        <p>
-            {post.data.date
-                ? <small>
+        {post.data.date
+            ? <><p>
+                <small>
                     from
                     {format(post.data.date, "MMMM d, yyyy")}
                     {post.data.updateDate ? ` — last updated on ${format(post.data.updateDate, "MMMM d, yyyy")}` : ''}
                     | <a href="/blog">back to blog home</a>
                 </small>
-                : <></>}
-        </p>
-        <hr />
+            </p>
+            <hr /></>
+            : <></>}
         <Content />
     </main>
 </Layout>
