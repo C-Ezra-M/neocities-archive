@@ -1,0 +1,8 @@
+---
+import { differenceInYears } from "date-fns"
+
+const { date } = Astro.props;
+const buildDate = new Date();
+const birthDate = new Date(date);
+---
+{differenceInYears(buildDate, birthDate)}
