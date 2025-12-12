@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 
 ---
 
-<Layout title="C.Ezra.M's home page" lang="en">
+<Layout title="C.Ezra.M" lang="en">
 	<main>
 		<h1>C.Ezra.M</h1>
 		<img
@@ -41,15 +41,25 @@ const posts = (await getCollection('blog')).sort(
 				href="/algotriacontathlon"
 				title="Algotriacontathlon"
 				body="A competition where 32 colors duke it out in 30 events to see who is truly the best!"
-			/>--><!-- <Card
+			/>-->
+			<Card
 				href="/blog"
 				title="C.Ezra.M's blog"
-				body="A space for Ezra to write about certain things."
-			/> -->
+				body="A space for Ezra to update things."
+			/>
+			<Card
+				href="/map"
+				title="Sitemap"
+				body="A cartographer's...dream? Not exactly, but it helps browse my site! Links to all public pages in one place!"
+			/>
 			<Card
 				href="/tok"
 				title="ijo pi toki pona"
 			>toki! mi jan Esuwa!</Card>
+			<Card
+				href="/jbo"
+				title="lo lojbo"
+			>coi do .i mi'e .ezras.</Card>
 		</ul>
 		<h2>My blog</h2>
 		<p>Here are the five newest entries! Go to the <a href="/blog">blog home</a> to see the full list of entries.</p>
