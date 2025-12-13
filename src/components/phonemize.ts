@@ -1,4 +1,5 @@
 const GRAPHEME_TO_PHONEME_TABLE = {
+    ".": ".",
     "-": "",
     " ": " ",
     a: "a",
