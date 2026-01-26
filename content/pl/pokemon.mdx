@@ -82,10 +82,14 @@ The pronunciation rules mainly apply to contexts where there are native words. L
     </thead>
     <tbody>
         <GenerationHeader name="I"/>
-        <PokemonPlSimple name="Blastoise" card="sm9-25" pl="Żółwierz">
-            - *żółw*: Polish for turtle, tortoise
-            - *żołnierz*: Polish for soldier
-        </PokemonPlSimple>
+        <PokemonPl name="Blastoise" card="sm9-25" pl="———" pron="">
+            <Fragment slot="etymology" />
+            <Fragment slot="notes">
+                This was "Żółwierz", from *żółw* (turtle, tortoise) and *żołnierz* (soldier). However, I recently found out this is similar to *Żółwnierz*, the name recently given to Koopa Troopa. I will have to change this to prevent confusion.
+
+                The name was retired [as of January 22, 2026](https://neocities.org/site/cezram?event_id=6263619).
+            </Fragment>
+        </PokemonPl>
         <PokemonPl name="Ekans" card="sm35-36" pl="Zołop" style="--offset-left: -110px;">
             <Fragment slot="etymology">
                 - *połozowate*: Polish for [*Colubridae*](https://en.wikipedia.org/wiki/Colubridae)
@@ -111,7 +115,7 @@ The pronunciation rules mainly apply to contexts where there are native words. L
                 - *pancernik*: Polish for armadillo
             </Fragment>
             <Fragment slot="notes">
-                I was the originally going with "Sandolin" (from *sand* and *pangolin*), but that sounded too similar to a brand name.
+                I was the originally going with "Sandolin" (from *sand* and *pangolin*), but that sounded too similar to "Sadolin", a brand name.
             </Fragment>
         </PokemonPl>
         <PokemonPlSimple name="Nidoran♀" card="xy5-66" pl="Nidoran♀" pron="Nidoran samica">Same as the original. Pronounced "Nidoran-samica" (lit. "Nidoran female").</PokemonPlSimple>
@@ -163,10 +167,15 @@ The pronunciation rules mainly apply to contexts where there are native words. L
             - *król*: Polish for king
             - *langsam*: German for slow
         </PokemonPlSimple> */}
-        <PokemonPlSimple name="Unown" card="sm8-90" pl="Icognito" pron="Ikognito" style="--offset-left: -100px;">
-            - *incognito*: Latin for unknown
-            - Same as the German name
-        </PokemonPlSimple>
+        <PokemonPl name="Unown" card="sm8-90" pl="Icognito" pron="Ikognito" style="--offset-left: -100px;">
+            <Fragment slot="etymology">
+                - *incognito*: Latin for unknown
+                - Same as the German name
+            </Fragment>
+            <Fragment slot="notes">
+                If any sort of word looks Latinate, one *will* pronounce it as if it were Latin.
+            </Fragment>
+        </PokemonPl>
         <PokemonPlSimple name="Forretress" card="xy2-60" pl="Fortyszka" style="--offset-left: -60px;">
             - *forteca*: Polish for fortress
             - *szyszka*: Polish for pinecone
@@ -238,14 +247,10 @@ The pronunciation rules mainly apply to contexts where there are native words. L
             - *żółw*: Polish for turtle, tortoise
             - *węgiel*: Polish for coal
         </PokemonPlSimple>
-        <PokemonPl name="Lileep" card="bw10-3" pl="Lilip">
-            <Fragment slot="etymology">
-                - *lilia*: Polish for lily
-                - *polip*: Polish for polyp
-                - Similar to the English name
-            </Fragment>
+        <PokemonPl name="Lileep" card="bw10-3" pl="———" pron="">
+            <Fragment slot="etymology" />
             <Fragment slot="notes">
-                I will need to change it because Lileep is *not* a polyp.
+                Previously "Lilip", from *lilia* (lily) and *polip* (polyp). I removed it as of January 26, 2026 because it is not a polyp.
             </Fragment>
         </PokemonPl>
         <PokemonPlSimple name="Absol" card="xyp-XY178" pl="Absol" style="--offset-left: -70px;">
