@@ -2,14 +2,15 @@
 interface Props {
     src: string,
     caption: string,
+    alt: string,
 }
 
-const { src, caption } = Astro.props;
+const { src, caption, alt } = Astro.props;
 ---
 
 <figure class="figure">
     <a href={src} target="_blank" rel="noreferrer">
-        <img src={src} class="figure-img img-fluid" alt={caption} loading="lazy" />
+        <img src={src} class="figure-img img-fluid" alt={alt ?? caption} loading="lazy" />
     </a>
     <figcaption class="figure-caption">{caption}</figcaption>
 </figure>
