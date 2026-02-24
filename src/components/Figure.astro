@@ -3,14 +3,15 @@ interface Props {
     src: string,
     caption: string,
     alt: string,
+    maxWidth?: string,
 }
 
-const { src, caption, alt } = Astro.props;
+const { src, caption, alt, maxWidth = '600px' } = Astro.props;
 ---
 
 <figure class="figure">
     <a href={src} target="_blank" rel="noreferrer">
-        <img src={src} class="figure-img img-fluid" alt={alt ?? caption} loading="lazy" />
+        <img src={src} class="figure-img img-fluid" alt={alt ?? caption} loading="lazy" style={({maxWidth: `min(${maxWidth}, 100%)`})} />
     </a>
     <figcaption class="figure-caption">{caption}</figcaption>
 </figure>

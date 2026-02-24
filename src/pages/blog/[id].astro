@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout title={`${post.data.title} | C.Ezra.M`}>
+<Layout title={`${post.data.title} | C.Ezra.M`} lang="en">
     <main>
         <h1>{post.data.title}</h1>
         <p>
