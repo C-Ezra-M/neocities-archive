@@ -4,4 +4,8 @@ This site was under `cezram.neocities.org` until the new site, made with [Eleven
 
 ## License information
 
-Files in `/src` and its subdirectories that have file names not ending with `.astro`
+Files in `/src` and its subdirectories that have file names not ending with `.astro` are licensed under the [MIT license](/LICENSE-MIT.txt).
+
+The file `/pokemon-tcg-cache.jsonl` is not covered by the license, as it is generated.
+
+All rights reserved for other content (text, images).
