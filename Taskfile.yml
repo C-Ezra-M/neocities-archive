@@ -43,7 +43,7 @@ tasks:
     cmds:
       - find dist -name '*.html' -exec sed 's!(href|src)="/!&neocities-archive/!g' {} -Ei \;
       - find dist -name '*.css' -exec sed 's!url\("/!&neocities-archive/!g' {} -Ei \;
-      - find dist -name '*.js' -exec sed 's!import\(`/!&neocities-archive/!g' {} -Ei \;
+      - find dist -name 'Layout*.js' -exec sed 's!/themes!/neocities-archive&!g' {} -Ei \;
   github-pages:
     cmds:
       - task: build
