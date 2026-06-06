@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.9",
     "@astrojs/mdx": "^4.2.6",
     "@floating-ui/dom": "^1.7.1",
     "astro": "^5.16.0",
@@ -22,6 +23,7 @@
     "localforage": "^1.10.0",
     "nanostores": "^1.0.1",
     "remark-gfm": "^4.0.1",
+    "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
